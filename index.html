@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鮨握り実践講座</title>
-    
+    <title>鮨握り実践講座｜鮨まさや</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -34,68 +35,105 @@
             color: #e5e5e5;
             overflow-x: hidden;
         }
-        /* 縦書き用クラス */
+
         .vertical-text {
             writing-mode: vertical-rl;
             text-orientation: upright;
             letter-spacing: 0.2em;
         }
-        /* 選択範囲の色 */
+
         ::selection {
-            background-color: #7f1d1d; /* red-900 */
+            background-color: #7f1d1d;
             color: white;
         }
-        /* フェードインアニメーション用初期状態 */
+
         .fade-section {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
+
         .fade-section.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        /* アニメーション用ユーティリティ */
+
         @keyframes fade-in-up {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .animate-fade-in-up {
             animation: fade-in-up 1s ease-out forwards;
         }
+
+        /* YouTube responsive embed */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Photo placeholder */
+        .photo-placeholder {
+            background: #1a1a1a;
+            border: 1px dashed #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
     </style>
 </head>
+
 <body class="font-serif">
 
-    <!-- Hero Section -->
+    <!-- ==================== HERO ==================== -->
     <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <!-- 1枚目の写真：ファーストビュー -->
-            <img 
-                src="top" 
-                alt="鮨を握る手元" 
-                class="w-full h-full object-cover opacity-60 grayscale-[30%]"
-            />
+            <img src="top.png" alt="鮨を握る手元" class="w-full h-full object-cover opacity-60 grayscale-[30%]" />
             <div class="absolute inset-0 bg-gradient-to-b from-[#111111]/30 via-[#111111]/60 to-[#111111]"></div>
         </div>
 
         <div class="relative z-10 container mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
             <div class="mb-8 animate-fade-in-up">
-                <p class="text-sm md:text-base tracking-[0.3em] uppercase text-gray-300 mb-4 border-b border-red-900/50 inline-block pb-2">
-                    鮨職人を目指す講座ではありません
+                <p
+                    class="text-sm md:text-base tracking-[0.3em] uppercase text-gray-300 mb-4 border-b border-red-900/50 inline-block pb-2">
+                    完全予約制
                 </p>
             </div>
-            
-            <h1 class="text-3xl md:text-5xl lg:text-6xl leading-tight font-medium mb-10 tracking-wide drop-shadow-lg animate-fade-in-up" style="animation-delay: 0.2s;">
+
+            <h1 class="text-3xl md:text-5xl lg:text-6xl leading-tight font-medium mb-10 tracking-wide drop-shadow-lg animate-fade-in-up"
+                style="animation-delay: 0.2s;">
                 はじめてでも、<br />
                 家族や友人にふるまえる鮨が<br />
                 <span class="text-red-700">3時間</span>で握れるようになる<br />
                 実践講座
             </h1>
 
-            <p class="text-sm md:text-lg text-gray-400 tracking-wider mb-12 animate-fade-in-up" style="animation-delay: 0.4s;">
-                料理初心者の方でも安心
+            <p class="text-sm md:text-lg text-gray-400 tracking-wider mb-12 animate-fade-in-up"
+                style="animation-delay: 0.4s;">
+                料理初心者の方でも安心｜少人数制
             </p>
 
             <div class="animate-bounce absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-500">
@@ -107,14 +145,15 @@
         </div>
     </header>
 
-    <!-- Empathy Part -->
+
+    <!-- ==================== EMPATHY ==================== -->
     <section class="py-24 md:py-32 container mx-auto px-6 relative">
         <div class="fade-section max-w-3xl mx-auto text-center">
             <h2 class="text-2xl md:text-3xl mb-12 leading-relaxed">
                 「鮨を握れたらいいな」と<br />
                 思ったこと、ありませんか？
             </h2>
-            
+
             <div class="space-y-8 text-base md:text-lg text-gray-400 leading-loose">
                 <p>
                     家でちょっと特別なことができたらいい。<br />
@@ -135,25 +174,55 @@
         </div>
     </section>
 
-    <!-- Values -->
-    <section class="py-24 bg-[#161616]">
+
+    <!-- ==================== 鮨まさやとは ==================== -->
+    <section class="py-24 bg-[#161616] border-t border-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="fade-section max-w-3xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-red-700 text-sm tracking-widest block mb-2">ABOUT</span>
+                    <h2 class="text-2xl md:text-3xl mb-6">「鮨まさや」について</h2>
+                </div>
+
+                <div class="space-y-6 text-sm md:text-base text-gray-400 leading-loose">
+                    <p>
+                        鮨まさやは、紹介制の鮨会として始まりました。
+                    </p>
+                    <p>
+                        コンセプトは、"鮨を通じて分かち合い、ご縁を紡ぐ"。<br />
+                        参加者が一品を持ち寄り、鮨を囲みながら語り合う。<br />
+                        そんなお裾分け文化が自然と育ち、SNS集客なしの口コミだけで毎回満席が続いています。
+                    </p>
+                    <p>
+                        この実践講座は、その「鮨まさや」が開く、<br />
+                        <span class="text-white">鮨を"握る体験"を通じて、人とつながる場</span>です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== VALUES ==================== -->
+    <section class="py-24">
         <div class="container mx-auto px-6">
             <div class="fade-section flex flex-col md:flex-row gap-12 items-center">
                 <!-- Image Side -->
                 <div class="w-full md:w-1/2 h-[400px] md:h-[600px] relative">
                     <div class="absolute inset-0 border border-gray-800 transform translate-x-4 translate-y-4"></div>
-                    <!-- 2枚目の写真：講座で大切にしていること -->
-                    <img 
-                        src="concept" 
-                        alt="完成した鮨" 
-                        class="w-full h-full object-cover relative z-10 grayscale-[10%]"
-                    />
+                    <img src="concept.jpg" alt="完成した鮨"
+                        class="w-full h-full object-cover relative z-10 grayscale-[10%]" />
+                    <p
+                        class="absolute bottom-4 right-4 z-20 text-[10px] tracking-widest text-white/60 bg-black/40 px-2 py-1 backdrop-blur-sm">
+                        受講生が握った鮨
+                    </p>
                 </div>
 
                 <!-- Text Side -->
                 <div class="w-full md:w-1/2 space-y-8">
                     <div class="flex items-start gap-4">
-                        <h3 class="text-2xl md:text-3xl font-medium mb-6 vertical-text h-auto md:h-64 border-l border-red-900 pl-4 py-2">
+                        <h3
+                            class="text-2xl md:text-3xl font-medium mb-6 vertical-text h-auto md:h-64 border-l border-red-900 pl-4 py-2">
                             講座で大切にしていること
                         </h3>
                         <div class="pt-2">
@@ -187,78 +256,145 @@
         </div>
     </section>
 
-    <!-- Why Safe -->
-    <section class="py-24 container mx-auto px-6">
-        <div class="fade-section max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-red-700 text-sm tracking-widest block mb-2">REASON</span>
-                <h2 class="text-3xl md:text-4xl">なぜ、初心者でも安心なのか？</h2>
-            </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-[#1a1a1a] p-8 border border-gray-800">
-                    <h3 class="text-xl text-gray-400 mb-4 border-b border-gray-700 pb-2">一般的な教え方</h3>
-                    <p class="text-gray-500 leading-loose">
-                        まず「返し」という手の動きを教える。<br />
-                        次に、見た目が美しい所作を意識させる。<br />
-                        <span class="block mt-4 text-sm">
-                            ⚠️ これが初心者にとって最も失敗しやすいルートです。
-                            所作に意識が向くと、シャリを強く握りすぎてしまい、
-                            食感が悪く、硬くなってしまいます。
-                        </span>
-                    </p>
+    <!-- ==================== WHY SAFE ==================== -->
+    <section class="py-24 bg-[#161616]">
+        <div class="container mx-auto px-6">
+            <div class="fade-section max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-red-700 text-sm tracking-widest block mb-2">REASON</span>
+                    <h2 class="text-3xl md:text-4xl">なぜ、初心者でも安心なのか？</h2>
                 </div>
-                <div class="bg-[#1a1a1a] p-8 border border-red-900/30 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-red-900/10 rounded-full blur-2xl"></div>
-                    <h3 class="text-xl text-white mb-4 border-b border-red-900 pb-2">この講座の教え方</h3>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-red-700 shrink-0 mt-1"></i>
-                            <span>いきなり難しい動きはしません</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-red-700 shrink-0 mt-1"></i>
-                            <span>シャリの握り方で9割決まります</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-red-700 shrink-0 mt-1"></i>
-                            <span>手数が少なく、失敗しにくい方法を使います</span>
-                        </li>
-                    </ul>
-                    <p class="mt-6 text-sm text-gray-400 leading-relaxed border-t border-gray-800 pt-4">
-                        だから、ちゃんと形になる。そして食べても美味しい。<br />
-                        「これならすぐにふるまえるかも」という状態を3時間で実感できます。
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-[#1a1a1a] p-8 border border-gray-800">
+                        <h3 class="text-xl text-gray-400 mb-4 border-b border-gray-700 pb-2">一般的な教え方</h3>
+                        <p class="text-gray-500 leading-loose">
+                            まず「返し」という手の動きを教える。<br />
+                            次に、見た目が美しい所作を意識させる。<br />
+                            <span class="block mt-4 text-sm">
+                                ⚠️ これが初心者にとって最も失敗しやすいルートです。
+                                所作に意識が向くと、シャリを強く握りすぎてしまい、
+                                食感が悪く、硬くなってしまいます。
+                            </span>
+                        </p>
+                    </div>
+                    <div class="bg-[#1a1a1a] p-8 border border-red-900/30 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-red-900/10 rounded-full blur-2xl"></div>
+                        <h3 class="text-xl text-white mb-4 border-b border-red-900 pb-2">この講座の教え方</h3>
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-red-700 shrink-0 mt-1"></i>
+                                <span>いきなり難しい動きはしません</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-red-700 shrink-0 mt-1"></i>
+                                <span>シャリの握り方で9割決まります</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-red-700 shrink-0 mt-1"></i>
+                                <span>手数が少なく、失敗しにくい方法を使います</span>
+                            </li>
+                        </ul>
+                        <p class="mt-6 text-sm text-gray-400 leading-relaxed border-t border-gray-800 pt-4">
+                            だから、ちゃんと形になる。そして食べても美味しい。<br />
+                            「これならすぐにふるまえるかも」という状態を3時間で実感できます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== BEYOND THE EXPERIENCE (RECOVERY MODEL) ==================== -->
+    <section class="py-24 bg-[#111] border-t border-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="fade-section max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-red-700 text-sm tracking-widest block mb-2">FUTURE</span>
+                    <h2 class="text-2xl md:text-3xl mb-6">握れるようになった、その先へ</h2>
+                    <p class="text-sm text-gray-500">この講座は、単なる「思い出作り」では終わりません</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Apprentise Session -->
+                    <div class="bg-[#161616] p-8 border border-gray-800 hover:border-red-900/30 transition-colors">
+                        <div class="w-12 h-12 bg-red-900/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="users" class="w-6 h-6 text-red-700"></i>
+                        </div>
+                        <h3 class="text-xl mb-4 font-medium">「弟子の握る会」への挑戦</h3>
+                        <p class="text-sm text-gray-400 leading-loose">
+                            一定のレベルに達した方は、定期的に開催される「弟子の握る会」に握り手として参加いただけます。
+                            「教わる側」から「もてなす側」へ。実践の場を通じて、あなたの鮨はさらに磨かれます。
+                        </p>
+                    </div>
+
+                    <!-- Festival Offer -->
+                    <div class="bg-[#161616] p-8 border border-gray-800 hover:border-red-900/30 transition-colors">
+                        <div class="w-12 h-12 bg-red-900/10 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="music" class="w-6 h-6 text-red-700"></i>
+                        </div>
+                        <h3 class="text-xl mb-4 font-medium">特別な現場での出張鮨オファー</h3>
+                        <p class="text-sm text-gray-400 leading-loose">
+                            2025年6月、数万人規模の大型エンタメフェスにて、<span class="text-white">出演アーティスト向けの「楽屋鮨」</span>を担当することが決定。
+                            実力を認められた受講生には、こうした一般には立ち入れない特別な現場でのオファーも検討しています。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <p class="text-xs text-gray-600">
+                        ※オファーは個々の習熟度や適性に応じて判断させていただきます
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
+
+    <!-- ==================== YOUTUBE VIDEO ==================== -->
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="fade-section max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-red-700 text-sm tracking-widest block mb-2">MOVIE</span>
+                    <h2 class="text-2xl md:text-3xl mb-4">体験した方の声</h2>
+                    <p class="text-sm text-gray-500">鮨握り体験交流会に参加されたお客様のリアルな声です</p>
+                </div>
+                <div class="video-container border border-gray-800">
+                    <iframe src="https://www.youtube.com/embed/ljo05qcMbUk" title="鮨握り体験交流会 お客様の声"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== TESTIMONIALS ==================== -->
     <section class="py-24 bg-[#161616]">
         <div class="container mx-auto px-6">
             <div class="fade-section max-w-5xl mx-auto">
-                <h2 class="text-center text-2xl mb-16 tracking-widest">実際に参加した方の声</h2>
+                <h2 class="text-center text-2xl mb-16 tracking-widest">参加した方の声</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Voice 1 -->
                     <div class="bg-[#111] p-8 relative group hover:bg-[#0d0d0d] transition-colors duration-300">
-                        <div class="text-4xl text-gray-700 absolute top-4 left-4 font-serif">“</div>
+                        <div class="text-4xl text-gray-700 absolute top-4 left-4 font-serif">"</div>
                         <p class="text-gray-300 leading-loose relative z-10 pt-4 pb-4 min-h-[140px]">
                             回転寿司と全然違いました。自分で握ったものがこんなに美味しいと思わなかった
                         </p>
                         <p class="text-xs text-right text-gray-600">ー 30代女性</p>
                     </div>
-                    <!-- Voice 2 -->
                     <div class="bg-[#111] p-8 relative group hover:bg-[#0d0d0d] transition-colors duration-300">
-                        <div class="text-4xl text-gray-700 absolute top-4 left-4 font-serif">“</div>
+                        <div class="text-4xl text-gray-700 absolute top-4 left-4 font-serif">"</div>
                         <p class="text-gray-300 leading-loose relative z-10 pt-4 pb-4 min-h-[140px]">
                             これなら家で出しても大丈夫だと思いました。シャリの固さが全然違うんですね
                         </p>
                         <p class="text-xs text-right text-gray-600">ー 40代女性</p>
                     </div>
-                    <!-- Voice 3 -->
                     <div class="bg-[#111] p-8 relative group hover:bg-[#0d0d0d] transition-colors duration-300">
-                        <div class="text-4xl text-gray-700 absolute top-4 left-4 font-serif">“</div>
+                        <div class="text-4xl text-gray-700 absolute top-4 left-4 font-serif">"</div>
                         <p class="text-gray-300 leading-loose relative z-10 pt-4 pb-4 min-h-[140px]">
                             「鮨握れるよ」って言っても、盛りすぎじゃないなと思えました(笑)
                         </p>
@@ -269,56 +405,106 @@
         </div>
     </section>
 
-    <!-- Curriculum -->
-    <section class="py-24 container mx-auto px-6">
-        <div class="fade-section max-w-4xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/3">
-                    <h2 class="text-3xl md:text-4xl sticky top-24 leading-relaxed">
-                        この講座で<br />やること<br /><span class="text-sm block mt-2 text-gray-500 tracking-widest">(3 HOURS)</span>
-                    </h2>
-                </div>
-                <div class="md:w-2/3 space-y-12 border-l border-gray-800 pl-8 md:pl-12 py-4">
-                    <!-- Item 1 -->
-                    <div class="relative">
-                        <span class="absolute -left-[54px] md:-left-[70px] top-0 text-gray-700 font-serif text-xl">01</span>
-                        <h3 class="text-xl text-white mb-2 font-medium">シャリの扱い方</h3>
-                        <p class="text-gray-400">握っても固くならない力加減を、体で覚えます。</p>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="relative">
-                        <span class="absolute -left-[54px] md:-left-[70px] top-0 text-gray-700 font-serif text-xl">02</span>
-                        <h3 class="text-xl text-white mb-2 font-medium">ネタとのバランス</h3>
-                        <p class="text-gray-400">シャリとネタの比率、のせ方を実際に試しながら調整します。</p>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="relative">
-                        <span class="absolute -left-[54px] md:-left-[70px] top-0 text-gray-700 font-serif text-xl">03</span>
-                        <h3 class="text-xl text-white mb-2 font-medium">形を崩さず握るコツ</h3>
-                        <p class="text-gray-400">崩れない握り方を、手数を最小化して体験します。</p>
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="relative">
-                        <span class="absolute -left-[54px] md:-left-[70px] top-0 text-gray-700 font-serif text-xl">04</span>
-                        <h3 class="text-xl text-white mb-2 font-medium">実際に食べ比べ</h3>
-                        <p class="text-gray-400">大将と食べ比べ。美味しさの秘密を握りながら体感。</p>
-                    </div>
 
-                    <div class="pt-4 text-xs text-gray-500">
-                        ※プロ養成ではありません<br />
-                        ※コミュニケーションを取りながら“感覚”を重視します
+    <!-- ==================== LECTURE PHOTOS ==================== -->
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="fade-section max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-red-700 text-sm tracking-widest block mb-2">SCENE</span>
+                    <h2 class="text-2xl md:text-3xl">講座の風景</h2>
+                </div>
+
+                <!-- Masonry-style layout using CSS columns -->
+                <div class="columns-2 lg:columns-3 gap-4 space-y-4">
+                    <div class="break-inside-avoid">
+                        <img src="SCENE1.png" alt="講座の様子 1"
+                            class="w-full h-auto object-cover border border-gray-800 hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="break-inside-avoid">
+                        <img src="SCENE2.png" alt="講座の様子 2"
+                            class="w-full h-auto object-cover border border-gray-800 hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="break-inside-avoid">
+                        <img src="SCENE3.jpeg" alt="講座の様子 3"
+                            class="w-full h-auto object-cover border border-gray-800 hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="break-inside-avoid">
+                        <img src="SCENE4.jpeg" alt="講座の様子 4"
+                            class="w-full h-auto object-cover border border-gray-800 hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="break-inside-avoid">
+                        <img src="SCENE5.JPG" alt="講座の様子 5"
+                            class="w-full h-auto object-cover border border-gray-800 hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="break-inside-avoid">
+                        <img src="SCENE6.JPG" alt="講座の様子 6"
+                            class="w-full h-auto object-cover border border-gray-800 hover:scale-105 transition-transform duration-500" />
+                    </div>
+                </div>
+
+                <p class="text-center text-xs text-gray-600 mt-12 tracking-widest">※写真は実際の講座の様子です</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== CURRICULUM ==================== -->
+    <section class="py-24 bg-[#161616]">
+        <div class="container mx-auto px-6">
+            <div class="fade-section max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/3">
+                        <h2 class="text-3xl md:text-4xl sticky top-24 leading-relaxed">
+                            この講座で<br />やること<br /><span class="text-sm block mt-2 text-gray-500 tracking-widest">(3
+                                HOURS)</span>
+                        </h2>
+                    </div>
+                    <div class="md:w-2/3 space-y-12 border-l border-gray-800 pl-8 md:pl-12 py-4">
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[54px] md:-left-[70px] top-0 text-gray-700 font-serif text-xl">01</span>
+                            <h3 class="text-xl text-white mb-2 font-medium">シャリの扱い方</h3>
+                            <p class="text-gray-400">握っても固くならない力加減を、体で覚えます。</p>
+                        </div>
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[54px] md:-left-[70px] top-0 text-gray-700 font-serif text-xl">02</span>
+                            <h3 class="text-xl text-white mb-2 font-medium">ネタとのバランス</h3>
+                            <p class="text-gray-400">シャリとネタの比率、のせ方を実際に試しながら調整します。</p>
+                        </div>
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[54px] md:-left-[70px] top-0 text-gray-700 font-serif text-xl">03</span>
+                            <h3 class="text-xl text-white mb-2 font-medium">形を崩さず握るコツ</h3>
+                            <p class="text-gray-400">崩れない握り方を、手数を最小化して体験します。</p>
+                        </div>
+                        <div class="relative">
+                            <span
+                                class="absolute -left-[54px] md:-left-[70px] top-0 text-gray-700 font-serif text-xl">04</span>
+                            <h3 class="text-xl text-white mb-2 font-medium">実際に食べ比べ</h3>
+                            <p class="text-gray-400">大将と食べ比べ。美味しさの秘密を握りながら体感。</p>
+                        </div>
+
+                        <div class="pt-4 text-xs text-gray-500">
+                            ※プロ養成ではありません<br />
+                            ※コミュニケーションを取りながら"感覚"を重視します
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Video Bonus -->
+
+    <!-- ==================== VIDEO BONUS ==================== -->
     <section class="py-20 bg-gradient-to-r from-[#1a1a1a] to-[#111]">
         <div class="container mx-auto px-6">
-            <div class="fade-section max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 border border-gray-800 p-8 md:p-12">
+            <div
+                class="fade-section max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 border border-gray-800 p-8 md:p-12">
                 <div class="md:w-1/2">
-                    <div class="inline-flex items-center gap-2 text-red-700 mb-4 border border-red-900/30 px-3 py-1 text-xs tracking-widest">
+                    <div
+                        class="inline-flex items-center gap-2 text-red-700 mb-4 border border-red-900/30 px-3 py-1 text-xs tracking-widest">
                         <i data-lucide="video" class="w-3 h-3"></i>
                         BONUS
                     </div>
@@ -328,145 +514,97 @@
                         家で復習するとき、「あれ、どうやるんだっけ？」となった場面で見返してください。
                     </p>
                     <ul class="text-sm text-gray-300 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><div class="w-1 h-1 bg-gray-500 rounded-full"></div> シャリ酢や醤油等のレシピ</li>
-                        <li class="flex items-center gap-2"><div class="w-1 h-1 bg-gray-500 rounded-full"></div> 鮨の握り方（復習用）</li>
-                        <li class="flex items-center gap-2"><div class="w-1 h-1 bg-gray-500 rounded-full"></div> 切り付けの考え方</li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-1 h-1 bg-gray-500 rounded-full"></div> シャリ酢や醤油等のレシピ
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-1 h-1 bg-gray-500 rounded-full"></div> 鮨の握り方（復習用）
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-1 h-1 bg-gray-500 rounded-full"></div> 切り付けの考え方
+                        </li>
                     </ul>
                     <p class="text-xs text-gray-600">
                         ※動画はあくまで補助です。本質は当日の実技体験にあります。
                     </p>
                 </div>
-                <!-- 3枚目の写真：動画プレビュー -->
                 <div class="md:w-1/2 w-full h-64 md:h-full relative border border-gray-800 group overflow-hidden">
-                    <img 
-                        src="video" 
-                        alt="動画プレビュー" 
-                        class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <!-- 再生ボタン風のあしらい -->
+                    <img src="video.png" alt="動画プレビュー"
+                        class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
                     <div class="absolute inset-0 flex items-center justify-center">
-                         <div class="w-16 h-16 bg-red-900/80 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-red-800 transition-colors">
+                        <div
+                            class="w-16 h-16 bg-red-900/80 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-red-800 transition-colors">
                             <i data-lucide="play" class="text-white w-8 h-8 ml-1"></i>
-                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Info & Recruitment -->
-    <section id="info" class="py-24 container mx-auto px-6">
-        <div class="fade-section max-w-3xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl mb-4">今回の募集について</h2>
-                <p class="text-xl text-red-700">2月28日(土) 開催</p>
-                <p class="text-xl text-red-600">13:00-16:00</p>
-                <p class="mt-4 text-gray-400 text-sm">
-                    すでに複数名の参加が決まっています。<br />
-                    モニター価格での募集は今回で終了。<br />
-                    <span class="text-white border-b border-white pb-1 mt-2 inline-block">残り1名のみ募集</span>
-                </p>
-            </div>
 
-            <div class="bg-[#161616] p-8 md:p-12 border border-gray-800 mb-16">
-                <div class="flex flex-col gap-8">
-                    <div class="flex flex-col md:flex-row justify-between items-baseline border-b border-gray-800 pb-8">
-                        <span class="text-gray-400 mb-2 md:mb-0">参加費</span>
-                        <span class="text-3xl md:text-4xl">33,000<span class="text-base text-gray-500 ml-2">円（税込）</span></span>
-                    </div>
-                    <div class="flex flex-col md:flex-row justify-between items-baseline">
-                        <span class="text-gray-400 mb-2 md:mb-0">食べる役の方</span>
-                        <span class="text-xl md:text-2xl">3,000<span class="text-base text-gray-500 ml-2">円（税込）</span></span>
-                    </div>
-                </div>
-                <div class="mt-8 text-sm text-gray-500 bg-[#111] p-4">
-                    ※ご夫婦・パートナーでの参加も歓迎です<br />
-                    ※食べる役の方は、握る方からのご紹介のみ
-                </div>
-            </div>
-
-            <!-- Target Audience -->
-            <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div>
-                    <h3 class="text-lg mb-6 text-center border-b border-gray-800 pb-2">こんな方におすすめ</h3>
-                    <ul class="space-y-4">
-                        <li class="flex gap-3 text-sm text-gray-300">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-green-700/70 mt-1 shrink-0"></i>
-                            鮨が握れるようになりたい方
-                        </li>
-                        <li class="flex gap-3 text-sm text-gray-300">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-green-700/70 mt-1 shrink-0"></i>
-                            人に自慢できる趣味が欲しい方
-                        </li>
-                        <li class="flex gap-3 text-sm text-gray-300">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-green-700/70 mt-1 shrink-0"></i>
-                            自己紹介で覚えてもらいたい方
-                        </li>
-                        <li class="flex gap-3 text-sm text-gray-300">
-                            <i data-lucide="check-circle" class="w-4 h-4 text-green-700/70 mt-1 shrink-0"></i>
-                            パートナーに鮨を握ってほしい方
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg mb-6 text-center border-b border-gray-800 pb-2">向いていない方</h3>
-                    <ul class="space-y-4">
-                        <li class="flex gap-3 text-sm text-gray-400">
-                            <i data-lucide="x-circle" class="w-4 h-4 text-red-900/70 mt-1 shrink-0"></i>
-                            本格的にプロを目指したい方
-                        </li>
-                        <li class="flex gap-3 text-sm text-gray-400">
-                            <i data-lucide="x-circle" class="w-4 h-4 text-red-900/70 mt-1 shrink-0"></i>
-                            完璧な所作や技術を求める方
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Instructor Profile -->
+    <!-- ==================== INSTRUCTOR PROFILE ==================== -->
     <section class="py-24 bg-[#161616] border-t border-gray-900">
         <div class="container mx-auto px-6">
             <div class="fade-section max-w-4xl mx-auto">
-                <h2 class="text-center text-2xl mb-16 tracking-widest border-b border-gray-800 pb-4 inline-block mx-auto px-8">講師紹介</h2>
-                
-                <div class="flex flex-col md:flex-row gap-12 items-start">
-                    <!-- Instructor Image (Placeholder) -->
-                    <div class="w-full md:w-1/3 flex justify-center">
-                        <div class="w-64 h-64 relative bg-gray-800 rounded-sm overflow-hidden border border-gray-700">
-                            <!-- 4枚目の写真：講師プロフィール -->
-                            <img 
-                                src="profile" 
-                                alt="講師：後藤将哉" 
-                                class="w-full h-full object-cover grayscale-[20%]"
-                            />
+                <div class="text-center mb-16">
+                    <span class="text-red-700 text-sm tracking-widest block mb-2">TEAM</span>
+                    <h2 class="text-2xl md:text-3xl tracking-widest">講師紹介</h2>
+                </div>
+
+                <!-- Group Photo -->
+                <div class="mb-16">
+                    <img src="IMG_8960.jpeg" alt="講師陣：小野匠・後藤将哉・和田優喜子"
+                        class="w-full h-auto object-cover grayscale-[20%] border border-gray-800" />
+                </div>
+
+                <!-- Profiles -->
+                <div class="space-y-16">
+
+                    <!-- 後藤 将哉（中央） -->
+                    <div class="border-l-2 border-red-900 pl-6 md:pl-8">
+                        <h3 class="text-xl md:text-2xl mb-1 font-medium">後藤 将哉 <span
+                                class="text-base text-gray-500 ml-2">Masaya Goto</span></h3>
+                        <p class="text-red-700 text-sm tracking-wider mb-6">鮨職人 × プロデューサー</p>
+                        <div class="text-sm text-gray-400 leading-loose space-y-3">
+                            <p>
+                                13年間の会社員生活を経て、メンタルダウンをきっかけに未経験から鮨職人へ。
+                            </p>
+                            <p>
+                                "鮨は最上級のコミュニケーションツール"を軸に、紹介だけで満席が続く「鮨まさや」を主宰。言葉にならない本音を対話で引き出し、言語化することを得意とする。
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Instructor Text -->
-                    <div class="w-full md:w-2/3">
-                        <h3 class="text-2xl mb-2 font-medium">後藤 将哉 <span class="text-base text-gray-500 ml-2">Masaya Goto</span></h3>
-                        <p class="text-red-700 text-sm tracking-wider mb-6">鮨職人 × プロデューサー</p>
-                        
-                        <div class="space-y-6 text-sm leading-loose text-gray-300">
+                    <!-- 和田 優喜子（右） -->
+                    <div class="border-l-2 border-red-900 pl-6 md:pl-8">
+                        <h3 class="text-xl md:text-2xl mb-1 font-medium">和田 優喜子 <span
+                                class="text-base text-gray-500 ml-2">Yukiko Wada</span></h3>
+                        <p class="text-red-700 text-sm tracking-wider mb-6">ご縁つなぎ × 居場所づくりの達人</p>
+                        <div class="text-sm text-gray-400 leading-loose space-y-3">
                             <p>
-                                大学卒業後、大手消費財メーカー(営業→マーケティング)と外資系メーカーで12年間の会社員を経験。
-                                メンタルダウンをきっかけに一念発起し、未経験から鮨職人へ。半年足らずの修業で、8席の会員制鮨屋の大将に抜擢され、平均予約率120％超（＝来店者の大半がその場で次回予約）の実績を残す。
+                                自宅に年間のべ700人が集まる"帰ってきたくなる場所"を育てた究極の人たらし。
                             </p>
                             <p>
-                                しかし──店舗が入るビルの老朽化と豪雨による漏水事故で天井が崩落し、惜しまれつつ閉店。この逆境を機に「場所がなくても鮨は握れる」と決意を新たにし、2024年7月に独立。
-                                現在は 鮨職人 × プロデューサー という二刀流で活動。
-                                本業のプロデュース業では、企業や個人起業家向けに “売れる仕組み”を設計するマーケティング支援やコンテンツ作りをサポート。経営者の壁打ちも行う。
+                                原宿のプライベートサロンでは、人と人が自然につながる居場所を作ってきた。
+                                "安心して話せる雰囲気づくり"で鮨まさやを支える女将。日本酒が大好き。
                             </p>
-                            <div class="bg-[#111] p-6 border-l-2 border-red-900 mt-6">
-                                <p class="mb-2 text-white font-medium">2025年3月、紹介制鮨会『鮨まさや』が誕生</p>
-                                <p class="text-xs text-gray-400">
-                                    コンセプトは“鮨を通じて分かち合い、ご縁を紡ぐ”。<br>
-                                    参加者持参の、一品持ち寄りで語り合う“お裾分け文化”が育ち、SNS集客なしの口コミだけで毎回満席が続く。
-                                </p>
-                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 小野 匠（左） -->
+                    <div class="border-l-2 border-red-900 pl-6 md:pl-8">
+                        <h3 class="text-xl md:text-2xl mb-1 font-medium">小野 匠 <span
+                                class="text-base text-gray-500 ml-2">Takumi Ono</span></h3>
+                        <p class="text-red-700 text-sm tracking-wider mb-6">環境整備コンサルタント × コーチ</p>
+                        <div class="text-sm text-gray-400 leading-loose space-y-3">
+                            <p>
+                                "環境整備こそ全ての活動の原点"を掲げ、人と場の土台を整えるプロ。
+                            </p>
+                            <p>
+                                Gallup認定ストレングスコーチとして、安心して話せる心理的安全性もデザインする。
+                                縁の下の力持ちとして「入った瞬間に空気が整う場」をつくる専門家。
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -474,7 +612,118 @@
         </div>
     </section>
 
-    <!-- Footer / CTA -->
+
+    <!-- ==================== COURSE INFO ==================== -->
+    <section id="info" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="fade-section max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-red-700 text-sm tracking-widest block mb-2">INFORMATION</span>
+                    <h2 class="text-3xl mb-4">講座概要</h2>
+                </div>
+
+                <div class="bg-[#161616] p-8 md:p-12 border border-gray-800 mb-12">
+                    <div class="space-y-6">
+                        <div
+                            class="flex flex-col md:flex-row justify-between items-baseline border-b border-gray-800 pb-6">
+                            <span class="text-gray-400 mb-2 md:mb-0">開催形式</span>
+                            <span>完全予約制・少人数制</span>
+                        </div>
+                        <div
+                            class="flex flex-col md:flex-row justify-between items-baseline border-b border-gray-800 pb-6">
+                            <span class="text-gray-400 mb-2 md:mb-0">所要時間</span>
+                            <span>約3時間</span>
+                        </div>
+                        <div
+                            class="flex flex-col md:flex-row justify-between items-baseline border-b border-gray-800 pb-6">
+                            <span class="text-gray-400 mb-2 md:mb-0">参加費</span>
+                            <span class="text-2xl md:text-3xl">55,000<span
+                                    class="text-base text-gray-500 ml-2">円（税込）</span></span>
+                        </div>
+                        <div
+                            class="flex flex-col md:flex-row justify-between items-baseline border-b border-gray-800 pb-6">
+                            <span class="text-gray-400 mb-2 md:mb-0">食べる役の方</span>
+                            <span class="text-xl md:text-2xl">5,500<span
+                                    class="text-base text-gray-500 ml-2">円（税込）</span></span>
+                        </div>
+                        <div class="flex flex-col md:flex-row justify-between items-baseline">
+                            <span class="text-gray-400 mb-2 md:mb-0">含まれるもの</span>
+                            <span class="text-sm text-gray-300">実技指導 / 食材 / 復習用動画</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-sm text-gray-500 bg-[#111] p-4">
+                        ※ご夫婦・パートナーでの参加も歓迎です<br />
+                        ※食べる役の方は、握る方からのご紹介のみ<br />
+                        ※食べる役のみの参加はできません<br />
+                        ※日程はLINEにてご相談ください
+                    </div>
+                </div>
+
+                <!-- Target Audience -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg mb-6 text-center border-b border-gray-800 pb-2">こんな方におすすめ</h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-700/70 mt-1 shrink-0"></i>
+                                鮨が握れるようになりたい方
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-700/70 mt-1 shrink-0"></i>
+                                人に自慢できる趣味が欲しい方
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-700/70 mt-1 shrink-0"></i>
+                                自己紹介で覚えてもらいたい方
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-700/70 mt-1 shrink-0"></i>
+                                パートナーに鮨を握ってほしい方
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg mb-6 text-center border-b border-gray-800 pb-2">向いていない方</h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3 text-sm text-gray-400">
+                                <i data-lucide="x-circle" class="w-4 h-4 text-red-900/70 mt-1 shrink-0"></i>
+                                本格的にプロを目指したい方
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-400">
+                                <i data-lucide="x-circle" class="w-4 h-4 text-red-900/70 mt-1 shrink-0"></i>
+                                完璧な所作や技術を求める方
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== BACKEND HINT ==================== -->
+    <section class="py-20 bg-[#161616] border-t border-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="fade-section max-w-2xl mx-auto text-center">
+                <div class="border border-gray-800 p-8 md:p-12">
+                    <p class="text-gray-500 text-xs tracking-widest mb-6">FOR THOSE WHO WANT MORE</p>
+                    <h3 class="text-xl md:text-2xl mb-6 leading-relaxed">
+                        もっと深く、<br />自分のものにしたい方へ
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-loose mb-4">
+                        この実践講座で「握れる感覚」を掴んだ方のために、<br />
+                        3ヶ月間じっくり鮨と向き合う集中特訓コースもご用意しています。
+                    </p>
+                    <p class="text-sm text-gray-500 leading-loose">
+                        詳細は講座内でご案内します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== FOOTER ==================== -->
     <footer class="relative bg-[#0a0a0a] py-24 border-t border-gray-900">
         <div class="container mx-auto px-6 relative z-10 text-center">
             <div class="fade-section max-w-2xl mx-auto">
@@ -486,38 +735,45 @@
                         修行は10年以上かかると言われています。
                     </p>
                     <p>
-                        もちろん、修行は大事だし、僕も必要と思います。<br />
-                        でも鮨は、思っているよりずっとシンプルだし、<br />
-                        もっと身近な存在であってほしいんです。
+                        もちろん、修行は大事だし、僕も必要だという立場です。<br />
+                        でも、握り鮨がもっと身近な存在であってほしいんです。
                     </p>
                     <p>
                         正しい順番で体験すれば、<br />
                         初心者でも「これはふるまえる」と思える状態に<br />
-                        ちゃんとなれます。
+                        ちゃんとなれます。むしろ魚を捌いたり、切り付けするよりも、握る方がずっと簡単です。
+                    </p>
+                    <p>
+                        そして何より、鮨が握れるだけで信じられないご縁が増えます。<br />
+                        僕がそれを証明してきました。
                     </p>
                     <p>
                         もし少しでも「やってみたいな」と感じたら、<br />
-                        ぜひご参加ください。モニター募集は今回が最後です。
+                        まずはLINEからお気軽にご連絡ください。
                     </p>
                 </div>
 
-                <button class="group relative inline-flex items-center justify-center px-12 py-4 text-lg text-white transition-all duration-200 bg-red-900 font-medium hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-900 focus:ring-offset-gray-900 w-full md:w-auto">
+                <!-- LINE CTA -->
+                <a href="#" id="line-cta"
+                    class="group relative inline-flex items-center justify-center px-12 py-4 text-lg text-white transition-all duration-200 bg-[#06C755] font-medium hover:bg-[#05b04c] focus:outline-none w-full md:w-auto">
                     <span class="absolute inset-0 border border-white/20"></span>
-                    <span class="mr-2">お申し込みはこちら</span>
+                    <span class="mr-3">鮨まさや 公式LINE</span>
                     <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                </button>
-                
-                <p class="mt-6 text-red-500 text-sm tracking-widest">
-                    【2/28開催 | 残り1名】
+                </a>
+
+                <p class="mt-4 text-xs text-gray-600">
+                    日程のご相談・ご質問もLINEで承ります
                 </p>
-                
-                <p class="mt-8 text-xs text-gray-600">
-                    補足：次回以降は内容・価格を見直す予定です。<br />
-                    モニター価格での参加は、今回が最後となります。
-                </p>
+
+                <div class="mt-20 pt-8 border-t border-gray-900">
+                    <p class="text-[10px] text-gray-700 tracking-widest">
+                        © 2025 鮨まさや All Rights Reserved.
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
+
 
     <!-- Scripts -->
     <script>
@@ -536,7 +792,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Run animation only once
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
@@ -548,5 +804,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
