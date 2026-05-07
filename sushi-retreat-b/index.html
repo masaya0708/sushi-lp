@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鮨リトリート | 4/28 限定特別企画</title>
+    <meta name="description" content="GW直前の小さな贅沢。鮨まさやが主催する、鮨握り体験を通じた「最高の休み方」の提案。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: Shippori Mincho for headings, Noto Sans JP for body -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===============================================================
+           鮨まさや LP Base Styles (Inspired by sushi.en-moto.com tone)
+           Minimalist, Serif for headings, dark ink base, ample whitespace
+        =============================================================== */
+
+        :root {
+            --color-bg: #fdfaf5;
+            /* 和紙の生成り色 (Natural Washi color) */
+            --color-bg-light: rgba(255, 255, 255, 0.6);
+            --color-text: #222222;
+            /* 墨色 (Deep Ink) */
+            --color-text-muted: #666666;
+            --color-accent: #f4efdf;
+            --color-gold: #b38c4d;
+            /* 少し落ち着いた金 */
+            --color-red: #a33333;
+            /* 落款の赤 (Hanko Red) */
+
+            --font-heading: 'Shippori Mincho', serif;
+            --font-body: 'Noto Sans JP', sans-serif;
+
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 14px;
+            /* 16pxから14pxに変更し、スマホ表示をスッキリさせます */
+            scroll-behavior: smooth;
+        }
+
+        @media (min-width: 768px) {
+            html {
+                font-size: 18px;
+            }
+        }
+
+        body {
+            background-color: var(--color-bg);
+            background-image: url('background.jpg');
+            background-repeat: repeat;
+            background-size: auto;
+            color: var(--color-text);
+            font-family: var(--font-body);
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography Details */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: 0.1em;
+        }
+
+        h2.section-title {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            padding-bottom: var(--spacing-sm);
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--color-red), transparent);
+        }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .small-text {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        /* Layout */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .bg-light {
+            background-color: var(--color-bg-light);
+        }
+
+        .bg-accent {
+            background-color: var(--color-accent);
+        }
+
+        /* Content Card Base */
+        .content-card {
+            background-color: #ffffff;
+            border: 1px solid var(--color-gold);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border-radius: 2px;
+        }
+
+        @media (min-width: 768px) {
+            .content-card {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        /* Hero Section (First View) */
+        .fv {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-xl) 1rem;
+            background: linear-gradient(to bottom, rgba(253, 250, 245, 0.4), rgba(253, 250, 245, 0.9)), url('top.JPG') center/cover;
+            border-bottom: 4px double var(--color-gold);
+        }
+
+        .fv-title {
+            font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+            line-height: 2.2;
+            margin-bottom: var(--spacing-lg);
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .fv-medium {
+            text-shadow: none;
+            /* エフェクト解除 */
+        }
+
+        .fv-large {
+            font-size: clamp(2.4rem, 10vw, 4rem);
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            letter-spacing: 0.2em;
+            text-shadow:
+                0 0 15px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(0, 0, 0, 0.1),
+                2px 2px 8px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+
+        /* Responsive Line Breaks */
+        .ib {
+            display: inline;
+        }
+
+        p {
+            word-break: break-word;
+            /* auto-phrase をやめて、単語の途中でも画面端で自然に折り返すように変更 */
+            line-break: strict;
+            font-feature-settings: "palt";
+        }
+
+        .pc-br {
+            display: none;
+        }
+
+        .sp-br {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .pc-br {
+                display: initial;
+            }
+
+            .sp-br {
+                display: none;
+            }
+        }
+
+        .fv-medium {
+            font-size: 1.4rem;
+            color: var(--color-gold);
+            display: block;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .fv-date {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .deadline-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--color-gold);
+            color: var(--color-gold);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* About Section Area */
+        .lead-text,
+        .experience-box,
+        .body-text,
+        .sake-description,
+        .guest-info p,
+        .closing-content p {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            /* 文章自体は左揃え */
+        }
+
+        .lead-text,
+        .experience-box {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .experience-box {
+            padding: var(--spacing-md);
+            border: 1px solid var(--color-gold);
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: var(--spacing-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-box p {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-box p:last-child {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-gold);
+        }
+
+        .body-text p {
+            margin-bottom: 2rem;
+            text-align: left;
+            /* 全て左揃えに固定 */
+        }
+
+        /* Voice Section */
+        .video-container {
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+            border: 1px dashed var(--color-gold);
+        }
+
+        .voice-cards {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .voice-card {
+            background: #ffffff;
+            border: 1px solid var(--color-gold);
+            padding: var(--spacing-md);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .voice-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .voice-attr {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Guest Section */
+        .guest-profile {
+            background-color: #ffffff;
+            border: 1px solid var(--color-gold);
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .guest-info {
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .guest-profile {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        .guest-image {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            flex-shrink: 0;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        .guest-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+            color: var(--color-gold);
+            text-align: center;
+            /* 名前は中央の方が見栄えが良い */
+        }
+
+        .guest-info h3 span {
+            font-size: 0.8rem;
+            font-family: var(--font-body);
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            margin-left: 0.5rem;
+        }
+
+        .guest-role {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--color-gold);
+            text-align: center;
+        }
+
+        .guest-books {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-gold);
+        }
+
+        .guest-books h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--color-gold);
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .guest-books h4 {
+                text-align: left;
+            }
+        }
+
+        .book-list {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .book-list {
+                justify-content: flex-start;
+            }
+        }
+
+        .book-list a {
+            display: block;
+            width: 140px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .book-list a:hover {
+            transform: translateY(-8px);
+        }
+
+        .book-list img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Buttons and CTA */
+        .cta-box {
+            text-align: center;
+            padding: var(--spacing-sm);
+        }
+
+        .cta-limit {
+            color: var(--color-gold);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .cta-message {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--color-red);
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 3rem;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: var(--spacing-sm);
+            border-radius: 2px;
+            box-shadow: 0 4px 15px rgba(163, 51, 51, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(163, 51, 51, 0.4);
+        }
+
+        .btn-large {
+            font-size: 1.3rem;
+            padding: 1.2rem 4rem;
+        }
+
+        .cta-deadline {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Data Tables */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid var(--color-gold);
+            text-align: left;
+        }
+
+        .info-table th {
+            width: 30%;
+            font-family: var(--font-heading);
+            font-weight: 400;
+            color: var(--color-text-muted);
+            vertical-align: top;
+        }
+
+        .includes-box {
+            background-color: rgba(179, 140, 77, 0.05);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            border: 1px solid var(--color-gold);
+        }
+
+        .includes-box h4 {
+            margin-bottom: 1rem;
+            color: var(--color-gold);
+        }
+
+        .includes-box ul {
+            list-style: none;
+        }
+
+        .includes-box li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .includes-box li::before {
+            content: '・';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: var(--spacing-md);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: var(--spacing-md);
+        }
+
+        .faq-q {
+            font-size: 1.1rem;
+            color: var(--color-gold);
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .faq-q::before {
+            content: 'Q.';
+            position: absolute;
+            left: 0;
+            font-family: var(--font-body);
+        }
+
+        .faq-a {
+            padding-left: 1.5rem;
+        }
+
+        /* Host & Team */
+        .host-info {
+            text-align: center;
+        }
+
+        .host-info h3 {
+            color: var(--color-gold);
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .host-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            object-fit: contain;
+            margin: var(--spacing-lg) auto 0;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .team-profile-img {
+            width: 100%;
+            max-width: 800px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .team-img-caption {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .team-member-text {
+            border-left: 2px solid #a33;
+            /* Dark red accent for names as per design */
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .team-meta h4 {
+            font-size: 1.4rem;
+            color: #000000;
+            font-weight: 500;
+        }
+
+        .team-meta span {
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+            color: #666;
+            margin-left: 0.5rem;
+        }
+
+        .team-role {
+            font-size: 0.9rem;
+            color: #a33;
+            margin-left: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            margin-top: 0.2rem;
+        }
+
+        .team-member-card {
+            background-color: #ffffff;
+            border: 1px solid var(--color-gold);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Closing Area */
+        .closing-content p {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+        }
+
+        .concept-reveal {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--color-red);
+            margin-top: var(--spacing-lg);
+            line-height: 2;
+            letter-spacing: 0.25em;
+        }
+
+        .final-cta {
+            padding-top: 0;
+            /* Attach closely to closing */
+            background-color: transparent;
+        }
+
+        footer {
+            text-align: center;
+            padding: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Host Context Box */
+        .host-context-box {
+            margin: var(--spacing-xl) 0;
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: #ffffff;
+            border: 1px solid var(--color-gold);
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .host-context-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-md);
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .host-context-content {
+                flex-direction: row;
+                text-align: left;
+                /* PCでの横並び時は左揃え */
+                align-items: flex-start;
+            }
+        }
+
+        .host-context-text {
+            flex: 1;
+        }
+
+        .host-context-text h3 {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .host-context-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sake Feature Section - Revised for Bright Pattern */
+        .sake-feature {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-top: 2px solid var(--color-gold);
+            border-bottom: 2px solid var(--color-gold);
+        }
+
+        .sake-card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            background: #ffffff;
+            padding: var(--spacing-lg);
+            border: 1px solid var(--color-gold);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .sake-card {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .sake-image-wrap {
+            flex: 0 0 40%;
+            position: relative;
+        }
+
+        .sake-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .sake-badge {
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            background-color: #a33;
+            /* Deep red for rarity */
+            color: #fff;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            font-family: var(--font-heading);
+            letter-spacing: 0.1em;
+            transform: rotate(-5deg);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .sake-info {
+            flex: 1;
+        }
+
+        .sake-title {
+            font-size: 1.6rem;
+            color: var(--color-gold);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.4;
+        }
+
+        .sake-price-note {
+            font-size: 0.95rem;
+            color: #ff9999;
+            /* Subtle red to show "premium/high price" context */
+            font-weight: 500;
+            margin-bottom: var(--spacing-md);
+            padding: 0.8rem;
+            background: rgba(163, 51, 51, 0.1);
+            border-left: 2px solid #a33;
+        }
+
+        .sake-description {
+            text-align: left;
+            /* 日本酒説明も左揃えに統一 */
+        }
+
+        .sake-description p {
+            margin-bottom: 1.2rem;
+        }
+
+        .sake-description p:nth-child(2) {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-red);
+            border-bottom: 1px solid var(--color-red);
+            display: inline-block;
+        }
+
+        .host-label {
+            color: #a33;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            font-family: var(--font-body);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .host-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-family: var(--font-heading);
+            text-shadow: 0 0 12px rgba(0, 0, 0, 0.5), 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .sake-present-note {
+            font-size: 1.1rem;
+            color: var(--color-gold);
+            border-top: 1px solid rgba(195, 163, 108, 0.2);
+            padding-top: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- First View / Hero -->
+    <header class="fv fade-in">
+        <div class="fv-content">
+            <h1 class="fv-title">
+                <span class="fv-large">鮨リトリート</span><br>
+                <span class="fv-medium">GW直前の、小さな贅沢。</span><br>
+                仕入れた新鮮なネタで、鮨を握る。<br class="pc-br">
+                自分で握って、みんなで食べて、ゆるく話す。
+            </h1>
+            <div class="fv-date">
+                <p>── 2026.4.28（火）19:00〜</p>
+                <p>── 都内プライベート空間・10名限定</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About the night -->
+        <section class="about section-padding fade-in">
+            <div class="container">
+                <div class="content-card">
+                    <h2 class="section-title">鮨リトリートとは？</h2>
+                    <div class="lead-text">
+                        <p>鮨まさやが主催する、鮨握り体験交流会の特別版です。</p>
+                        <p>いつもの交流会とは異なり、<br class="pc-br">
+                            「握ること」を通じて、"五感のリセット"と<br class="pc-br">
+                            "最高の休み方を体験"ができる機会をご用意しました。</p>
+                        <p>やることはとてもシンプルです。</p>
+                    </div>
+
+                    <img src="sushi-retreat.jpg" alt="鮨リトリートの様子" class="section-image">
+
+                    <div class="experience-box">
+                        <p>仕入れた新鮮なネタを前にして、<br class="pc-br">見よう見まねで鮨を握ってみる。</p>
+                        <p>酢飯の温かさと香り。手に残る感触。</p>
+                        <p>気づくと、さっきまで頭にあった仕事のことや<br class="pc-br">日常の悩みが消えています。</p>
+                        <p>そして、隣の方が握った鮨を食べてみる。<br class="pc-br">自分が握ったものを誰かが食べて、<br class="pc-br">「美味しい！」と言ってくれる。</p>
+                        <p>このやりとりが、想像以上に心地良いんです。</p>
+                    </div>
+                </div>
+
+                <!-- Host Context Box (Aligned with screenshot style) -->
+                <div class="host-context-box fade-in">
+                    <div class="host-context-content">
+                        <div class="host-context-text">
+                            <span class="host-label">ABOUT</span>
+                            <h2 class="host-title">「鮨まさや」について</h2>
+                            <p>2025年に紹介制の鮨会として始まりました。</p>
+                            <p>コンセプトは、"鮨を通じて分かち合い、ご縁を紡ぐ"。<br class="pc-br">
+                                参加者が一品を持ち寄り、鮨を囲みながら語り合う。<br class="pc-br">
+                                そんなお裾分け文化が自然と育ち、SNS集客なしの口コミだけで毎回満席が続いています。</p>
+                        </div>
+                        <img src="sushi.masaya.png" alt="鮨まさや縁元" class="host-context-image">
+                    </div>
+                </div>
+
+                <div class="body-text">
+                    <p>面白いのは、同じネタ、同じシャリを使っても、<br class="pc-br">握る方によって味が変わること。<br class="pc-br">技術の差だけでは説明がつきません。</p>
+                    <p>これまで僕が鮨握り体験交流会を重ねてきた中で気づいたのは、<br class="pc-br">「握る」というプロセスそのものが、<br
+                            class="pc-br">人と人との距離を自然に縮めているということでした。</p>
+                    <p>初めましての方同士でも、鮨を握っていると<br class="pc-br">不思議と会話が生まれます。<br class="pc-br">手を動かしているから沈黙も気まずくならないし、<br
+                            class="pc-br">「これ美味しいですね」がそのまま対話になる。</p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Voice -->
+        <section class="voice section-padding bg-light fade-in">
+            <div class="container">
+                <h2 class="section-title">体験された方の声</h2>
+
+                <div class="content-card">
+                    <p class="center-text">鮨握り体験交流会に参加された方のリアルな声です。</p>
+
+                    <div class="video-container">
+                        <iframe width="100%" height="100%" style="aspect-ratio: 16/9;"
+                            src="https://www.youtube.com/embed/ljo05qcMbUk?si=ZC453hr9VzVktT-k"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="voice-cards">
+                        <div class="voice-card">
+                            <p class="voice-quote">「回転寿司とは全く別物でした。自分の手で握るからこそ、ネタの味が分かる。」</p>
+                            <p class="voice-attr">── 30代女性</p>
+                        </div>
+                        <div class="voice-card">
+                            <p class="voice-quote">「気づいたら3時間経っていました。これだけリラックスできたのは久しぶりです。」</p>
+                            <p class="voice-attr">── 40代男性</p>
+                        </div>
+                        <div class="voice-card">
+                            <p class="voice-quote">「人見知りなのですが、握っているうちに自然と話せるようになっていて驚きました。」</p>
+                            <p class="voice-attr">── 40代女性</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Guest -->
+        <section class="guest section-padding fade-in">
+            <div class="container">
+                <h2 class="section-title">特別ゲスト</h2>
+
+                <div class="guest-profile">
+                    <img src="asakosuzuki.png" alt="鈴木亜佐子" class="guest-image">
+                    <div class="guest-info">
+                        <h3>鈴木 亜佐子 <span>Asako Suzuki</span></h3>
+                        <p class="guest-role">作家・スタンフォード大学認定コンパッションアンバサダー<br>アメリカ在住。</p>
+                        <p>著書『スタンフォード式 最高の休み方』では、忙しい毎日の中で五感を取り戻し、働きながら疲れを溜めず、パフォーマンスを最大化するための戦略を体系化。</p>
+                        <p>2冊目となる新刊『スタンフォード式 自分をいたわる人がうまくいく』の出版を記念して、今回来日となりました。</p>
+                        <p>日本で唯一のスタンフォード大学認定アンバサダーとして、<br class="pc-br">
+                            「自分をいたわること」を本気で研究してきた著者と一緒に、鮨を握り、食べて、語り合う。</p>
+                        <p>このタイミングでしか実現できない、特別な時間です。</p>
+
+                        <div class="guest-books">
+                            <h4>著書</h4>
+                            <div class="book-list">
+                                <a href="https://amzn.asia/d/0afV9FND" target="_blank" rel="noopener noreferrer">
+                                    <img src="book1.jpg" alt="スタンフォード式 最高の休み方">
+                                </a>
+                                <a href="https://amzn.asia/d/02mBNCJ1" target="_blank" rel="noopener noreferrer">
+                                    <img src="book2.jpg" alt="スタンフォード式 自分をいたわる人がうまくいく">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA 1 -->
+        <section class="cta-section bg-accent fade-in">
+            <div class="container">
+                <div class="cta-box">
+                    <p class="cta-limit">10名限定 / 残席わずか</p>
+                    <p class="cta-message">『スタンフォード式 最高の休み方』の著者と<br class="pc-br">鮨を握る夜は、4/28の一夜限りです。</p>
+                    <a href="https://sub.en-moto.com/event/wbsZf9hrBx9W/register" class="btn">参加を申し込む &rarr;</a>
+                    <p class="cta-deadline">お申し込み締切　4/24（金）23:59</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details -->
+        <section class="details section-padding fade-in">
+            <div class="container">
+                <h2 class="section-title">概要</h2>
+
+                <div class="content-card">
+                    <table class="info-table">
+                        <tr>
+                            <th>日時</th>
+                            <td>2026年4月28日（火） 19:00 - 21:30</td>
+                        </tr>
+                        <tr>
+                            <th>会場</th>
+                            <td>都内（原宿周辺）<br class="sp-br">・完全プライベート空間<br><span class="small-text">（参加申し込み時にご案内）</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>アクセス</th>
+                            <td>JR原宿駅より徒歩12分</td>
+                        </tr>
+                        <tr>
+                            <th>定員</th>
+                            <td>限定10名</td>
+                        </tr>
+                        <tr>
+                            <th>参加費</th>
+                            <td>¥13,000（税込）</td>
+                        </tr>
+                        <tr>
+                            <th>申込締切</th>
+                            <td>2026年4月24日（金）23:59<br><span class="small-text">※定員に達し次第、<br
+                                        class="sp-br">締切前でも受付終了</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="includes-box">
+                        <h4>コンテンツおよび特典：</h4>
+                        <ul>
+                            <li>鮨握り体験（市場仕入れの新鮮ネタ）</li>
+                            <li>日本酒などドリンク付 <span class="small-text">※飲み放題ではありません（ノンアルもご用意）</span></li>
+                            <li>鈴木亜佐子氏ゲスト参加 ＋ ミニトーク</li>
+                            <li>サイン入り書籍1冊プレゼント</li><span class="small-text">※どちらか1冊となります</span>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sake Feature -->
+        <section class="sake-feature section-padding bg-dark fade-in">
+            <div class="container">
+                <div class="sake-card">
+                    <div class="sake-image-wrap">
+                        <img src="Ubusuna.JPG" alt="産土 Ubusuna" class="sake-image">
+                        <div class="sake-badge">参加特典</div>
+                    </div>
+                    <div class="sake-info">
+                        <h2 class="sake-title">希少日本酒<br>「産土"Ubusuna"」を<br>乾杯ドリンクで</h2>
+                        <div class="sake-description">
+                            <p>メロンや洋梨、マスカットなどの果実を思わせる香りで、微発泡のキレのよさや、旨味やとろみのある味わいが特徴です。<br
+                                    class="pc-br">日本酒が苦手な方でも飲めちゃいます。</p>
+                            <p>なかなか手に入らなく、Amazonや楽天では8,000円<br class="sp-br">近くのプレ値が付くほど…！</p>
+                            <p class="sake-present-note">今回の参加特典として特別にご用意いたしました。<br>
+                                <span class="small-text">※720mlを参加者全員でおすそわけ</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cancel Policy -->
+        <section class="cancel-policy section-padding bg-light fade-in">
+            <div class="container">
+                <h2 class="section-title">キャンセルポリシー</h2>
+
+                <div class="content-card">
+                    <table class="info-table">
+                        <tr>
+                            <th></th>
+                            <th>キャンセル料</th>
+                        </tr>
+                        <tr>
+                            <td>4/25（土）以降のキャンセル</td>
+                            <td>50%</td>
+                        </tr>
+                        <tr>
+                            <td>4/27（月）以降のキャンセル</td>
+                            <td>80%</td>
+                        </tr>
+                        <tr>
+                            <td>当日キャンセル</td>
+                            <td>100%</td>
+                        </tr>
+                    </table>
+
+                    <div class="policy-note">
+                        <p>※仕入れの都合のため、ご理解いただけますと幸いです。</p>
+                        <ul>
+                            <li>4/25（土）以前のキャンセルの場合、決済手数料を引いた金額を全額返金いたします。</li>
+                            <li>主催者都合で開催が中止となった場合、参加費は全額返金されます。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq section-padding fade-in">
+            <div class="container">
+                <h2 class="section-title">よくあるご質問</h2>
+
+                <div class="content-card">
+                    <div class="faq-item">
+                        <h3 class="faq-q">鮨を握ったことがないのですが……</h3>
+                        <div class="faq-a">
+                            <p>問題ありません。むしろ初めての方がほとんどです。<br class="pc-br">講師が横にいますので、見よう見まねで握れます。<br
+                                    class="pc-br">うまく作る必要はありませんし、正解もありません。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-q">どなたが参加されますか？</h3>
+                        <div class="faq-a">
+                            <p>主催メンバーの知り合いを中心にお声がけしています。<br class="pc-br">利害関係のない、気楽な場です。名刺交換もありません。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-q">一人でも参加できますか？</h3>
+                        <div class="faq-a">
+                            <p>もちろんです。鮨を握っていると自然に会話が生まれますので、<br class="pc-br">おひとりでいらしても全く浮きません。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-q">SNSでは繋がっているのですが、まだ直接お会いしたことがなくて……</h3>
+                        <div class="faq-a">
+                            <p>むしろ、そういう方にこそ来ていただきたいです。<br class="pc-br">改まって「初めまして」とご挨拶するよりも、<br
+                                    class="pc-br">一緒に鮨を握りながらの方が、<br class="pc-br">自然に打ち解けていただけると思います。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA 2 -->
+        <section class="cta-section bg-accent fade-in">
+            <div class="container">
+                <div class="cta-box">
+                    <p class="cta-limit">10名限定 / お早めに</p>
+                    <p class="cta-message">気になることが解消したら、<br class="pc-br">あとは席を確保するだけです。</p>
+                    <a href="https://sub.en-moto.com/event/wbsZf9hrBx9W/register" class="btn">参加を申し込む &rarr;</a>
+                    <p class="cta-deadline">お申し込み締切　4/24（金）23:59</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="team section-padding bg-light fade-in">
+            <div class="container">
+                <h2 class="section-title">講師紹介</h2>
+
+                <div class="team-grid">
+                    <img src="profile.jpeg" alt="集合写真" class="team-profile-img">
+                    <p class="team-img-caption">左から：匠、将哉、優喜子</p>
+
+                    <div class="team-member-card">
+                        <div class="team-meta">
+                            <h4>後藤 将哉 <span>Masaya Goto</span></h4>
+                            <p class="team-role">鮨職人 × プロデューサー</p>
+                        </div>
+                        <p class="team-desc">
+                            13年間の会社員生活を経て、メンタルダウンをきっかけに<br class="pc-br">未経験から鮨職人へ。<br><br>"鮨は最上級のコミュニケーションツール"を軸に、<br
+                                class="sp-br">紹介だけで満席が続く「鮨まさや」を主宰。<br>言葉にならない本音を対話で引き出し、言語化することを得意とする。
+                        </p>
+                    </div>
+
+                    <div class="team-member-card">
+                        <div class="team-meta">
+                            <h4>和田 優喜子 <span>Yukiko Wada</span></h4>
+                            <p class="team-role">ご縁つなぎ × 居場所づくりの達人</p>
+                        </div>
+                        <p class="team-desc">
+                            自宅に年間のべ700人が集まる"帰ってきたくなる場所"を育てた究極の人たらし。<br><br>原宿のプライベートサロンでは、人と人が自然に<br
+                                class="sp-br">つながる居場所を作ってきた。<br>"安心して話せる雰囲気づくり"で鮨まさやを支える女将。日本酒が大好き。
+                        </p>
+                    </div>
+
+                    <div class="team-member-card">
+                        <div class="team-meta">
+                            <h4>小野 匠 <span>Takumi Ono</span></h4>
+                            <p class="team-role">環境整備コンサルタント × コーチ</p>
+                        </div>
+                        <p class="team-desc">
+                            "環境整備こそ全ての活動の原点"を掲げ、人と場の土台を整えるプロ。<br><br>Gallup認定ストレングスコーチとして、安心して話せる心理的安全性もデザインする。<br>縁の下の力持ちとして「入った瞬間に空気が整う場」をつくる専門家。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Closing -->
+        <section class="closing section-padding fade-in">
+            <div class="container">
+                <div class="content-card">
+                    <div class="closing-content">
+                        <p>GW前の祝前日。</p>
+                        <p>美味しい鮨を、自分の手で握って。<br>面白い人たちと、日本酒を飲みながら<br class="pc-br">ゆるく話して。<br>翌日から始まる連休を、<br>少しでも良い気分で<br
+                                class="pc-br">迎えていただけたら嬉しいです。</p>
+                        <p class="concept-reveal">鮨リトリートという、<br class="sp-br">新しい「休み方」の提案です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-section final-cta fade-in">
+            <div class="container">
+                <div class="cta-box">
+                    <a href="https://sub.en-moto.com/event/wbsZf9hrBx9W/register" class="btn btn-large">参加を申し込む
+                        &rarr;</a>
+                    <p class="cta-deadline">お申し込み締切　4/24（金）23:59　／　定員に達し次第締切</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 en-moto All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple Intersection Observer for elegant fade-in effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
