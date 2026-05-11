@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>経営者こそ、鮨を握れ | Kindle本</title>
+  <meta name="description" content="名刺交換だけで終わらない出会い方へ。自己紹介を話すものではなく、仕込むものに変えるKindle本『経営者こそ、鮨を握れ』のLPです。">
+  <style>
+    :root {
+      --sumi: #11100f;
+      --sumi-2: #191715;
+      --ink: #2f2a25;
+      --muted: #786f66;
+      --paper: #fffaf0;
+      --paper-2: #f5eddf;
+      --line: rgba(120, 111, 102, 0.22);
+      --accent: #9e2b22;
+      --gold: #c4a15a;
+      --white: #fffaf3;
+      --max: 1080px;
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      --sans: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.9;
+      letter-spacing: 0;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .serif { font-family: var(--serif); font-weight: 500; }
+
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 30;
+      background: linear-gradient(180deg, rgba(17, 16, 15, 0.86), rgba(17, 16, 15, 0));
+      color: var(--white);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 13px;
+      color: rgba(255, 250, 243, 0.74);
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 24px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.35;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #812018;
+      border-color: #812018;
+    }
+
+    .button.ghost {
+      border-color: rgba(255, 250, 243, 0.42);
+      background: transparent;
+      color: var(--white);
+    }
+
+    .button.ghost:hover { background: rgba(255, 250, 243, 0.1); }
+
+    .nav-cta {
+      min-height: 38px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 96vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--sumi);
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.64);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(17, 16, 15, 0.88) 0%, rgba(17, 16, 15, 0.62) 44%, rgba(17, 16, 15, 0.2) 100%),
+        linear-gradient(180deg, rgba(17, 16, 15, 0.22) 0%, rgba(17, 16, 15, 0.42) 58%, rgba(17, 16, 15, 0.92) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 150px 0 92px;
+    }
+
+    .kicker,
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 28px;
+      font-size: clamp(38px, 7vw, 82px);
+      line-height: 1.16;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin-bottom: 34px;
+      color: rgba(255, 250, 243, 0.82);
+      font-size: clamp(16px, 2.1vw, 21px);
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .microcopy {
+      margin-top: 16px;
+      color: rgba(255, 250, 243, 0.64);
+      font-size: 13px;
+    }
+
+    .section {
+      padding: clamp(86px, 11vw, 144px) 20px;
+      position: relative;
+    }
+
+    .section.dark {
+      background: var(--sumi);
+      color: rgba(255, 250, 243, 0.84);
+    }
+
+    .section.warm { background: var(--paper-2); }
+
+    .wrap {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+    }
+
+    .narrow {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(42px, 7vw, 86px);
+      align-items: center;
+    }
+
+    .section-title {
+      margin: 0 0 28px;
+      font-family: var(--serif);
+      font-size: clamp(28px, 4.2vw, 48px);
+      font-weight: 500;
+      line-height: 1.48;
+      letter-spacing: 0.03em;
+    }
+
+    .section.dark .section-title { color: var(--white); }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 2.1;
+    }
+
+    .section.dark .lead,
+    .section.dark .body {
+      color: rgba(255, 250, 243, 0.72);
+    }
+
+    .body {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 2.05;
+    }
+
+    .statement {
+      padding: 42px;
+      border: 1px solid rgba(196, 161, 90, 0.22);
+      background: rgba(255, 250, 243, 0.03);
+    }
+
+    .statement p {
+      margin-bottom: 0;
+      font-family: var(--serif);
+      color: var(--white);
+      font-size: clamp(24px, 4vw, 42px);
+      line-height: 1.62;
+    }
+
+    .pain-list {
+      display: grid;
+      gap: 22px;
+      margin: 46px 0 0;
+    }
+
+    .pain-item {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 22px;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .pain-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .pain-item .num {
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .pain-item h3 {
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(196, 161, 90, 0.22);
+      background: var(--sumi);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .book-frame {
+      width: min(380px, 100%);
+      margin: 0 auto;
+      padding: 14px;
+      border: 1px solid rgba(196, 161, 90, 0.32);
+      background: #0c0c0c;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
+    }
+
+    .book-frame img {
+      width: 100%;
+      height: auto;
+    }
+
+    .belief-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 44px;
+    }
+
+    .belief-card {
+      min-height: 230px;
+      padding: 28px;
+      border: 1px solid rgba(196, 161, 90, 0.18);
+      background: var(--sumi-2);
+    }
+
+    .belief-card h3 {
+      margin-bottom: 14px;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .belief-card p {
+      color: rgba(255, 250, 243, 0.64);
+      font-size: 15px;
+      line-height: 1.95;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 40px;
+    }
+
+    .fit-card {
+      padding: 22px 24px;
+      border-left: 3px solid var(--accent);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    .bonus-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 34px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .bonus-box .button {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .bonus-box .button:hover { background: rgba(159, 43, 34, 0.06); }
+
+    .final {
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(17, 16, 15, 0.94), rgba(17, 16, 15, 0.72)),
+        url("assets/sushi-top-scene.png") center / cover no-repeat;
+    }
+
+    .final .wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+      gap: clamp(36px, 6vw, 74px);
+      align-items: center;
+    }
+
+    .final-copy {
+      max-width: 660px;
+    }
+
+    .final .lead { color: rgba(255, 250, 243, 0.76); }
+
+    .footer {
+      padding: 38px 20px;
+      background: #090807;
+      color: rgba(255, 250, 243, 0.58);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer a { text-decoration: underline; text-underline-offset: 3px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 760ms ease, transform 760ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .nav-inner { min-height: 62px; }
+
+      .hero {
+        min-height: 88vh;
+      }
+
+      .hero-content {
+        padding: 120px 0 72px;
+      }
+
+      .split,
+      .belief-grid,
+      .fit-grid,
+      .bonus-box,
+      .final .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-frame img {
+        aspect-ratio: 16 / 11;
+      }
+
+      .final {
+        min-height: auto;
+        padding: 94px 20px;
+      }
+
+      .final .wrap {
+        padding: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .brand {
+        white-space: normal;
+        max-width: 170px;
+        line-height: 1.45;
+      }
+
+      .button {
+        width: 100%;
+        padding-inline: 16px;
+      }
+
+      .hero-actions { align-items: stretch; }
+
+      .pain-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .statement,
+      .bonus-box {
+        padding: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="ページ内ナビゲーション">
+    <div class="nav-inner">
+      <a class="brand" href="#top">経営者こそ、鮨を握れ</a>
+      <div class="nav-links">
+        <a href="#why">なぜ鮨か</a>
+        <a href="#book">本書について</a>
+        <a href="#reader">おすすめ</a>
+        <a href="#buy">Kindleで読む</a>
+      </div>
+      <a class="button nav-cta" href="#buy">Kindleで読む</a>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <img class="hero-img" src="assets/sushi-hands-real.jpg" alt="鮨を握る手元">
+    <div class="hero-content">
+      <p class="kicker">Kindle Book</p>
+      <h1 class="serif">その名刺交換、<br>仕事につながっていますか。</h1>
+      <p class="hero-copy">
+        『経営者こそ、鮨を握れ』は、鮨の技術書ではありません。
+        自己紹介を「話すもの」から「仕込むもの」に変え、紹介・会食・初対面の場で記憶に残る出会い方をつくる本です。
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#buy">Kindleで本を読む</a>
+        <a class="button ghost" href="#why">なぜ鮨を握るのか</a>
+      </div>
+      <p class="microcopy">読者限定動画つき。詳細は書籍内の案内から確認できます。</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="why" class="section dark">
+      <div class="wrap split reveal">
+        <div>
+          <p class="eyebrow">Why sushi</p>
+          <h2 class="section-title">なぜ、経営者が<br>鮨を握るのか。</h2>
+        </div>
+        <div>
+          <p class="lead">
+            それは、鮨が「食べるもの」である前に、目の前の相手との関係をつくるものだからです。
+          </p>
+          <p class="body">
+            ネタを仕込み、シャリを整え、一貫を握って差し出す。そこには、相手のために場を整えるという姿勢が出ます。
+            肩書きや実績を説明するよりも、その人の記憶に残る場面をつくれることがある。
+          </p>
+          <p class="body">
+            本書が提案するのは、職人を目指すことではありません。鮨を握るという体験を、出会い方を変えるフックとして使うことです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap reveal">
+        <div class="narrow">
+          <p class="eyebrow">Problem</p>
+          <h2 class="section-title">名刺交換だけでは、ほとんど覚えてもらえない。</h2>
+          <p class="lead">
+            交流会、会食、紹介の場。会社名や肩書き、実績を話すことは必要です。
+            でも、それだけだと相手から見れば「よくある自己紹介」のひとつで終わってしまうことがあります。
+          </p>
+        </div>
+        <div class="pain-list">
+          <article class="pain-item">
+            <div class="num">01</div>
+            <div>
+              <h3>肩書きは必要。でも、それだけでは紹介されにくい。</h3>
+              <p class="body">「何をしている人か」は伝わっても、「なぜこの人を誰かに会わせたいのか」までは残りません。</p>
+            </div>
+          </article>
+          <article class="pain-item">
+            <div class="num">02</div>
+            <div>
+              <h3>実績や肩書を話すと、「すごいですね」で終わる。</h3>
+              <p class="body">相手は褒めてくれても、そこから会話が深まるとは限りません。信頼は、説明の量だけではつくれません。</p>
+            </div>
+          </article>
+          <article class="pain-item">
+            <div class="num">03</div>
+            <div>
+              <h3>記憶に残る場面がないと、次の会話が生まれない。</h3>
+              <p class="body">また会いたい、誰かに紹介したい。その理由は、言葉よりも「その人と出会った場面」から生まれることがあります。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm" id="book">
+      <div class="wrap split reveal">
+        <figure class="book-frame">
+          <img src="assets/book-cover.jpg" alt="Kindle本『経営者こそ、鮨を握れ』表紙">
+        </figure>
+        <div>
+          <p class="eyebrow">Core idea</p>
+          <h2 class="section-title">自己紹介を、<br>話すものから<br>仕込むものへ。</h2>
+          <p class="lead">
+            本書のテーマは、鮨そのものではなく「出会い方」です。
+          </p>
+          <p class="body">
+            何を話すか。どう肩書きを見せるか。どんな実績を伝えるか。もちろん、それらも大切です。
+            ただ、紹介や会食の場で本当に残るのは、相手が人に話したくなる具体的な体験です。
+          </p>
+          <p class="body">
+            鮨を握ることは、その体験をつくる入口になります。
+            自分の仕事や思想を、言葉だけでなく場として伝える。その考え方をまとめたのが、このKindle本です。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap reveal">
+        <div class="statement">
+          <p>鮨は、最強のコミュニケーションツールである。</p>
+        </div>
+        <div class="belief-grid">
+          <article class="belief-card">
+            <h3>売り込まずに、思い出してもらう。</h3>
+            <p>営業トークを強めるのではなく、あとから思い出せる場面をつくる。出会い方を変える発想です。</p>
+          </article>
+          <article class="belief-card">
+            <h3>他己紹介したくなる理由をつくる。</h3>
+            <p>「鮨を握る経営者」というフックがあると、紹介者があなたのことを誰かに話したくなります。</p>
+          </article>
+          <article class="belief-card">
+            <h3>ビジネスの前に、「○○の人」として記憶に残る。</h3>
+            <p>サービス内容を覚えてもらう前に、また会いたいと思われること。会食や紹介の場では、その順番が重要です。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reader" class="section">
+      <div class="wrap split reveal">
+        <div class="photo-frame">
+          <img src="assets/target-oku.jpg" alt="鮨を握って差し出す手元">
+        </div>
+        <div>
+          <p class="eyebrow">Target</p>
+          <h2 class="section-title">こんな人におすすめ</h2>
+          <p class="lead">
+            鮨が好きな人だけに向けた本ではありません。紹介・会食・初対面の場を、もう少し仕事につながる出会いに変えたい人のための一冊です。
+          </p>
+          <div class="fit-grid">
+            <div class="fit-card">会食や紹介の機会が多い経営者</div>
+            <div class="fit-card">肩書きや実績だけでは印象に残りにくい士業・コンサル・講師</div>
+            <div class="fit-card">売り込みではなく、自然に覚えてもらえる出会い方をつくりたい人</div>
+            <div class="fit-card">自分の仕事や思想を、言葉だけでなく体験として伝えたい人</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm">
+      <div class="wrap reveal">
+        <div class="bonus-box">
+          <div>
+            <p class="eyebrow">Reader bonus</p>
+            <h2 class="section-title">購入者限定の動画特典つき。</h2>
+            <p class="body">
+              本書を読んだ方には、内容をより実践に移しやすくするための読者限定動画をご用意しています。
+              詳細は書籍内の案内からご確認ください。
+            </p>
+          </div>
+          <a class="button" href="#buy">まず本を読む</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="buy" class="section final">
+      <div class="wrap reveal">
+        <div class="final-copy">
+          <p class="eyebrow">Kindle book</p>
+          <h2 class="section-title">名刺交換だけで終わらない、<br>また会いたくなる出会い方へ。</h2>
+          <p class="lead">
+            経営者が鮨を握る理由は、奇抜な肩書きをつくるためではありません。
+            相手に覚えてもらい、紹介され、また会いたいと思われる出会い方を、自分で仕込むためです。
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="https://amzn.asia/d/0doFIznO">Kindleで『経営者こそ、鮨を握れ』を読む</a>
+          </div>
+        </div>
+        <figure class="book-frame">
+          <img src="assets/book-cover.jpg" alt="Kindle本『経営者こそ、鮨を握れ』表紙">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>Copyright © sushi masaya</div>
+      <div class="footer-links">
+        <a href="https://sub.masaya-goto.com/p/privacy_policy_sushi">プライバシーポリシー</a>
+        <a href="https://sub.masaya-goto.com/p/sctl_sushi">特定商取引法に基づく表記</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const targets = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    targets.forEach((target) => observer.observe(target));
+  </script>
+</body>
+</html>
