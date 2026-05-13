@@ -462,7 +462,7 @@
 
     .bonus-box {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
       gap: 34px;
       align-items: center;
       padding: 34px;
@@ -470,7 +470,21 @@
       background: rgba(255, 255, 255, 0.5);
     }
 
+    .bonus-media {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(120, 111, 102, 0.2);
+      background: var(--sumi);
+    }
+
+    .bonus-media img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
     .bonus-box .button {
+      margin-top: 22px;
       background: transparent;
       color: var(--ink);
       border-color: var(--line);
@@ -667,14 +681,14 @@
             <div class="num">01</div>
             <div>
               <h3>肩書きは必要。でも、それだけでは紹介されにくい。</h3>
-              <p class="body">「何をしている人か」は伝わる。でも「なぜこの人を誰かに会わせたいのか」までは残らない。</p>
+              <p class="body">「何をしている人か」は伝わる。でも「誰かに紹介したい」とはなりにくい。</p>
             </div>
           </article>
           <article class="pain-item">
             <div class="num">02</div>
             <div>
               <h3>実績や肩書を話すと、「すごいですね」で終わる。</h3>
-              <p class="body">相手は褒めてくれても、そこから会話が深まるとは限りません。信頼は、説明の量だけではつくれません。</p>
+              <p class="body">実績や肩書で相手から尊敬はされても、信頼されるわけではありません。</p>
             </div>
           </article>
           <article class="pain-item">
@@ -698,18 +712,39 @@
           <h2 class="section-title">「うちで鮨握ってよ」<br>その一言から、<br>すべてが変わった。</h2>
           <p class="author-kicker">後藤将哉 / 鮨を握るビジネスプロデューサー</p>
           <p class="body">
-            大手消費財メーカー、外資系ベンチャーを経て独立。
-            肩書きや実績を整えても、初対面の場で自分のことがうまく残らない時期がありました。
+            大学卒業後、大手消費財メーカーと外資系ベンチャーで営業からマーケティングまで経験。
           </p>
           <p class="body">
-            転機は、ある経営者からの「うちで鮨握ってよ」という一言。
-            握ってみると、自己紹介を頑張るより先に、相手のほうから興味を持ってくれるようになった。
-            紹介が生まれ、会話が続き、仕事につながる。
+            30代後半、未経験から鮨職人の道へ。半年足らずの修業で、8席の会員制鮨屋の大将に抜擢されました。
+          </p>
+          <p class="body">
+            そこで残せた実績は、平均予約率120%超。
+            来店者の大半が、その場で次回の予約を入れて帰っていく状態でした。
+          </p>
+          <p class="body">
+            ただ、ビジネスマンとして独立した当初は、自己紹介がうまくいかない時期が長く続きました。
+            肩書きを整えても、実績を語っても、なかなか次につながらない日々。
+          </p>
+          <p class="body">
+            転機は、ある友人の一言でした。
+            「うちで鮨握ってよ」
+          </p>
+          <p class="body">
+            半分ノリで引き受けて、鮨会を開催。すると、驚くほど現実が変わり始めました。
+            自己紹介を頑張る前に、相手のほうから興味を持ってくれる。会話が続く。紹介が生まれる。
+            気づけば、色んな仕事につながっていました。
           </p>
           <p class="body">
             最初は、自分だけの偶然だと思っていました。
-            でも、鮨を握ることで出会い方が変わる感覚には再現性があった。
-            だから、この本にまとめました。
+            でも、同じようなことが僕の周りにも起き始めた。
+            これはもう、自分一人の話じゃない。
+          </p>
+          <p class="body">
+            その確信を、一冊にまとめたのが本書です。
+          </p>
+          <p class="body">
+            現在は、紹介制鮨会「鮨まさや」を主宰。
+            SNS集客ほぼなし、口コミだけで毎回満席が続いています。
           </p>
         </div>
       </div>
@@ -729,11 +764,11 @@
           </p>
           <p class="body">
             何を話すか。どう肩書きを見せるか。どんな実績を伝えるか。もちろん、それらも大切です。
-            ただ、紹介や会食の場で本当に残るのは、相手が人に話したくなる具体的な体験です。
+            ただ、紹介や会食の場で相手の記憶に残るのは、相手が人に話したくなる具体的な体験です。
           </p>
           <p class="body">
             鮨を握ることは、その体験をつくる入口になります。
-            自分の仕事や思想を、言葉だけでなく場として伝える。その考え方をまとめたのが、このKindle本です。
+            自己紹介という入口の構造そのものを再定義したのが、このKindle本です。
           </p>
         </div>
       </div>
@@ -742,7 +777,7 @@
     <section class="section dark">
       <div class="wrap reveal">
         <div class="statement">
-          <p>鮨は、ただの食事ではなくなる。</p>
+          <p>鮨は最強のコミュニケーションツール</p>
         </div>
         <div class="belief-grid">
           <article class="belief-card">
@@ -767,7 +802,7 @@
     <section class="section dark">
       <div class="wrap reveal">
         <p class="eyebrow">読者の声</p>
-        <h2 class="section-title">先に読んでくれた人の声。</h2>
+        <h2 class="section-title">読者の声</h2>
         <article class="voice-panel">
           <h3 class="voice-title">お話上手な人ほど陥る「壁」を、どう突破するか。</h3>
           <div class="voice-body">
@@ -790,7 +825,7 @@
               <li>やりたいことはあるのに、うまく伝わらない人</li>
               <li>印象に残らず、機会を逃している気がする人</li>
             </ul>
-            <p class="voice-source">先行読者の感想より</p>
+            <p class="voice-source">女性デザイナー・ライター（兵庫県）</p>
           </div>
         </article>
       </div>
@@ -802,10 +837,10 @@
           <img src="assets/target-oku.jpg" alt="鮨を握って差し出す手元">
         </div>
         <div>
-          <p class="eyebrow">想定読者</p>
+          <p class="eyebrow">Target</p>
           <h2 class="section-title">こんな人におすすめ</h2>
           <p class="lead">
-            鮨が好きな人だけに向けた本ではありません。紹介・会食・初対面の場を、もう少し仕事につながる出会いに変えたい人のための一冊です。
+            鮨が好きな人だけに向けた本ではありません。紹介・会食・初対面の場を、"次につながる出会い"に変えたい人のための一冊です。
           </p>
           <div class="fit-grid">
             <div class="fit-card">会食や紹介の機会が多い経営者</div>
@@ -823,15 +858,18 @@
     <section class="section warm">
       <div class="wrap reveal">
         <div class="bonus-box">
+          <figure class="bonus-media">
+            <img src="assets/bonus-video.png" alt="購入特典動画のイメージ">
+          </figure>
           <div>
-            <p class="eyebrow">読者特典</p>
+            <p class="eyebrow">購入特典</p>
             <h2 class="section-title">購入者限定の動画特典つき。</h2>
             <p class="body">
               本書を読んだ方には、鮨を握る流れと、初対面で覚えてもらう自己紹介の考え方を補足する読者限定動画をご用意しています。
               詳細は書籍内の案内からご確認ください。
             </p>
+            <a class="button" href="https://amzn.asia/d/0doFIznO">まず本を読む</a>
           </div>
-          <a class="button" href="https://amzn.asia/d/0doFIznO">まず本を読む</a>
         </div>
       </div>
     </section>
