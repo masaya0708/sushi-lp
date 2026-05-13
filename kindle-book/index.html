@@ -360,6 +360,72 @@
       line-height: 1.8;
     }
 
+    .voice-panel {
+      margin-top: 42px;
+      padding: clamp(30px, 5vw, 54px);
+      border: 1px solid rgba(196, 161, 90, 0.3);
+      background:
+        linear-gradient(135deg, rgba(255, 250, 243, 0.07), rgba(255, 250, 243, 0.02)),
+        var(--sumi-2);
+      color: rgba(255, 250, 243, 0.82);
+    }
+
+    .voice-title {
+      margin-bottom: 26px;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.4vw, 38px);
+      line-height: 1.55;
+    }
+
+    .voice-quote {
+      margin: 0 0 24px;
+      padding-left: 22px;
+      border-left: 3px solid var(--gold);
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.95;
+    }
+
+    .voice-body {
+      max-width: 780px;
+    }
+
+    .voice-body p {
+      color: rgba(255, 250, 243, 0.72);
+    }
+
+    .voice-recommend {
+      display: grid;
+      gap: 8px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .voice-recommend li {
+      padding-left: 18px;
+      position: relative;
+      color: rgba(255, 250, 243, 0.82);
+    }
+
+    .voice-recommend li::before {
+      content: "";
+      position: absolute;
+      top: 0.88em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+    }
+
+    .voice-source {
+      margin-top: 26px;
+      color: rgba(255, 250, 243, 0.5);
+      font-size: 13px;
+    }
+
     .bonus-box {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -627,6 +693,38 @@
             <p>サービス内容を覚えてもらう前に、また会いたいと思われること。会食や紹介の場では、その順番が重要です。</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap reveal">
+        <p class="eyebrow">Voice</p>
+        <h2 class="section-title">先に読んでくれた人の声。</h2>
+        <article class="voice-panel">
+          <h3 class="voice-title">お話上手な人ほど陥る「壁」を、どう突破するか。</h3>
+          <div class="voice-body">
+            <p class="voice-quote">
+              話せることと、記憶に残りご縁が続くことは別。その違いに気づかされました。
+            </p>
+            <p>
+              私の中でのまさやさんの印象は「お話がとても上手で、想いを同じにする人が集まる方」でした。
+              ところが本書を読み、「自己紹介をしても、後に繋がらない」「印象に残らない」という悩みや葛藤が過去にあったと知り、びっくりしました。
+            </p>
+            <p>
+              わたしがまさやさんと知り合った時には、既に「鮨」はありました。
+              鮨とご縁を紡ぐことが、かちっとはまったんですね。
+              本書を読み進めていくうちに、ご自身だけでなく周りの方々の人生も前に進んでいく様子を共に体験できたように感じました。
+            </p>
+            <p>
+              まさやさんが提案しているのは、自己紹介の設計の視点。
+            </p>
+            <ul class="voice-recommend">
+              <li>やりたいことはあるのに、うまく伝わらない人</li>
+              <li>印象に残らず、機会を逃している気がする人</li>
+            </ul>
+            <p class="voice-source">先行読者の感想より</p>
+          </div>
+        </article>
       </div>
     </section>
 
