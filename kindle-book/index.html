@@ -125,7 +125,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.64);
+      filter: brightness(0.82) contrast(1.04);
     }
 
     .hero::before {
@@ -134,8 +134,8 @@
       inset: 0;
       z-index: 1;
       background:
-        linear-gradient(90deg, rgba(17, 16, 15, 0.88) 0%, rgba(17, 16, 15, 0.62) 44%, rgba(17, 16, 15, 0.2) 100%),
-        linear-gradient(180deg, rgba(17, 16, 15, 0.22) 0%, rgba(17, 16, 15, 0.42) 58%, rgba(17, 16, 15, 0.92) 100%);
+        linear-gradient(90deg, rgba(17, 16, 15, 0.76) 0%, rgba(17, 16, 15, 0.46) 44%, rgba(17, 16, 15, 0.12) 100%),
+        linear-gradient(180deg, rgba(17, 16, 15, 0.12) 0%, rgba(17, 16, 15, 0.26) 58%, rgba(17, 16, 15, 0.78) 100%);
     }
 
     .hero-content {
@@ -551,8 +551,35 @@
     }
 
     @media (max-width: 860px) {
-      .nav-links { display: none; }
-      .nav-inner { min-height: 62px; }
+      .site-nav {
+        background: rgba(17, 16, 15, 0.9);
+      }
+
+      .nav-inner {
+        min-height: auto;
+        padding: 12px 0 10px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        padding: 2px 0 4px;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar { display: none; }
+
+      .nav-cta { display: none; }
 
       .hero {
         min-height: 88vh;
@@ -628,7 +655,7 @@
     <img class="hero-img" src="assets/sushi-hands-real.jpg" alt="鮨を握る手元">
     <div class="hero-content">
       <h1 class="serif">経営者こそ、<br>鮨を握れ。</h1>
-      <p class="hero-sub serif">その名刺交換、仕事につながっていますか。</p>
+      <p class="hero-sub serif">その名刺交換、仕事につながっていますか？</p>
       <p class="hero-copy">
         『経営者こそ、鮨を握れ』は、鮨の技術書ではありません。
         自己紹介を「話すもの」から「仕込むもの」に変える、出会い方の本です。
