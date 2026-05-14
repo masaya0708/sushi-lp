@@ -310,6 +310,10 @@
       object-fit: cover;
     }
 
+    .author-photo img {
+      object-position: center top;
+    }
+
     .book-frame {
       width: min(380px, 100%);
       margin: 0 auto;
@@ -601,6 +605,10 @@
         aspect-ratio: 16 / 11;
       }
 
+      .author-photo img {
+        aspect-ratio: 4 / 5;
+      }
+
       .final {
         min-height: auto;
         padding: 94px 20px;
@@ -728,7 +736,7 @@
 
     <section class="section" id="author">
       <div class="wrap split reveal">
-        <div class="photo-frame">
+        <div class="photo-frame author-photo">
           <img src="assets/author-masaya.jpg" alt="後藤将哉が鮨を握る姿">
         </div>
         <div>
