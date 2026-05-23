@@ -427,8 +427,14 @@
       border-color: #812018;
     }
 
-    .voice-panel {
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
       margin-top: 42px;
+    }
+
+    .voice-panel {
       padding: clamp(30px, 5vw, 54px);
       border: 1px solid rgba(196, 161, 90, 0.3);
       background:
@@ -437,11 +443,31 @@
       color: rgba(255, 250, 243, 0.82);
     }
 
+    .voice-card {
+      position: relative;
+      min-height: 100%;
+      padding: clamp(24px, 3vw, 34px);
+      border: 1px solid rgba(196, 161, 90, 0.26);
+      background:
+        linear-gradient(180deg, rgba(255, 250, 243, 0.075), rgba(255, 250, 243, 0.025)),
+        var(--sumi-2);
+    }
+
+    .voice-card::before {
+      content: "VOICE";
+      display: inline-flex;
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
     .voice-title {
-      margin-bottom: 26px;
+      margin-bottom: 20px;
       color: var(--white);
       font-family: var(--serif);
-      font-size: clamp(24px, 3.4vw, 38px);
+      font-size: clamp(20px, 2.4vw, 26px);
       line-height: 1.55;
     }
 
@@ -459,7 +485,8 @@
       max-width: 780px;
     }
 
-    .voice-body p {
+    .voice-body p,
+    .voice-card p {
       color: rgba(255, 250, 243, 0.72);
     }
 
@@ -489,8 +516,9 @@
 
     .voice-source {
       margin-top: 26px;
-      color: rgba(255, 250, 243, 0.5);
+      color: rgba(255, 250, 243, 0.62);
       font-size: 13px;
+      font-weight: 700;
     }
 
     .bonus-box {
@@ -630,6 +658,7 @@
       .split,
       .hero-layout,
       .belief-grid,
+      .voice-grid,
       .fit-grid,
       .bonus-box,
       .final .wrap {
@@ -783,9 +812,6 @@
             本書は、職人を目指すための技術書ではありません。
             鮨という体験を通じて、人との距離を縮め、顧客との接点をつくるための一冊です。
           </p>
-          <div class="section-cta">
-            <a class="button" href="https://amzn.asia/d/0doFIznO">鮨が仕事につながる理由を読む</a>
-          </div>
         </div>
       </div>
     </section>
@@ -811,7 +837,7 @@
             自己紹介という入口の構造そのものを再定義したのが、このKindle本です。
           </p>
           <div class="section-cta">
-            <a class="button" href="https://amzn.asia/d/0doFIznO">自分に必要か確認する</a>
+            <a class="button" href="https://amzn.asia/d/0doFIznO">本の詳細はこちら</a>
           </div>
         </div>
       </div>
@@ -865,9 +891,6 @@
             <p>サービス内容を覚えてもらう前に、また会いたいと思われること。会食や紹介の場では、その順番が重要です。</p>
           </article>
         </div>
-        <div class="section-cta">
-          <a class="button" href="https://amzn.asia/d/0doFIznO">出会い方の仕込みを読む</a>
-        </div>
       </div>
     </section>
 
@@ -875,9 +898,9 @@
       <div class="wrap reveal">
         <p class="eyebrow">Customer Review</p>
         <h2 class="section-title">読者の声</h2>
-        <article class="voice-panel">
-          <h3 class="voice-title">お話上手な人ほど陥る「壁」を、どう突破するか。</h3>
-          <div class="voice-body">
+        <div class="voice-grid">
+          <article class="voice-card">
+            <h3 class="voice-title">お話上手な人ほど陥る「壁」を、どう突破するか。</h3>
             <p class="voice-quote">
               話せることと、記憶に残りご縁が続くことは別。その違いに気づかされました。
             </p>
@@ -889,13 +912,49 @@
               自己紹介を整えるだけではなく、相手の記憶に残る入口をどう設計するか。
               その視点が、やりたいことはあるのに伝わらない人に必要だと感じました。
             </p>
-            <ul class="voice-recommend">
-              <li>やりたいことはあるのに、うまく伝わらない人</li>
-              <li>印象に残らず、機会を逃している気がする人</li>
-            </ul>
             <p class="voice-source">きいさん（ライター×デザイナー）</p>
-          </div>
-        </article>
+          </article>
+
+          <article class="voice-card">
+            <h3 class="voice-title">自分次第で変われる"仕込み方"を見せてもらいました</h3>
+            <p class="voice-quote">
+              ただ目の前のことを懸命にこなすだけでは、もったいないんだな...と感じました。
+            </p>
+            <p>
+              この本で印象に残ったのは、自己紹介を「なんとなく話すもの」ではなく、
+              相手に伝わり、次のご縁や仕事につながるように仕込むという考え方です。
+            </p>
+            <p>
+              「仕込む」とは、うまく見せるテクニックではなく、自分の経験や価値が、必要な人に届くように環境を整えること。
+              認知から感情へ、そして仕事へ。その流れを偶然に任せず、自分で整えていく大切さを感じました。
+            </p>
+            <p>
+              自己紹介をただの挨拶で終わらせたくない人に、ぜひ読んでほしい一冊です。
+            </p>
+            <p class="voice-source">西川友子さん（講演家・著者）</p>
+          </article>
+
+          <article class="voice-card">
+            <h3 class="voice-title">鮨ワークショップ、本当に楽しい！</h3>
+            <p class="voice-quote">
+              感動体験をシェアできるスキルが身につくことは、幸せの循環を生むんだなあと改めて思いました。
+            </p>
+            <p>
+              以前、まさやさん主催の鮨ワークショップに参加させていただきました。
+              最初はイメージトレーニングをしていたのですが、実際は全然握ることが出来ず。
+              しかし、2時間ほどのレクチャーで見違えるように上手くなりました。
+            </p>
+            <p>
+              翌日、家族で娘と妻とみんなで、教わったことを思い出しながら鮨を握ってみました。
+              とても楽しい時間を過ごすことが出来ました。
+            </p>
+            <p>
+              これからたくさんの方が体験し、きっとまさやさん達の活躍の場が広がっていくことでしょう。
+              みなさんぜひ、一度は受けてみてください。
+            </p>
+            <p class="voice-source">福田基弘さん（株式会社ふたつぶ / Takumi inc.代表取締役）</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -912,7 +971,6 @@
               本書を読んだ方限定で、「シャリ玉の感覚」と「握りの基礎」がわかる読者限定動画をご用意しています。
               酢飯の詳しいレシピやネタの仕込みではなく、まず一貫握るときに大切な“感覚”を知るための入門動画です。
             </p>
-            <a class="button" href="https://amzn.asia/d/0doFIznO">読者限定動画を受け取る方法を見る</a>
           </div>
         </div>
       </div>
@@ -934,9 +992,6 @@
             <div class="fit-card">肩書きや実績だけでは印象に残りにくい士業・コンサル・講師</div>
             <div class="fit-card">売り込みではなく、自然に覚えてもらえる出会いが欲しい人</div>
             <div class="fit-card">自分の仕事や思想を、言葉だけでなく体験として伝えたい人</div>
-          </div>
-          <div class="section-cta">
-            <a class="button" href="https://amzn.asia/d/0doFIznO">この本が自分向けか確認する</a>
           </div>
         </div>
       </div>
