@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3時間で鮨が握れる実践講座 | 鮨まさや</title>
+  <meta name="description" content="鮨を料理ではなく、ご縁を深めるコミュニケーションツールとして学ぶ。経営者・個人事業主・クリエイターのための、3時間実践講座。">
+  <style>
+    :root {
+      --sumi: #12110f;
+      --ink: #2f2924;
+      --text: #463d35;
+      --muted: #766c61;
+      --paper: #fffaf1;
+      --paper-2: #f2eadc;
+      --white: #fffdf8;
+      --line: rgba(47, 41, 36, 0.18);
+      --accent: #9d2d24;
+      --accent-dark: #7d211b;
+      --cta: #fa6e78;
+      --cta-dark: #e95b66;
+      --moss: #435348;
+      --gold: #b89250;
+      --max: 1120px;
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      --sans: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.9;
+      letter-spacing: 0;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    .serif {
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 40;
+      background: rgba(18, 17, 15, 0.86);
+      backdrop-filter: blur(10px);
+      color: var(--white);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: rgba(255, 253, 248, 0.74);
+      font-size: 13px;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 24px;
+      border: 1px solid var(--cta);
+      border-radius: 6px;
+      background: var(--cta);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--cta-dark);
+      border-color: var(--cta-dark);
+      box-shadow: 0 12px 24px rgba(18, 17, 15, 0.14);
+    }
+
+    .nav-cta {
+      min-height: 38px;
+      padding: 8px 14px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 94vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--sumi);
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 48% center;
+      filter: brightness(0.68);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(18, 17, 15, 0.9) 0%, rgba(18, 17, 15, 0.68) 42%, rgba(18, 17, 15, 0.22) 100%),
+        linear-gradient(180deg, rgba(18, 17, 15, 0.16) 0%, rgba(18, 17, 15, 0.32) 55%, rgba(18, 17, 15, 0.92) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 150px 0 86px;
+    }
+
+    .kicker,
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 840px;
+      margin-bottom: 26px;
+      color: var(--white);
+      font-size: 72px;
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin-bottom: 30px;
+      color: rgba(255, 253, 248, 0.86);
+      font-size: 20px;
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .microcopy {
+      max-width: 700px;
+      margin: 16px 0 0;
+      color: rgba(255, 253, 248, 0.68);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .section {
+      position: relative;
+      padding: 112px 20px;
+      scroll-margin-top: 76px;
+    }
+
+    .section.dark {
+      background: var(--sumi);
+      color: rgba(255, 253, 248, 0.84);
+    }
+
+    .section.warm { background: var(--paper-2); }
+    .section.moss { background: var(--moss); color: rgba(255, 253, 248, 0.88); }
+
+    .wrap {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+    }
+
+    .narrow {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 72px;
+      align-items: center;
+    }
+
+    .split.reverse {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    }
+
+    .section-title {
+      margin-bottom: 28px;
+      color: var(--ink);
+      font-size: 38px;
+      line-height: 1.45;
+      letter-spacing: 0;
+    }
+
+    .dark .section-title,
+    .moss .section-title { color: var(--white); }
+
+    .lead {
+      font-size: 20px;
+      line-height: 2;
+      color: var(--ink);
+    }
+
+    .dark .lead,
+    .moss .lead { color: rgba(255, 253, 248, 0.9); }
+
+    .body-copy {
+      margin-bottom: 0;
+      font-size: 16px;
+      line-height: 2.05;
+    }
+
+    .body-copy strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .dark .body-copy strong,
+    .moss .body-copy strong { color: var(--white); }
+
+    .photo {
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--sumi);
+      box-shadow: 0 22px 50px rgba(18, 17, 15, 0.18);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .point-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .point {
+      min-height: 172px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.68);
+    }
+
+    .point h3 {
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .point p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .dark .point {
+      border-color: rgba(255, 253, 248, 0.16);
+      background: rgba(255, 253, 248, 0.06);
+    }
+
+    .dark .point h3 { color: var(--white); }
+    .dark .point p { color: rgba(255, 253, 248, 0.72); }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      min-height: 84px;
+      padding: 22px 22px 20px 62px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .steps li::before {
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      top: 22px;
+      left: 20px;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .list-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 38px;
+    }
+
+    .list-box {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .list-box h3 {
+      margin-bottom: 18px;
+      color: var(--ink);
+      font-size: 20px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .check-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.86em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .video-shell {
+      margin-top: 36px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 253, 248, 0.16);
+      border-radius: 8px;
+      background: #000;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 62px;
+      align-items: center;
+    }
+
+    .profile-photo {
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--sumi);
+      box-shadow: 0 22px 50px rgba(18, 17, 15, 0.18);
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      color: var(--accent);
+      font-weight: 700;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .text-link::after { content: "→"; }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 34px;
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .info-table th,
+    .info-table td {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.8;
+    }
+
+    .info-table th {
+      width: 28%;
+      color: var(--ink);
+      font-weight: 700;
+      background: rgba(67, 83, 72, 0.08);
+    }
+
+    .info-table tr:last-child th,
+    .info-table tr:last-child td { border-bottom: 0; }
+
+    .notice {
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      background: var(--white);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--text);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 20px 22px;
+      color: var(--ink);
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 22px 22px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .final {
+      position: relative;
+      overflow: hidden;
+      background: var(--sumi);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .final::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(18, 17, 15, 0.82), rgba(18, 17, 15, 0.9)),
+        url("assets/final-bg.jpg") center / cover no-repeat;
+      opacity: 0.84;
+    }
+
+    .final .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-title {
+      margin-bottom: 24px;
+      color: var(--white);
+      font-size: 44px;
+      line-height: 1.45;
+    }
+
+    .final .lead,
+    .final .body-copy,
+    .final .microcopy {
+      color: rgba(255, 253, 248, 0.9);
+      text-shadow: 0 1px 18px rgba(0, 0, 0, 0.44);
+    }
+
+    .final .microcopy {
+      color: rgba(255, 253, 248, 0.72);
+    }
+
+    .footer {
+      padding: 34px 20px;
+      background: #0c0b0a;
+      color: rgba(255, 253, 248, 0.66);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer a { text-decoration: underline; text-underline-offset: 3px; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 720ms ease, transform 720ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.button) { display: none; }
+      h1 { font-size: 52px; }
+      .hero-copy { font-size: 18px; }
+      .section { padding: 86px 18px; }
+      .split,
+      .split.reverse,
+      .profile {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+      .point-grid,
+      .steps,
+      .list-grid { grid-template-columns: 1fr; }
+      .photo img { min-height: 320px; }
+      .profile-photo img { height: auto; max-height: 640px; }
+    }
+
+    @media (max-width: 560px) {
+      .nav-inner { width: min(100% - 24px, var(--max)); min-height: 62px; }
+      .brand { font-size: 13px; }
+      .nav-cta { padding: 7px 10px; font-size: 12px; }
+      .hero { min-height: 90vh; }
+      .hero-content { width: min(100% - 28px, var(--max)); padding: 118px 0 56px; }
+      h1 { font-size: 40px; line-height: 1.18; }
+      .hero-copy { font-size: 16px; line-height: 1.9; }
+      .button { width: 100%; padding-inline: 16px; }
+      .section-title { font-size: 30px; }
+      .lead { font-size: 18px; }
+      .point,
+      .list-box { padding: 24px 20px; }
+      .steps li { padding-right: 18px; }
+      .info-table,
+      .info-table tbody,
+      .info-table tr,
+      .info-table th,
+      .info-table td {
+        display: block;
+        width: 100%;
+      }
+      .info-table th { padding-bottom: 6px; }
+      .info-table td { padding-top: 8px; }
+      .final-title { font-size: 32px; }
+      .footer-inner { display: block; }
+      .footer-links { margin-top: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button,
+      .reveal {
+        transition: none;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">鮨まさや</a>
+      <nav class="nav-links" aria-label="ページ内ナビゲーション">
+        <a href="#reason">なぜ鮨なのか</a>
+        <a href="#voice">受講者の声</a>
+        <a href="#info">開催概要</a>
+        <a class="button nav-cta" href="https://mosh.jp/services/370938?openExternalBrowser=1">問い合わせる</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-img" src="assets/nigiri-hands.jpg" alt="鮨を握る手元">
+      <div class="hero-content">
+        <p class="kicker">3時間で鮨が握れる実践講座</p>
+        <h1 id="hero-title" class="serif">名刺交換よりも、<br>鮨を握れ。</h1>
+        <p class="hero-copy">
+          鮨を料理ではなく、<br>
+          ご縁を深めるコミュニケーションツールとして学ぶ。<br>
+          経営者・個人事業主・クリエイターのための、3時間実践講座。
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="https://mosh.jp/services/370938?openExternalBrowser=1">MOSHで講座について問い合わせる</a>
+        </div>
+        <p class="microcopy">
+          現在、開催日は個別に調整しています。受講を希望される方は、MOSHページ下部の「クリエイターに問い合わせる」よりご連絡ください。日程が決まり次第、MOSH上でお申し込みいただけます。
+        </p>
+      </div>
+    </section>
+
+    <section id="reason" class="section warm">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Why sushi</p>
+          <h2 class="section-title serif">なぜ、経営者・クリエイターが鮨を握るのか</h2>
+          <p class="lead">
+            どれだけ良いサービスでも、まず興味を持ってもらえなければ届きません。
+          </p>
+          <p class="body-copy">
+            そして、最後に選ばれる理由は、サービス内容だけではなく「この人から買いたい」と思われること。<br><br>
+            その人らしさは、説明ではなく体験で伝わります。<br>
+            鮨は、その入口になります。
+          </p>
+        </div>
+        <figure class="photo" aria-label="講座で鮨を握る様子">
+          <img src="assets/hands-lesson.jpeg" alt="受講者が鮨を握っている手元">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split reverse">
+        <figure class="photo">
+          <img src="assets/oku.jpg" alt="握った鮨を置く手元">
+        </figure>
+        <div>
+          <p class="eyebrow">Communication</p>
+          <h2 class="section-title serif">鮨は、最強のコミュニケーションツールである</h2>
+          <p class="body-copy">
+            鮨には、会話が生まれる流れがあります。<br><br>
+            手元を見る。握る。渡す。食べる。感想を交わす。<br><br>
+            名刺交換では生まれにくい間が、一貫の鮨を通じて自然に生まれます。肩書きではなく、人柄が伝わる。説明ではなく、ふるまいが伝わる。だから鮨は、経営者やクリエイターにとって強いコミュニケーションツールになります。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="eyebrow">You will learn</p>
+          <h2 class="section-title serif">この講座で身につくこと</h2>
+          <p class="lead">
+            この講座で学ぶのは、プロの技術ではありません。人に鮨をふるまえる基礎です。
+          </p>
+        </div>
+        <div class="point-grid">
+          <div class="point">
+            <h3>握りの基本</h3>
+            <p>シャリの扱い方、ネタの置き方、力の入れ方など、はじめての方でも実践しやすい順番で学びます。</p>
+          </div>
+          <div class="point">
+            <h3>人に出す所作</h3>
+            <p>握るだけで終わらせず、目の前の人に一貫を出すときの間合いやふるまいまで扱います。</p>
+          </div>
+          <div class="point">
+            <h3>場のつくり方</h3>
+            <p>家族、仲間、仕事相手にふるまうとき、会話が自然に生まれる場づくりを体験します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Not professional training</p>
+          <h2 class="section-title serif">プロを目指す講座ではありません</h2>
+          <p class="body-copy">
+            3時間でプロにはなれません。<br>
+            この講座も、鮨職人養成講座ではありません。<br><br>
+            目的は、完璧な握りを習得することではなく、人に鮨をふるまえる基礎を習得することです。<br><br>
+            「鮨を握れる人」になるというより、「鮨を通じて、関係を深められる人」になる。その最初の一歩を体験します。
+          </p>
+        </div>
+        <div>
+          <p class="eyebrow">3 hours</p>
+          <h2 class="section-title serif">3時間の流れ</h2>
+          <ol class="steps">
+            <li>鮨がコミュニケーションツールになる理由</li>
+            <li>シャリ・ネタ・道具の基本</li>
+            <li>握りの実演</li>
+            <li>実際に握る練習</li>
+            <li>人にふるまう体験</li>
+            <li>質問・活用相談</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section moss">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="eyebrow">After lesson</p>
+          <h2 class="section-title serif">受講後にできること</h2>
+          <p class="lead">
+            自分のサービスを説明する前に、自分という人に興味を持ってもらう。
+          </p>
+          <p class="body-copy">
+            家族にふるまう。仲間内の集まりで握る。コミュニティイベントで出す。会食や紹介の場で、記憶に残る時間をつくる。<br><br>
+            そのための体験を、自分の手でつくれるようになります。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice" class="section dark">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="eyebrow">Voice</p>
+          <h2 class="section-title serif">受講された方の声</h2>
+          <p class="body-copy">
+            実際に講座を受けた方の声を、動画でご覧いただけます。3時間の講座で何を感じ、どんな変化があったのか。受講前の不安や、受講後の実感をそのままお話しいただいています。
+          </p>
+        </div>
+        <div class="video-shell">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/FrdP04iolco" title="3時間で鮨が握れる実践講座を受けた方のリアルな声" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Philosophy</p>
+          <h2 class="section-title serif">鮨まさやの考え方</h2>
+          <p class="body-copy">
+            鮨まさやが大切にしているのは、鮨を通じて分かち合い、ご縁を紡ぐことです。<br><br>
+            鮨を、特別な料理として提供するだけでなく、人と人の関係を深めるおもてなしとして届ける。<br><br>
+            この考え方は、著書『経営者こそ、鮨を握れ』にもつながっています。本で世界観を知ってから考えたい方は、そちらもご覧ください。
+          </p>
+          <a class="text-link" href="https://sushi.en-moto.com/kindle-book/">著書『経営者こそ、鮨を握れ』を見る</a>
+        </div>
+        <figure class="photo">
+          <img src="assets/nigiri-hands.jpg" alt="鮨を握る手元のアップ">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap profile">
+        <figure class="profile-photo">
+          <img src="assets/masaya.jpg" alt="鮨まさや主宰 後藤将哉">
+        </figure>
+        <div>
+          <p class="eyebrow">Profile</p>
+          <h2 class="section-title serif">講師紹介：後藤 将哉</h2>
+          <p class="body-copy">
+            全くの未経験から鮨職人の道へ。修行わずか3カ月で、8席の会員制鮨屋の大将に抜擢され、来店人数に対する次回予約率が120％を超えるなど、鮨を通じた関係づくりを現場で体現してきました。<br><br>
+            その後独立。現在は、プロデューサーとして活動しながら、鮨を通じて人と人のご縁をつなぐ「鮨まさや」を主宰。<br><br>
+            鮨を、特別な料理として提供するだけでなく、人と人の関係を深めるおもてなしとして届けています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="eyebrow">Target</p>
+          <h2 class="section-title serif">こんな方へ</h2>
+        </div>
+        <div class="list-grid">
+          <div class="list-box">
+            <h3>向いている方</h3>
+            <ul class="check-list">
+              <li>経営者・個人事業主の方</li>
+              <li>MOSHクリエイターの方</li>
+              <li>講座・体験・コミュニティを届けている方</li>
+              <li>人を紹介する機会が多い方</li>
+              <li>会食や交流の場を印象に残る時間にしたい方</li>
+              <li>自分の人柄や価値観を、体験として伝えたい方</li>
+            </ul>
+          </div>
+          <div class="list-box">
+            <h3>合わない方</h3>
+            <ul class="check-list">
+              <li>プロの鮨職人修行を求める方</li>
+              <li>高級店の技術を完全再現したい方</li>
+              <li>料理スキルだけを学びたい方</li>
+              <li>短時間で完璧な握りを求める方</li>
+              <li>単なる話題づくりだけを求める方</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="info" class="section">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="eyebrow">Information</p>
+          <h2 class="section-title serif">開催概要</h2>
+        </div>
+        <table class="info-table">
+          <tbody>
+            <tr><th>所要時間</th><td>3時間</td></tr>
+            <tr><th>対象</th><td>経営者・個人事業主・クリエイターなど</td></tr>
+            <tr><th>形式</th><td>少人数制</td></tr>
+            <tr><th>場所</th><td>都内・原宿</td></tr>
+            <tr><th>価格</th><td>55,000円（税込）</td></tr>
+            <tr><th>支払い方法</th><td>MOSH決済予定</td></tr>
+            <tr><th>持ち物</th><td>詳細は日程調整時にご案内します。</td></tr>
+            <tr><th>キャンセルポリシー</th><td>決済前にMOSHページおよび個別案内でご確認ください。</td></tr>
+            <tr><th>申込方法</th><td>現時点では、MOSHページ下部の「クリエイターに問い合わせる」よりご連絡ください。</td></tr>
+          </tbody>
+        </table>
+        <div class="notice">
+          現在、開催日は個別に調整しています。受講を希望される方は、MOSHページ下部の「クリエイターに問い合わせる」よりご連絡ください。日程が決まり次第、MOSH上でお申し込みいただけます。
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title serif">よくあるご質問</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>初心者でも大丈夫ですか？</summary>
+            <p>大丈夫です。プロの所作を完全に覚える講座ではなく、初めての方でも人に鮨をふるまえる基礎を体験できるように進めます。</p>
+          </details>
+          <details>
+            <summary>料理が苦手でも参加できますか？</summary>
+            <p>参加できます。難しい技術から入るのではなく、シャリの扱い方や力加減など、実践しやすい順番で体験します。</p>
+          </details>
+          <details>
+            <summary>3時間で本当に握れるようになりますか？</summary>
+            <p>3時間でプロにはなれません。ただし、人に鮨をふるまうための基礎は身に付けられるように設計しています。</p>
+          </details>
+          <details>
+            <summary>仕事の場でどう活用できますか？</summary>
+            <p>会食、紹介、コミュニティイベント、少人数の集まりなどで、記憶に残る体験をつくるきっかけになります。</p>
+          </details>
+          <details>
+            <summary>一人で参加できますか？</summary>
+            <p>参加できます。少人数制で進めるため、お一人でも自然に参加しやすい形です。</p>
+          </details>
+          <details>
+            <summary>開催日程はどう決まりますか？</summary>
+            <p>現在は個別に調整しています。MOSHページ下部の「クリエイターに問い合わせる」よりご希望をお知らせください。</p>
+          </details>
+          <details>
+            <summary>MOSHではどこから問い合わせればいいですか？</summary>
+            <p>MOSHページ下部にある「クリエイターに問い合わせる」ボタンからご連絡ください。</p>
+          </details>
+          <details>
+            <summary>アレルギー対応はできますか？</summary>
+            <p>内容によって対応可否が変わるため、事前にお問い合わせください。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final">
+      <div class="wrap narrow">
+        <h2 class="final-title serif">名刺ではなく、<br>記憶に残る一貫を。</h2>
+        <p class="lead">
+          鮨を握ることは、特別な人だけの技術ではありません。目の前の人とご縁を深めるための、新しい“おもてなし”です。
+        </p>
+        <p class="body-copy">
+          自分のサービスを説明する前に、自分という人に興味を持ってもらう入口をつくる。
+        </p>
+        <div class="hero-actions" style="justify-content: center; margin-top: 30px;">
+          <a class="button" href="https://mosh.jp/services/370938?openExternalBrowser=1">MOSHで講座について問い合わせる</a>
+        </div>
+        <p class="microcopy" style="margin-left: auto; margin-right: auto;">
+          現在、開催日は個別に調整しています。受講を希望される方は、MOSHページ下部の「クリエイターに問い合わせる」よりご連絡ください。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>Copyright © sushi masaya</div>
+      <div class="footer-links">
+        <a href="https://sub.masaya-goto.com/p/privacy_policy_sushi">プライバシーポリシー</a>
+        <a href="https://sub.masaya-goto.com/p/sctl_sushi">特定商取引法に基づく表記</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const revealTargets = document.querySelectorAll(
+      ".section .wrap, .point, .list-box, .photo, .profile-photo, .video-shell, .info-table, .notice, details"
+    );
+
+    revealTargets.forEach((target) => target.classList.add("reveal"));
+
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+
+      revealTargets.forEach((target) => observer.observe(target));
+    } else {
+      revealTargets.forEach((target) => target.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
