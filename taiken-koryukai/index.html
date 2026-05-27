@@ -163,6 +163,7 @@
       color: rgba(255, 250, 242, 0.88);
       font-size: clamp(17px, 2.1vw, 23px);
       line-height: 1.9;
+      overflow-wrap: anywhere;
     }
 
     .hero-actions {
@@ -673,7 +674,7 @@
       }
 
       h1 {
-        font-size: clamp(36px, 11vw, 62px);
+        font-size: clamp(34px, 10vw, 54px);
       }
 
       .intro,
@@ -720,6 +721,17 @@
         min-height: 54px;
       }
 
+      .hero-copy {
+        font-size: 16px;
+        line-height: 1.78;
+        max-width: 20em;
+      }
+
+      .cta-note {
+        line-height: 1.7;
+        max-width: 26em;
+      }
+
       .pc-only {
         display: none;
       }
@@ -753,12 +765,12 @@
   </nav>
 
   <header id="top" class="hero">
-    <img class="hero-img" src="../top.png" alt="鮨を握る手元">
+    <img class="hero-img" src="assets/fv.JPG" alt="鮨握り体験交流会で参加者と主催者が笑顔で話している様子">
     <div class="hero-content">
-      <p class="kicker">見て、握って、食べて、話す。</p>
-      <h1 class="serif"><span class="pc-only">鮨を握ると、<br>会話がほどける。</span><span class="sp-only">鮨を握ると、<br>会話がほどける。</span></h1>
+      <p class="kicker">少人数の鮨握り体験交流会</p>
+      <h1 class="serif"><span class="pc-only">名刺交換より、<br>鮨を握る方が<br>話が早い。</span><span class="sp-only">名刺交換より、<br>鮨を握る方が<br>話が早い。</span></h1>
       <p class="hero-copy">
-        初対面でも、名刺交換より先に同じシャリを触る。見よう見まねで握って、食べて、感想を交わす。鮨をきっかけに、人との距離が自然に近づく少人数の体験交流会です。
+        初対面でも、同じシャリを触り、見よう見まねで握って、食べて、感想を交わす。自己紹介だけでは生まれにくい会話が、鮨をきっかけに自然に始まる交流会です。
       </p>
       <div class="hero-actions">
         <a class="button primary" href="https://sub.masaya-goto.com/line/open/FQ2cCNREUHMg">LINEで開催案内を受け取る</a>
@@ -769,28 +781,28 @@
   </header>
 
   <main>
-    <section id="about" class="section photo-light" style="--bg: url('../sushi-retreat0428/sushi-retreat.jpg');">
+    <section id="about" class="section photo-light" style="--bg: url('assets/IMG_7870.JPG');">
       <div class="wrap intro">
         <div class="photo-frame">
-          <img src="../concept.jpg" alt="完成した握り鮨">
+          <img src="assets/IMG_7875.JPG" alt="主催者が参加者に鮨の握り方を伝えている様子">
         </div>
         <div>
           <p class="eyebrow">ABOUT</p>
-          <h2 class="section-title serif">鮨の技術を学ぶ前に、<br>鮨で人とつながる。</h2>
-          <p class="quote">うまく握れるかより、同じ体験を共有することが、この会の中心です。</p>
+          <h2 class="section-title serif">うまく話すより、<br>同じ一貫を握る。</h2>
+          <p class="quote">鮨の技術を競う会ではありません。共通の体験から、自然に会話が始まる場です。</p>
           <div class="body-copy">
             <p>この会は、鮨職人を目指すための講座ではありません。鮨を握ったことがない人でも、目の前で見て、試して、自分で握った一貫を食べるところまで体験できます。</p>
-            <p>シャリの温かさ、ネタの香り、隣の人の手元。「ちょっと強く握りすぎたかも」という一言から会話が始まる。食事会でも勉強会でもない、手を動かすからこそ生まれる交流の場です。</p>
+            <p>シャリの温かさ、ネタの香り、隣の人の手元。「ちょっと強く握りすぎたかも」という一言から会話が始まる。名刺交換会でも食事会でもない、手を動かすからこそ距離が縮まる交流の場です。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section warm photo-light" style="--bg: url('../concept.jpg');">
+    <section class="section warm photo-light" style="--bg: url('assets/fv.JPG');">
       <div class="wrap">
         <p class="eyebrow">POINT</p>
         <h2 class="section-title serif">この会で持ち帰れるもの</h2>
-        <p class="lead">目的は「鮨が上手くなること」だけではありません。鮨を握る体験を通じて、人と打ち解ける感覚を持ち帰っていただく会です。</p>
+        <p class="lead">目的は「鮨が上手くなること」だけではありません。初対面でも会話が始まりやすくなる体験と、鮨まさやの場の空気を持ち帰っていただく会です。</p>
         <div class="cards">
           <article class="card">
             <div class="card-num">01</div>
@@ -799,8 +811,8 @@
           </article>
           <article class="card">
             <div class="card-num">02</div>
-            <h3>会話のきっかけが生まれる</h3>
-            <p>同じネタとシャリを使っても、握る人によって味や形が変わります。その違いが、そのまま自然な会話になります。</p>
+            <h3>自己紹介に頼らず話せる</h3>
+            <p>同じネタとシャリを使っても、握る人によって味や形が変わります。その違いが、そのまま自然な会話の入口になります。</p>
           </article>
           <article class="card">
             <div class="card-num">03</div>
@@ -811,7 +823,7 @@
       </div>
     </section>
 
-    <section id="flow" class="section dark photo-dark" style="--bg: url('../SCENE1.png');">
+    <section id="flow" class="section dark photo-dark" style="--bg: url('assets/IMG_7875.JPG');">
       <div class="wrap">
         <p class="eyebrow">FLOW</p>
         <h2 class="section-title serif">当日の流れ</h2>
@@ -847,14 +859,14 @@
         <h2 class="section-title serif">実際の雰囲気</h2>
         <p class="lead">かしこまった講座ではなく、鮨を囲んで手を動かす時間です。一人参加でも、共通の体験があるので会話の入口が作りやすくなります。</p>
         <div class="gallery">
-          <img src="../sushi-retreat0428/sushi-retreat.jpg" alt="参加者が鮨を握る手元">
-          <img src="../sushi-retreat0428/top.JPG" alt="参加者が握った鮨">
-          <img src="../sushi-retreat0428/profile.jpeg" alt="鮨まさやの主催メンバー">
+          <img src="assets/IMG_7870.JPG" alt="参加者が鮨を握りながら交流している様子">
+          <img src="assets/fv.JPG" alt="鮨握り体験交流会で笑顔が生まれている様子">
+          <img src="assets/IMG_7875.JPG" alt="主催者と参加者が鮨を握っている手元">
         </div>
       </div>
     </section>
 
-    <section class="section dark photo-dark" style="--bg: url('../sushi-retreat0428/top.JPG');">
+    <section class="section dark photo-dark" style="--bg: url('assets/IMG_7870.JPG');">
       <div class="wrap">
         <p class="eyebrow">VOICE</p>
         <h2 class="section-title serif">体験した方の声</h2>
@@ -865,7 +877,7 @@
       </div>
     </section>
 
-    <section id="info" class="section warm photo-light" style="--bg: url('../top.png');">
+    <section id="info" class="section warm photo-light" style="--bg: url('assets/IMG_7875.JPG');">
       <div class="wrap info-grid">
         <div>
           <p class="eyebrow">INFORMATION</p>
@@ -881,6 +893,14 @@
             <div class="info-row">
               <div class="info-label">日程</div>
               <div class="info-value">次回開催が決まり次第、公式LINEでご案内</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">場所</div>
+              <div class="info-value">開催ごとに公式LINEでご案内</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">参加費</div>
+              <div class="info-value">開催内容にあわせて公式LINEでご案内</div>
             </div>
             <div class="info-row">
               <div class="info-label">内容</div>
@@ -902,7 +922,7 @@
       </div>
     </section>
 
-    <section id="fit" class="section photo-light" style="--bg: url('../SCENE3.jpeg');">
+    <section id="fit" class="section photo-light" style="--bg: url('assets/fv.JPG');">
       <div class="wrap">
         <p class="eyebrow">FIT</p>
         <h2 class="section-title serif">向いている方・向いていない方</h2>
@@ -923,14 +943,14 @@
               <li>プロ向けの技術指導を期待している方</li>
               <li>食べるだけの食事会を探している方</li>
               <li>大人数の名刺交換会のような場を求めている方</li>
-              <li>開催日・場所・条件が未確定の段階では検討しづらい方</li>
+              <li>日程や条件を確認する前に、その場で予約確定まで進めたい方</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section dark photo-dark" style="--bg: url('../SCENE2.png');">
+    <section class="section dark photo-dark" style="--bg: url('assets/IMG_7870.JPG');">
       <div class="wrap">
         <p class="eyebrow">FAQ</p>
         <h2 class="section-title serif">よくあるご質問</h2>
@@ -948,6 +968,10 @@
             <p>この会は技術習得を目的にした講座ではありません。より深く学びたい方には、別途3時間の実践講座をご案内できる場合があります。</p>
           </article>
           <article class="faq-item">
+            <h3>場所や参加費はどこで確認できますか？</h3>
+            <p>開催ごとに内容が変わるため、次回の日程、場所、参加費、空き状況は公式LINEでご案内します。案内を見てから参加するか判断できます。</p>
+          </article>
+          <article class="faq-item">
             <h3>LINE登録後は何が届きますか？</h3>
             <p>次回開催が決まった際の案内、空き状況、参加条件の確認をお送りします。参加を強制するものではありません。</p>
           </article>
@@ -957,16 +981,16 @@
 
     <section class="section dark">
       <div class="wrap profile">
-        <img src="../deshinokai/assets/photos/masaya.jpg" alt="鮨まさや 大将 後藤雅也">
+        <img src="../deshinokai/assets/photos/masaya.jpg" alt="鮨まさや 大将 後藤将哉">
         <div>
           <p class="eyebrow">HOST</p>
-          <h2 class="section-title serif">鮨まさや<br>後藤 雅也</h2>
+          <h2 class="section-title serif">鮨まさや<br>後藤 将哉</h2>
           <p class="lead">13年間の会社員生活を経て、未経験から鮨職人へ。紹介制の鮨会「鮨まさや」を主宰し、鮨を通じて分かち合い、ご縁を紡ぐ場をつくってきました。この交流会では、鮨を握る技術だけでなく、握ることで人との距離が近づく体験を大切にしています。</p>
         </div>
       </div>
     </section>
 
-    <section id="entry" class="section final-cta photo-light" style="--bg: url('../concept.jpg');">
+    <section id="entry" class="section final-cta photo-light" style="--bg: url('assets/fv.JPG');">
       <div class="wrap">
         <p class="eyebrow">ENTRY</p>
         <h2 class="section-title serif">次回の開催案内を<br>LINEで受け取る</h2>
