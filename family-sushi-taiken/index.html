@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>親子で鮨を握る体験講座 | 鮨まさや</title>
+  <meta name="description" content="2026年8月2日、北参道で開催。包丁を使わず、親子でシャリに触れ、鮨を握ってその場で味わう少人数の体験講座です。">
+  <meta property="og:title" content="親子で鮨を握る体験講座 | 鮨まさや">
+  <meta property="og:description" content="8月2日（日）19:00開始。事前にご案内した親子向けの申込確認ページです。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sushi.en-moto.com/practical-course/assets/nigiri-hands.jpg">
+  <style>
+    :root {
+      --sumi: #12110f;
+      --ink: #2f2924;
+      --text: #463d35;
+      --muted: #766c61;
+      --paper: #fffaf1;
+      --paper-2: #f2eadc;
+      --white: #fffdf8;
+      --line: rgba(47, 41, 36, 0.18);
+      --accent: #9d2d24;
+      --accent-dark: #7d211b;
+      --gold: #b89250;
+      --moss: #435348;
+      --max: 1080px;
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      --sans: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.9;
+      letter-spacing: 0;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    .serif {
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 40;
+      background: rgba(18, 17, 15, 0.88);
+      backdrop-filter: blur(10px);
+      color: var(--white);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 68px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: rgba(255, 253, 248, 0.74);
+      font-size: 13px;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 24px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      box-shadow: 0 12px 24px rgba(18, 17, 15, 0.14);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .button.secondary:hover {
+      color: var(--white);
+      background: var(--accent);
+    }
+
+    .button.pending {
+      border-color: rgba(70, 61, 53, 0.28);
+      background: rgba(70, 61, 53, 0.1);
+      color: var(--muted);
+      pointer-events: none;
+      box-shadow: none;
+    }
+
+    .nav-cta {
+      min-height: 38px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92dvh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--sumi);
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 48% center;
+      filter: brightness(0.7);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(18, 17, 15, 0.9) 0%, rgba(18, 17, 15, 0.66) 44%, rgba(18, 17, 15, 0.24) 100%),
+        linear-gradient(180deg, rgba(18, 17, 15, 0.12) 0%, rgba(18, 17, 15, 0.38) 58%, rgba(18, 17, 15, 0.94) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 128px 0 78px;
+    }
+
+    .kicker,
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 24px;
+      color: var(--white);
+      font-size: clamp(42px, 6.4vw, 78px);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin-bottom: 28px;
+      color: rgba(255, 253, 248, 0.88);
+      font-size: clamp(17px, 2.1vw, 21px);
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .microcopy {
+      max-width: 700px;
+      margin: 16px 0 0;
+      color: rgba(255, 253, 248, 0.68);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .section {
+      position: relative;
+      padding: 96px 20px;
+      scroll-margin-top: 74px;
+    }
+
+    .section.dark {
+      background: var(--sumi);
+      color: rgba(255, 253, 248, 0.84);
+    }
+
+    .section.warm { background: var(--paper-2); }
+    .section.moss { background: var(--moss); color: rgba(255, 253, 248, 0.88); }
+
+    .wrap {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+    }
+
+    .narrow {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      max-width: 860px;
+      margin-bottom: 22px;
+      color: var(--ink);
+      font-size: clamp(30px, 3.9vw, 44px);
+      line-height: 1.42;
+      text-wrap: balance;
+      line-break: strict;
+    }
+
+    .dark .section-title,
+    .moss .section-title { color: var(--white); }
+
+    .lead {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--text);
+      font-size: 17px;
+      line-height: 2;
+      text-wrap: pretty;
+      line-break: strict;
+    }
+
+    .dark .lead,
+    .moss .lead { color: rgba(255, 253, 248, 0.78); }
+
+    .info-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      width: min(var(--max), calc(100% - 32px));
+      margin: -44px auto 0;
+      position: relative;
+      z-index: 4;
+      background: rgba(255, 253, 248, 0.26);
+      box-shadow: 0 22px 50px rgba(18, 17, 15, 0.16);
+    }
+
+    .info-item {
+      min-height: 118px;
+      padding: 22px;
+      background: var(--white);
+    }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .info-value {
+      display: block;
+      margin-top: 8px;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: clamp(34px, 5vw, 58px);
+      align-items: center;
+    }
+
+    .photo {
+      overflow: hidden;
+      border-radius: 6px;
+      background: var(--paper-2);
+      box-shadow: 0 22px 46px rgba(18, 17, 15, 0.16);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .flow {
+      display: grid;
+      gap: 0;
+      margin-top: 42px;
+      border-top: 1px solid var(--line);
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 26px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .time {
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .flow-row h3 {
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-size: 19px;
+    }
+
+    .flow-row p {
+      margin: 0;
+      color: var(--text);
+      line-break: strict;
+      text-wrap: pretty;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .panel {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255, 253, 248, 0.72);
+    }
+
+    .panel h3 {
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .panel p { margin-bottom: 0; }
+
+    .panel p,
+    .notice p,
+    details p,
+    .overview td {
+      line-break: strict;
+      text-wrap: pretty;
+    }
+
+    .pc-only { display: inline; }
+    .sp-only { display: none; }
+
+    .dark .panel,
+    .moss .panel {
+      border-color: rgba(255, 253, 248, 0.18);
+      background: rgba(255, 253, 248, 0.06);
+    }
+
+    .dark .panel h3,
+    .moss .panel h3 { color: var(--white); }
+
+    .dark .panel p,
+    .moss .panel p { color: rgba(255, 253, 248, 0.76); }
+
+    .price-box {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(260px, 0.64fr);
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+
+    .main-price {
+      padding: 34px;
+      border-radius: 6px;
+      background: var(--sumi);
+      color: var(--white);
+    }
+
+    .main-price .label {
+      color: rgba(255, 253, 248, 0.62);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .main-price strong {
+      display: block;
+      margin-top: 12px;
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.1;
+    }
+
+    .main-price p {
+      margin: 18px 0 0;
+      color: rgba(255, 253, 248, 0.76);
+    }
+
+    .price-list {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--white);
+    }
+
+    .price-list dl {
+      margin: 0;
+      display: grid;
+      gap: 13px;
+    }
+
+    .price-list div {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid rgba(47, 41, 36, 0.12);
+    }
+
+    .price-list div:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .price-list dt { color: var(--muted); }
+    .price-list dd { margin: 0; color: var(--ink); font-weight: 700; white-space: nowrap; }
+
+    .policy {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 30px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .policy-item {
+      padding: 24px;
+      background: var(--white);
+    }
+
+    .policy-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .policy-item strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--accent);
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .notice {
+      margin-top: 26px;
+      padding: 24px;
+      border-left: 4px solid var(--accent);
+      background: rgba(157, 45, 36, 0.08);
+    }
+
+    .notice p {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .moss .notice p,
+    .dark .notice p {
+      color: rgba(255, 253, 248, 0.84);
+    }
+
+    .overview {
+      width: 100%;
+      margin-top: 34px;
+      border-collapse: collapse;
+      background: rgba(255, 253, 248, 0.7);
+    }
+
+    .overview th,
+    .overview td {
+      padding: 18px 20px;
+      border-top: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .overview th {
+      width: 180px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255, 253, 248, 0.76);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 18px 22px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 22px 20px;
+    }
+
+    .final {
+      text-align: center;
+      background:
+        linear-gradient(rgba(18, 17, 15, 0.84), rgba(18, 17, 15, 0.92)),
+        url("../practical-course/assets/final-bg.jpg") center / cover;
+      color: var(--white);
+    }
+
+    .final .section-title {
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: rgba(255, 253, 248, 0.78);
+    }
+
+    .footer {
+      padding: 34px 20px;
+      background: var(--sumi);
+      color: rgba(255, 253, 248, 0.62);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer a { text-decoration: underline; }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links a:not(.button) { display: none; }
+      .info-strip { grid-template-columns: repeat(2, 1fr); }
+      .split,
+      .price-box { grid-template-columns: 1fr; }
+      .grid,
+      .policy { grid-template-columns: 1fr; }
+      .photo img { min-height: 300px; }
+    }
+
+    @media (max-width: 560px) {
+      .nav-inner { width: min(100% - 24px, var(--max)); min-height: 62px; }
+      .brand { font-size: 13px; }
+      .nav-cta { padding: 7px 10px; font-size: 12px; }
+      .hero { min-height: 88dvh; }
+      .hero-content { width: min(100% - 28px, var(--max)); padding: 112px 0 54px; }
+      h1 { font-size: 40px; }
+      .hero-copy { font-size: 16px; line-height: 1.9; }
+      .button { width: 100%; padding-inline: 16px; }
+      .info-strip { width: min(100% - 24px, var(--max)); grid-template-columns: 1fr; margin-top: -28px; }
+      .info-item { min-height: auto; padding: 18px; }
+      .section { padding: 72px 16px; }
+      .section-title { font-size: 29px; line-height: 1.5; }
+      .lead { font-size: 16px; line-height: 2; }
+      .flow-row { grid-template-columns: 1fr; gap: 6px; }
+      .panel,
+      .main-price,
+      .price-list,
+      .policy-item { padding: 22px; }
+      .overview th,
+      .overview td {
+        display: block;
+        width: 100%;
+        padding: 14px 16px;
+      }
+      .overview td { padding-top: 0; }
+      .footer-inner { display: block; }
+      .footer-links { margin-top: 12px; }
+      .pc-only { display: none; }
+      .sp-only { display: inline; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+      .button:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="主要ナビゲーション">
+    <div class="nav-inner">
+      <a class="brand" href="#top">鮨まさや</a>
+      <div class="nav-links">
+        <a href="#flow">当日の流れ</a>
+        <a href="#price">料金</a>
+        <a href="#faq">確認事項</a>
+        <a class="button nav-cta" href="https://sub.masaya-goto.com/event/tBu5JIPI4Krg/register">お支払いへ</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <img class="hero-img" src="../practical-course/assets/nigiri-hands.jpg" alt="鮨を握る手元">
+    <div class="hero-content">
+      <p class="kicker">2026.8.2 SUN / KITASANDO</p>
+      <h1 class="serif">親子で鮨を握る<br>体験講座</h1>
+      <p class="hero-copy">包丁は使わず、切りつけたネタと仕込んだシャリを使って、親子で一緒に鮨を握る時間です。</p>
+      <div class="hero-actions">
+        <a class="button" href="https://sub.masaya-goto.com/event/tBu5JIPI4Krg/register">申込み・お支払いへ</a>
+        <a class="button secondary" href="#flow">当日の流れを見る</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="info-strip" aria-label="開催概要">
+    <div class="info-item">
+      <span class="info-label">日程</span>
+      <span class="info-value">2026年8月2日（日）</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">時間</span>
+      <span class="info-value">19:00開始<br>21:30終了予定</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">場所</span>
+      <span class="info-value">北参道</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">対象</span>
+      <span class="info-value">小学生以上の<br>お子さんと保護者</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="section" id="about">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">ABOUT</p>
+          <h2 class="section-title serif">食べるだけではなく、<br>親子で一緒に握る。</h2>
+          <p class="lead">今回の体験では、ネタの切りつけや難しい返しは行いません。シャリに触れ、シャリ玉を作り、ネタを乗せて脇を締める。親子で同じ手元を見ながら、握った一貫をその場で味わいます。</p>
+        </div>
+        <figure class="photo">
+          <img src="assets/oyako-nigiri.png" alt="親子で鮨を握る手元">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section warm" id="flow">
+      <div class="wrap">
+        <p class="eyebrow">FLOW</p>
+        <h2 class="section-title serif">当日の流れ</h2>
+        <p class="lead">当日の流れは目安です。20時頃に合流される方もいるため、皆さんの進み具合に合わせて臨機応変に対応します。小学生のお子さんも参加するため、難しい工程よりも「自分で握って食べる」時間を大切にします。</p>
+        <div class="flow">
+          <div class="flow-row">
+            <div class="time">19:00-19:10</div>
+            <div>
+              <h3>受付・あいさつ・安全説明</h3>
+              <p>包丁は使わず、切りつけ済みのネタを扱うことを最初に確認します。</p>
+            </div>
+          </div>
+          <div class="flow-row">
+            <div class="time">19:10-19:30</div>
+            <div>
+              <h3>シャリとネタについて知る</h3>
+              <p>シャリ切りはデモ、または少量だけ体験。フル工程ではなく、触れて分かる範囲に留めます。</p>
+            </div>
+          </div>
+          <div class="flow-row">
+            <div class="time">19:30-19:45</div>
+            <div>
+              <h3>シャリ玉を作る練習</h3>
+              <p>握る前に、手の上でシャリの形を作る練習をします。</p>
+            </div>
+          </div>
+          <div class="flow-row">
+            <div class="time">19:45-20:55</div>
+            <div>
+              <h3>親子で握る</h3>
+              <p>ネタを乗せ、脇を締める簡単な握り方を中心に進めます。難しい返しは扱いません。</p>
+            </div>
+          </div>
+          <div class="flow-row">
+            <div class="time">20:55-21:30</div>
+            <div>
+              <h3>食べる・感想を共有する</h3>
+              <p>握った鮨をその場で食べ、最後に動画または文章で感想をいただきます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="safety">
+      <div class="wrap">
+        <p class="eyebrow">SAFETY</p>
+        <h2 class="section-title serif">初めてでも、<br class="sp-only">参加しやすい形に<br class="sp-only">しています</h2>
+        <div class="grid">
+          <div class="panel">
+            <h3>包丁は使いません</h3>
+            <p>ネタは切りつけた状態で用意します。お子さんが包丁を扱う工程はありません。</p>
+          </div>
+          <div class="panel">
+            <h3>難しい返しは教えません</h3>
+            <p>今回は技術講座ではなく体験講座です。簡単な握り方に絞って進めます。</p>
+          </div>
+          <div class="panel">
+            <h3>対象は小学生以上です</h3>
+            <p>親子で同じ場に立ち、一緒に手を動かせる年齢を想定しています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section moss" id="monitor">
+      <div class="wrap split">
+        <figure class="photo">
+          <img src="../deshinokai/assets/photos/nigiri.jpg" alt="握られた鮨">
+        </figure>
+        <div>
+          <p class="eyebrow">MONITOR</p>
+          <h2 class="section-title serif">終了後に、<br class="sp-only">感想をお願いします</h2>
+          <p class="lead">今回は初開催の体験講座として、会の終了後に動画撮影のご協力、または文章で感想をいただきたいです。次回以降の改善や案内に活かします。</p>
+          <div class="notice">
+            <p>参加者による写真撮影はOKです。こちらで撮影した写真を広報利用する場合は、申込フォームで了承をいただいた方の写真のみ使用します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm" id="price">
+      <div class="wrap">
+        <p class="eyebrow">PRICE</p>
+        <h2 class="section-title serif">料金（モニター価格）</h2>
+        <p class="lead">今回ご参加予定の3組は、いずれも「父母＋子ども2人」の想定です。1組あたりの参加費は21,000円です。</p>
+        <div class="price-box">
+          <div class="main-price">
+            <span class="label">今回の参加費</span>
+            <strong>21,000円</strong>
+            <p>父母＋子ども2人で参加する場合の金額です。</p>
+          </div>
+          <div class="price-list">
+            <dl>
+              <div>
+                <dt>保護者1名＋子ども1名</dt>
+                <dd>12,000円</dd>
+              </div>
+              <div>
+                <dt>大人追加</dt>
+                <dd>+5,000円</dd>
+              </div>
+              <div>
+                <dt>子ども追加</dt>
+                <dd>+4,000円</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="policy">
+      <div class="wrap">
+        <p class="eyebrow">POLICY</p>
+        <h2 class="section-title serif">キャンセルポリシー</h2>
+        <div class="policy">
+          <div class="policy-item">
+            <span>2026年7月30日（木）以降</span>
+            <strong>50%</strong>
+          </div>
+          <div class="policy-item">
+            <span>2026年8月1日（土）以降</span>
+            <strong>80%</strong>
+          </div>
+          <div class="policy-item">
+            <span>2026年8月2日（日）当日</span>
+            <strong>100%</strong>
+          </div>
+        </div>
+        <div class="notice">
+          <p>返金金額は、決済手数料を差し引いた金額となります。主催者都合で開催が中止となった場合、参加費は全額返金されます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm" id="overview">
+      <div class="wrap">
+        <p class="eyebrow">INFO</p>
+        <h2 class="section-title serif">開催概要</h2>
+        <table class="overview">
+          <tbody>
+            <tr><th>日程</th><td>2026年8月2日（日）</td></tr>
+            <tr><th>時間</th><td>19:00開始、21:30終了予定</td></tr>
+            <tr><th>場所</th><td>北参道。詳細は申込後にご案内します。</td></tr>
+            <tr><th>対象年齢</th><td>小学生以上</td></tr>
+            <tr><th>持ち物</th><td>手ぶらで参加できます。エプロンが必要な方はご持参ください。</td></tr>
+            <tr><th>アレルギー</th><td>申込時にご申告ください。すべてに対応できるわけではない点はご了承ください。</td></tr>
+            <tr><th>写真撮影</th><td>参加者による撮影は可能です。広報利用は、申込フォームで了承を得た方のみ対象とします。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title serif">よくある確認事項</h2>
+        <div class="faq">
+          <details>
+            <summary>包丁は使いますか？</summary>
+            <p>使いません。ネタは切りつけた状態で用意します。</p>
+          </details>
+          <details>
+            <summary>シャリ切りはやりますか？</summary>
+            <p>フル工程では行いません。デモ、または少量だけ体験する形を予定しています。</p>
+          </details>
+          <details>
+            <summary>子どもだけで参加できますか？</summary>
+            <p>今回は親子で一緒に参加する体験講座です。保護者の方と一緒にご参加ください。</p>
+          </details>
+          <details>
+            <summary>写真は撮ってもいいですか？</summary>
+            <p>参加者による撮影は可能です。こちらで撮影した写真を広報利用する場合は、申込時に了承をいただいた方のみ使用します。</p>
+          </details>
+          <details>
+            <summary>アレルギー対応はできますか？</summary>
+            <p>申込時にご申告ください。ただし、すべてのアレルギーに対応できるわけではありません。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final" id="payment">
+      <div class="wrap narrow">
+        <p class="eyebrow">PAYMENT</p>
+        <h2 class="section-title serif">内容をご確認のうえ、<br>申込み・お支払いへ<br class="sp-only">お進みください</h2>
+        <p>以下のボタンから、UTAGE決済ページへお進みください。</p>
+        <a class="button" href="https://sub.masaya-goto.com/event/tBu5JIPI4Krg/register">申込み・お支払いへ</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>Copyright © sushi masaya</div>
+      <div class="footer-links">
+        <a href="https://sub.masaya-goto.com/p/privacy_policy_sushi">プライバシーポリシー</a>
+        <a href="https://sub.masaya-goto.com/p/sctl_sushi">特定商取引法に基づく表記</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
