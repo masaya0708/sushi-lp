@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>3時間で鮨が握れる実践講座 | 鮨まさや</title>
-  <meta name="description" content="鮨を料理ではなく、ご縁を深めるコミュニケーションツールとして学ぶ。経営者・個人事業主・クリエイターのための、3時間実践講座。">
+  <meta name="description" content="2026年7月30日開催。鮨を料理ではなく、人との出会い方を変える道具として学ぶ、経営者・個人事業主のための3時間実践講座。">
   <style>
     :root {
       --sumi: #12110f;
@@ -254,6 +254,10 @@
       line-height: 2.05;
     }
 
+    .body-copy + .lead {
+      margin-top: 28px;
+    }
+
     .body-copy strong {
       color: var(--ink);
       font-weight: 700;
@@ -347,6 +351,57 @@
       line-height: 1;
     }
 
+    .step-note {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .section-note,
+    .voice-card {
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.72);
+      border: 1px solid var(--line);
+    }
+
+    .section-note {
+      margin-top: 28px;
+      padding: 22px 24px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .dark .section-note,
+    .moss .section-note {
+      background: rgba(255, 253, 248, 0.07);
+      border-color: rgba(255, 253, 248, 0.16);
+      color: rgba(255, 253, 248, 0.8);
+    }
+
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .voice-card {
+      padding: 24px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .dark .voice-card {
+      background: rgba(255, 253, 248, 0.07);
+      border-color: rgba(255, 253, 248, 0.16);
+      color: rgba(255, 253, 248, 0.82);
+    }
+
     .list-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -415,6 +470,97 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    .bonus-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.86fr);
+      gap: 34px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid rgba(255, 253, 248, 0.16);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.06);
+    }
+
+    .bonus-badge {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 5px 12px;
+      border: 1px solid rgba(155, 45, 45, 0.42);
+      color: #d8a0a0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .bonus-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+      color: rgba(255, 253, 248, 0.8);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .bonus-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .bonus-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.8em;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .bonus-note {
+      margin-top: 18px;
+      color: rgba(255, 253, 248, 0.56);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .bonus-media {
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+      border: 1px solid rgba(255, 253, 248, 0.14);
+      border-radius: 8px;
+      background: #000;
+    }
+
+    .bonus-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      opacity: 0.78;
+    }
+
+    .bonus-media::after {
+      content: "▶";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      display: grid;
+      width: 64px;
+      height: 64px;
+      transform: translate(-50%, -50%);
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(155, 45, 45, 0.82);
+      color: var(--white);
+      font-size: 24px;
+      line-height: 1;
+      text-indent: 4px;
     }
 
     .profile {
@@ -487,6 +633,21 @@
       color: var(--text);
       font-size: 14px;
       line-height: 1.9;
+    }
+
+    .secondary-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 22px;
+      margin-top: 20px;
+      color: rgba(255, 253, 248, 0.82);
+      font-size: 14px;
+    }
+
+    .secondary-links a {
+      border-bottom: 1px solid currentColor;
+      text-underline-offset: 3px;
     }
 
     .faq {
@@ -607,7 +768,9 @@
       }
       .point-grid,
       .steps,
-      .list-grid { grid-template-columns: 1fr; }
+      .list-grid,
+      .bonus-card,
+      .voice-grid { grid-template-columns: 1fr; }
       .photo img { min-height: 320px; }
       .profile-photo img { height: auto; max-height: 640px; }
     }
@@ -662,7 +825,7 @@
         <a href="#reason">なぜ鮨なのか</a>
         <a href="#voice">受講者の声</a>
         <a href="#info">開催概要</a>
-        <a class="button nav-cta" href="https://mosh.jp/services/370938?openExternalBrowser=1">問い合わせる</a>
+        <a class="button nav-cta" href="https://sub.en-moto.com/event/3M8IIpKatY9j/register">申し込む</a>
       </nav>
     </div>
   </header>
@@ -671,18 +834,18 @@
     <section class="hero" aria-labelledby="hero-title">
       <img class="hero-img" src="assets/nigiri-hands.jpg" alt="鮨を握る手元">
       <div class="hero-content">
-        <p class="kicker">3時間で鮨が握れる実践講座</p>
+        <p class="kicker">2026年7月30日（木）開催</p>
         <h1 id="hero-title" class="serif">名刺交換よりも、<br>鮨を握れ。</h1>
         <p class="hero-copy">
-          鮨を料理ではなく、<br>
-          ご縁を深めるコミュニケーションツールとして学ぶ。<br>
-          経営者・個人事業主・クリエイターのための、3時間実践講座。
+          鮨は料理じゃなくて、<br>
+          人との出会い方を変える道具だと思っています。<br>
+          経営者・個人事業主のための、3時間の実践講座です。
         </p>
         <div class="hero-actions">
-          <a class="button" href="https://mosh.jp/services/370938?openExternalBrowser=1">MOSHで講座について問い合わせる</a>
+          <a class="button" href="https://sub.en-moto.com/event/3M8IIpKatY9j/register">7月30日の講座に申し込む</a>
         </div>
         <p class="microcopy">
-          現在、開催日は個別に調整しています。受講を希望される方は、MOSHページ下部の「クリエイターに問い合わせる」よりご連絡ください。日程が決まり次第、MOSH上でお申し込みいただけます。
+          完全予約制・少人数制。定員3名で開催します。
         </p>
       </div>
     </section>
@@ -691,7 +854,14 @@
       <div class="wrap split">
         <div>
           <p class="eyebrow">Why sushi</p>
-          <h2 class="section-title serif">なぜ、経営者・クリエイターが鮨を握るのか</h2>
+          <h2 class="section-title serif">なぜ、経営者・個人事業主が鮨を握るのか</h2>
+          <p class="body-copy">
+            経営者のまわりには、いつも人がいます。<br>
+            交流会に出れば名刺は増えるし、会食の予定も埋まっている。<br>
+            でも正直なところ、その多くは肩書きと用件で集まっている人たちです。<br><br>
+            名刺入れの中に、会ったはずの人の名刺だけが増えていく。<br>
+            その先に、関係は残っているでしょうか。
+          </p>
           <p class="lead">
             どれだけ良いサービスでも、まず興味を持ってもらえなければ届きません。
           </p>
@@ -716,9 +886,14 @@
           <p class="eyebrow">Communication</p>
           <h2 class="section-title serif">鮨は、最強のコミュニケーションツールである</h2>
           <p class="body-copy">
+            鮨会をずっと続けてきて、毎回のように起きることがあります。<br>
+            さっきまで仕事の話をしていた人が、目の前で握った一貫を口に入れた瞬間、ふっと素の顔に戻るんです。<br>
+            そこから出てくるのは、肩書きの話じゃない。その人自身の話です。<br><br>
+            僕が鮨を握り続けている理由は、正直これに尽きます。<br>
+            この講座では、その時間を、自分の手でつくれるようになります。<br><br>
             鮨には、会話が生まれる流れがあります。<br><br>
             手元を見る。握る。渡す。食べる。感想を交わす。<br><br>
-            名刺交換では生まれにくい間が、一貫の鮨を通じて自然に生まれます。肩書きではなく、人柄が伝わる。説明ではなく、ふるまいが伝わる。だから鮨は、経営者やクリエイターにとって強いコミュニケーションツールになります。
+            名刺交換では生まれにくい間が、一貫の鮨を通じて自然に生まれます。肩書きではなく、人柄が伝わる。説明ではなく、ふるまいが伝わる。だから鮨は、経営者や個人事業主にとって強いコミュニケーションツールになります。
           </p>
         </div>
       </div>
@@ -768,11 +943,32 @@
           <ol class="steps">
             <li>鮨がコミュニケーションツールになる理由</li>
             <li>シャリ・ネタ・道具の基本</li>
-            <li>握りの実演</li>
+            <li>握りの実演<span class="step-note">「大将が背中を見せてくれたことで、"ああ、こういう風にできるんだ"って想像がついた」（受講者）</span></li>
             <li>実際に握る練習</li>
             <li>人にふるまう体験</li>
             <li>質問・活用相談</li>
           </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Reason</p>
+          <h2 class="section-title serif">なぜ、初心者でも3時間で握れるのか</h2>
+        </div>
+        <div>
+          <p class="body-copy">
+            一般的な鮨教室は、まず「返し」という手の動きから教えます。<br>
+            実はこれが、初心者が一番つまずく順番なんです。<br>
+            手の形に気を取られると、シャリを強く握りすぎる。硬くなって、食べたときに美味しくない。<br><br>
+            僕は、逆から教えます。<br>
+            シャリの握り方で、9割が決まる。だからそこから始めます。<br>
+            手数は少なく、失敗しにくいやり方だけ。形になるし、ちゃんと美味しい。<br><br>
+            握れないのは、あなたのセンスの問題じゃありません。<br>
+            教わる順番が、ズレていただけです。
+          </p>
         </div>
       </div>
     </section>
@@ -786,9 +982,16 @@
             自分のサービスを説明する前に、自分という人に興味を持ってもらう。
           </p>
           <p class="body-copy">
-            家族にふるまう。仲間内の集まりで握る。コミュニティイベントで出す。会食や紹介の場で、記憶に残る時間をつくる。<br><br>
-            そのための体験を、自分の手でつくれるようになります。
+            取引先の皆様を自宅に招いて鮨をふるまう。<br>
+            友人宅へ訪問して鮨をふるまう。<br>
+            休みの日に家族にふるまう。<br><br>
+            お店を予約してごちそうするのとは、相手の記憶への残り方が変わります。<br><br>
+            自分のサービスを説明する前に、まず自分という人間に興味を持ってもらう。<br>
+            その入口を、自分の手でつくれるようになります。
           </p>
+          <div class="section-note">
+            「自分のために握れるようになりたい、というより、"誰かに握ってあげたい"と思って来ました。3時間で、そこまでは問題なくできると分かった」（受講者）
+          </div>
         </div>
       </div>
     </section>
@@ -802,11 +1005,58 @@
             実際に講座を受けた方の声を、動画でご覧いただけます。3時間の講座で何を感じ、どんな変化があったのか。受講前の不安や、受講後の実感をそのままお話しいただいています。
           </p>
         </div>
+        <div class="voice-grid">
+          <div class="voice-card">「前までは、とにかく形にすることで精一杯でした。今回は力の抜き方が分かって、余裕が出てきた。そうしたら、"食べる人においしく食べてもらうにはどうしよう"を考えられるようになって。人に出したい、って気持ちが増えました」</div>
+          <div class="voice-card">「正直、握るのはハードルが高いと思っていました。でも、ポイントさえつかめば、難しくなく握れる」</div>
+          <div class="voice-card">「鮨を握れる、というだけで、他の人との違いをはっきり見せられると思いました」</div>
+        </div>
         <div class="video-shell">
           <div class="video-frame">
             <iframe src="https://www.youtube.com/embed/FrdP04iolco" title="3時間で鮨が握れる実践講座を受けた方のリアルな声" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap">
+        <div class="bonus-card">
+          <div>
+            <span class="bonus-badge">Bonus</span>
+            <h2 class="section-title serif">復習用の動画もお渡しします</h2>
+            <p class="body-copy">
+              当日だけで終わらないように、復習用として動画をお渡しします。<br>
+              家で復習するとき、「あれ、どうやるんだっけ？」となった場面で見返してください。
+            </p>
+            <ul class="bonus-list">
+              <li>シャリ酢や醤油等のレシピ</li>
+              <li>鮨の握り方（復習用）</li>
+              <li>切り付けの考え方</li>
+            </ul>
+            <p class="bonus-note">※動画はあくまで補助です。本質は当日の実技体験にあります。</p>
+          </div>
+          <figure class="bonus-media" aria-label="復習用動画のイメージ">
+            <img src="../video.png" alt="動画プレビュー">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap narrow">
+        <p class="eyebrow">Next</p>
+        <h2 class="section-title serif">握れるようになったあと、場を持てる</h2>
+        <p class="body-copy">
+          握れるようになると、次に出てくるのは技術だけの悩みではありません。<br><br>
+          どこでふるまうのか。<br>
+          仕入れはどうするのか。<br>
+          道具や器はどう揃えるのか。<br>
+          一人で場を回せるのか。<br><br>
+          ここでお役に立てるのは、もう一段先の「人が集まる場づくり」です。<br>
+          北参道駅徒歩3分の場所、鮨をふるまうための道具や食器、必要に応じた当日のサポートまで用意できます。<br><br>
+          取引先や友人、家族を招いて、自分が主役となって鮨をふるまう。<br>
+          その場からご縁を広げていきたい方には、講座後に相談できる形を用意しています。
+        </p>
       </div>
     </section>
 
@@ -837,9 +1087,9 @@
           <p class="eyebrow">Profile</p>
           <h2 class="section-title serif">講師紹介：後藤 将哉</h2>
           <p class="body-copy">
-            全くの未経験から鮨職人の道へ。修行わずか3カ月で、8席の会員制鮨屋の大将に抜擢され、来店人数に対する次回予約率が120％を超えるなど、鮨を通じた関係づくりを現場で体現してきました。<br><br>
-            その後独立。現在は、プロデューサーとして活動しながら、鮨を通じて人と人のご縁をつなぐ「鮨まさや」を主宰。<br><br>
-            鮨を、特別な料理として提供するだけでなく、人と人の関係を深めるおもてなしとして届けています。
+            大学卒業後、大手消費財メーカーと外資系ベンチャーで営業からマーケティングまで経験。30代後半、未経験から鮨職人の道へ進み、修行3ヶ月で、8席の会員制の鮨屋の大将を任される。<br><br>
+            著書『経営者こそ、鮨を握れ』では、偶然出会った鮨によって人生の流れが大きく変わった経験を詳細に綴る。<br><br>
+            現在はプロデューサーとして活動しながら、鮨を通じて人とご縁をつなぐ活動中。
           </p>
         </div>
       </div>
@@ -856,7 +1106,6 @@
             <h3>向いている方</h3>
             <ul class="check-list">
               <li>経営者・個人事業主の方</li>
-              <li>MOSHクリエイターの方</li>
               <li>講座・体験・コミュニティを届けている方</li>
               <li>人を紹介する機会が多い方</li>
               <li>会食や交流の場を印象に残る時間にしたい方</li>
@@ -885,20 +1134,21 @@
         </div>
         <table class="info-table">
           <tbody>
+            <tr><th>開催日</th><td>2026年7月30日（木）</td></tr>
+            <tr><th>時間</th><td>18:30-21:30</td></tr>
             <tr><th>所要時間</th><td>3時間</td></tr>
-            <tr><th>対象</th><td>経営者・個人事業主・クリエイターなど</td></tr>
-            <tr><th>形式</th><td>少人数制</td></tr>
-            <tr><th>場所</th><td>都内・原宿</td></tr>
-            <tr><th>価格</th><td>55,000円（税込）</td></tr>
-            <tr><th>支払い方法</th><td>MOSH決済予定</td></tr>
-            <tr><th>持ち物</th><td>詳細は日程調整時にご案内します。</td></tr>
-            <tr><th>キャンセルポリシー</th><td>決済前にMOSHページおよび個別案内でご確認ください。</td></tr>
-            <tr><th>申込方法</th><td>現時点では、MOSHページ下部の「クリエイターに問い合わせる」よりご連絡ください。</td></tr>
+            <tr><th>対象</th><td>経営者・個人事業主の方</td></tr>
+            <tr><th>形式</th><td>完全予約制・少人数制</td></tr>
+            <tr><th>定員</th><td>3名</td></tr>
+            <tr><th>場所</th><td>北参道駅徒歩3分※詳細は確定後にご案内します</td></tr>
+            <tr><th>参加費</th><td>55,000円（税込）</td></tr>
+            <tr><th>含まれるもの</th><td>実技指導／食材／復習用動画（シャリ酢などのレシピ・握り方・切り付けの考え方）</td></tr>
+            <tr><th>支払い方法</th><td>クレジットカード決済</td></tr>
+            <tr><th>持ち物</th><td>手ぶらでOK※鮨を握るのにエプロンが必要な方はご持参ください</td></tr>
+            <tr><th>キャンセルポリシー</th><td>7/28(火)以降　50％<br>7/29(水)以降　80%<br>当日キャンセル　100％<br><br>※返金金額は決済手数料をひいた金額となります。<br>※主催者都合で開催が中止となった場合、参加費は全額返金されます。</td></tr>
+            <tr><th>申込方法</th><td>ページ内の「申し込む」ボタンより決済ページへお進みください</td></tr>
           </tbody>
         </table>
-        <div class="notice">
-          現在、開催日は個別に調整しています。受講を希望される方は、MOSHページ下部の「クリエイターに問い合わせる」よりご連絡ください。日程が決まり次第、MOSH上でお申し込みいただけます。
-        </div>
       </div>
     </section>
 
@@ -919,7 +1169,7 @@
           </details>
           <details>
             <summary>3時間で本当に握れるようになりますか？</summary>
-            <p>3時間でプロにはなれません。ただし、人に鮨をふるまうための基礎は身に付けられるように設計しています。</p>
+            <p>はい。プロの握りじゃなくて、「人にふるまえる基礎」までを3時間で持ち帰ってもらいます。受講した方の言葉を借りると——「正直、握るのはハードルが高いと思っていた。でも、ポイントさえつかめば、難しくなく握れる」。</p>
           </details>
           <details>
             <summary>仕事の場でどう活用できますか？</summary>
@@ -930,16 +1180,20 @@
             <p>参加できます。少人数制で進めるため、お一人でも自然に参加しやすい形です。</p>
           </details>
           <details>
-            <summary>開催日程はどう決まりますか？</summary>
-            <p>現在は個別に調整しています。MOSHページ下部の「クリエイターに問い合わせる」よりご希望をお知らせください。</p>
+            <summary>持ち物はありますか？</summary>
+            <p>手ぶらでお越しいただけます。鮨を握る際にエプロンが必要な方はご持参ください。</p>
           </details>
           <details>
-            <summary>MOSHではどこから問い合わせればいいですか？</summary>
-            <p>MOSHページ下部にある「クリエイターに問い合わせる」ボタンからご連絡ください。</p>
+            <summary>支払い方法はどうなりますか？</summary>
+            <p>クレジットカード決済です。ページ内の「申し込む」ボタンより決済ページへお進みください。</p>
+          </details>
+          <details>
+            <summary>キャンセルポリシーはありますか？</summary>
+            <p>7/28(火)以降は参加費の50％、7/29(水)以降は80%、当日キャンセルは100％を申し受けます。返金金額は決済手数料をひいた金額となります。主催者都合で開催が中止となった場合、参加費は全額返金されます。</p>
           </details>
           <details>
             <summary>アレルギー対応はできますか？</summary>
-            <p>内容によって対応可否が変わるため、事前にお問い合わせください。</p>
+            <p>内容によって対応可否が変わるため、申し込み時のフォームにご記入ください。</p>
           </details>
         </div>
       </div>
@@ -955,11 +1209,16 @@
           自分のサービスを説明する前に、自分という人に興味を持ってもらう入口をつくる。
         </p>
         <div class="hero-actions" style="justify-content: center; margin-top: 30px;">
-          <a class="button" href="https://mosh.jp/services/370938?openExternalBrowser=1">MOSHで講座について問い合わせる</a>
+          <a class="button" href="https://sub.en-moto.com/event/3M8IIpKatY9j/register">7月30日の講座に申し込む</a>
         </div>
         <p class="microcopy" style="margin-left: auto; margin-right: auto;">
-          現在、開催日は個別に調整しています。受講を希望される方は、MOSHページ下部の「クリエイターに問い合わせる」よりご連絡ください。
+          2026年7月30日（木）18:30-21:30。定員3名。場所は北参道駅徒歩3分、詳細は確定後にご案内します。
         </p>
+        <div class="secondary-links">
+          <span>まだ考えたい方へ。</span>
+          <a href="https://sushi.en-moto.com/kindle-book/">著書『経営者こそ、鮨を握れ』を読む</a>
+          <a href="https://sub.masaya-goto.com/line/open/FQ2cCNREUHMg">LINEで開催案内を受け取る</a>
+        </div>
       </div>
     </section>
   </main>
@@ -975,7 +1234,7 @@
   </footer>
   <script>
     const revealTargets = document.querySelectorAll(
-      ".section .wrap, .point, .list-box, .photo, .profile-photo, .video-shell, .info-table, .notice, details"
+      ".section .wrap, .point, .list-box, .photo, .profile-photo, .video-shell, .voice-card, .bonus-card, .bonus-media, .info-table, details"
     );
 
     revealTargets.forEach((target) => target.classList.add("reveal"));
