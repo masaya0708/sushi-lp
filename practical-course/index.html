@@ -280,6 +280,45 @@
       object-fit: cover;
     }
 
+    .case-gallery {
+      display: grid;
+      gap: 16px;
+    }
+
+    .case-photo {
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--sumi);
+      box-shadow: 0 22px 50px rgba(18, 17, 15, 0.16);
+    }
+
+    .case-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .case-photo.main img {
+      min-height: 420px;
+    }
+
+    .case-photo.logo {
+      display: grid;
+      min-height: 180px;
+      background: #8d1518;
+    }
+
+    .case-photo.logo img {
+      object-fit: contain;
+    }
+
+    .case-caption {
+      margin: 10px 2px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
     .point-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -772,6 +811,7 @@
       .bonus-card,
       .voice-grid { grid-template-columns: 1fr; }
       .photo img { min-height: 320px; }
+      .case-photo.main img { min-height: 320px; }
       .profile-photo img { height: auto; max-height: 640px; }
     }
 
@@ -992,6 +1032,34 @@
           <div class="section-note">
             「自分のために握れるようになりたい、というより、"誰かに握ってあげたい"と思って来ました。3時間で、そこまでは問題なくできると分かった」（受講者）
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Case</p>
+          <h2 class="section-title serif">実際に、鮨は“場”を変えました</h2>
+          <p class="body-copy">
+            FLOW THE FESTIVAL 2026の楽屋にて、出演アーティスト向けに鮨をふるまう機会をいただきました。<br><br>
+            ただ食事を出すのではなく、<br>
+            本番前後の楽屋に、少しだけ肩の力が抜ける時間をつくる。<br><br>
+            一貫の鮨をきっかけに、会話が生まれる。<br>
+            写真を撮りたくなる。<br>
+            その場にいた人の記憶に残る。<br><br>
+            同じ規模の場をすぐに担う、という話ではありません。<br>
+            ただ、鮨を握れるようになると、自分の手で人が集まる場の空気を変える入口をつくれるようになります。
+          </p>
+        </div>
+        <div class="case-gallery" aria-label="FLOW THE FESTIVAL 2026 楽屋鮨の実績写真">
+          <figure class="case-photo main">
+            <img src="assets/flow-backstage-sushi.jpg" alt="FLOW THE FESTIVAL 2026の楽屋で鮨をふるまった様子">
+          </figure>
+          <figure class="case-photo logo">
+            <img src="assets/flow-noren.jpg" alt="FLOW THE FESTIVAL 2026 Presented by 鮨まさや のれん">
+          </figure>
+          <p class="case-caption">FLOW THE FESTIVAL 2026 楽屋鮨。イベント名・写真は掲載許可の範囲で使用しています。</p>
         </div>
       </div>
     </section>
