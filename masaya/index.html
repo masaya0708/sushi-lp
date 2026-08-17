@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>経営者こそ、鮨を握れ。｜後藤将哉 / 鮨まさや</title>
-  <meta name="description" content="鮨は、最強のコミュニケーションツール。著書『経営者こそ、鮨を握れ。』著者・後藤将哉のポータルページです。著書、鮨講座・イベント、LINEの情報はこちら。">
+  <meta name="description" content="鮨を握れるようになって変わったのは、技術ではなく人との出会い方でした。著書『経営者こそ、鮨を握れ。』著者・後藤将哉の活動と、3時間の鮨実践講座をご紹介します。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="経営者こそ、鮨を握れ。｜後藤将哉 / 鮨まさや">
-  <meta property="og:description" content="鮨は、最強のコミュニケーションツール。著書『経営者こそ、鮨を握れ。』著者・後藤将哉のポータルページです。著書、鮨講座・イベント、LINEの情報はこちら。">
+  <meta property="og:description" content="鮨を握れるようになって変わったのは、技術ではなく人との出会い方でした。著書『経営者こそ、鮨を握れ。』著者・後藤将哉の活動と、3時間の鮨実践講座をご紹介します。">
   <meta property="og:image" content="https://sushi.en-moto.com/masaya/assets/hero-sushi.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <style>
@@ -209,6 +209,17 @@
       gap: 14px;
     }
 
+    .hero .button.secondary {
+      color: var(--white);
+      border-color: rgba(255, 250, 243, 0.62);
+      background: rgba(17, 16, 15, 0.28);
+    }
+
+    .hero .button.secondary:hover {
+      border-color: var(--white);
+      background: rgba(255, 250, 243, 0.14);
+    }
+
     .section {
       padding: 108px 20px;
       scroll-margin-top: 82px;
@@ -304,6 +315,53 @@
     .profile-copy p { margin-bottom: 22px; }
     .profile-copy p:last-child { margin-bottom: 0; }
 
+    .course-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+      gap: clamp(38px, 7vw, 86px);
+      align-items: center;
+    }
+
+    .course-copy .section-title { margin-bottom: 26px; }
+
+    .course-actions {
+      margin-top: 34px;
+    }
+
+    .course-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .course-focus {
+      padding: 10px 0 10px clamp(26px, 4vw, 48px);
+      border-left: 1px solid rgba(158, 43, 34, 0.38);
+    }
+
+    .course-time {
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: clamp(56px, 8vw, 92px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .course-focus h3 {
+      margin-bottom: 18px;
+      color: var(--ink);
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.5;
+    }
+
+    .course-focus p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
     .entry-head {
       max-width: 720px;
       margin-bottom: 42px;
@@ -377,6 +435,13 @@
     .produce-copy .section-title { margin-bottom: 26px; }
     .produce-copy .button { margin-top: 34px; }
 
+    .produce-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
     .produce-panel {
       padding: 32px;
       border: 1px solid var(--line);
@@ -446,6 +511,12 @@
       text-underline-offset: 3px;
     }
 
+    @media (max-width: 1180px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
     @media (max-width: 820px) {
       .nav-inner {
         min-height: 64px;
@@ -482,6 +553,7 @@
       }
 
       .profile,
+      .course-layout,
       .entry-grid,
       .book-row,
       .produce-layout {
@@ -495,6 +567,12 @@
       .book-cover {
         width: 148px;
       }
+
+      .course-focus {
+        padding: 28px 0 0;
+        border-top: 1px solid rgba(158, 43, 34, 0.28);
+        border-left: 0;
+      }
     }
   </style>
 </head>
@@ -503,11 +581,12 @@
     <div class="nav-inner">
       <a class="brand" href="#top">後藤将哉｜著書・鮨講座・イベント</a>
       <nav class="nav-links" aria-label="主要ナビゲーション">
-        <a href="#why">なぜ鮨なのか</a>
+        <a href="#why">出会い方が変わった理由</a>
         <a href="#profile">後藤将哉について</a>
+        <a href="#course">3時間の実践講座</a>
         <a href="#produce">法人向け相談</a>
         <a href="#entry">著書・講座・イベント</a>
-        <a class="button nav-cta" href="#entry">著書・講座・イベントを見る</a>
+        <a class="button nav-cta" href="#course">実践講座を見る</a>
       </nav>
     </div>
   </header>
@@ -516,24 +595,25 @@
     <section class="hero">
       <img class="hero-img" src="assets/hero-sushi.jpg" alt="鮨を握る手元とカウンターの風景">
       <div class="hero-content">
-        <p class="hero-kicker">著書・鮨講座・イベント情報はこちら</p>
+        <p class="hero-kicker">名刺交換いただいた方へ</p>
         <h1 class="serif">経営者こそ、<br>鮨を握れ。</h1>
-        <p class="hero-sub">鮨は、最強のコミュニケーションツール。</p>
+        <p class="hero-sub">鮨を握れるようになって、変わったのは技術ではありません。<br>人との「出会い方」でした。</p>
         <div class="hero-actions">
-          <a class="button" href="#entry">著書・講座・イベントを見る</a>
+          <a class="button" href="#why">出会い方が変わった理由を見る</a>
+          <a class="button secondary" href="#course">3時間の実践講座を見る</a>
         </div>
       </div>
     </section>
 
     <section id="why" class="section">
       <div class="wrap narrow">
-        <h2 class="section-title serif">名刺交換だけでは、<br>記憶に残らない。</h2>
+        <h2 class="section-title serif">鮨を握ったら、<br>出会う人が変わった。</h2>
         <div class="lead">
-          <p>交流会、会食、紹介の場。<br>名刺を交換し、会社名や肩書きを伝える。<br>でも、それだけだと「よくある自己紹介」で終わってしまいます。</p>
-          <p>自己紹介は、話すものではなく、仕込むもの。<br>相手の頭に絵が浮かび、もっと話したくなる入口を、事前に用意することです。</p>
-          <p>鮨は、その入口を一瞬でつくる道具になります。<br>肩書きの説明より早く、相手の興味が動く。<br>名刺交換では生まれにくい間が、一貫の鮨を通じて自然に生まれます。</p>
+          <p>独立したばかりの頃、交流会に出て、自己紹介を磨き、名刺を配っていました。<br>それでも、新しい出会いはなかなか仕事につながりませんでした。</p>
+          <p>変化が起きたのは、鮨を握るようになってからです。<br>「趣味で鮨職人をしています」と言うだけで、相手から質問が生まれ、会話が始まる。<br>鮨をきっかけに、紹介や相談、仕事へつながる出会いが増えていきました。</p>
+          <p>鮨が僕を変えたんじゃない。<br>鮨が、僕の中にあった才能を引き出してくれた。</p>
         </div>
-        <p class="statement">鮨を握ること自体が目的ではありません。<br>鮨は、人との距離が縮まり、会話が生まれ、関係性が深まる場をつくるための入口です。</p>
+        <p class="statement">鮨は、新しい自分になるためのものではありません。<br>もともと自分の中にあった強みを、相手に伝わる形にする入口でした。</p>
       </div>
     </section>
 
@@ -543,13 +623,36 @@
           <img src="assets/author-masaya.jpg" alt="鮨を握るビジネスプロデューサー 後藤将哉">
         </figure>
         <div>
-          <h2 class="profile-name serif">後藤 将哉 / Masaya Goto</h2>
+          <h2 class="profile-name serif">後藤将哉 / Masaya Goto</h2>
           <p class="profile-role">鮨を握るビジネスプロデューサー</p>
           <div class="profile-copy">
             <p>13年間の会社員生活を経て、自身の働き方や人との関わり方を見つめ直す中で、未経験から鮨職人の道へ。</p>
-            <p>「鮨は最強のコミュニケーションツール」を軸に、紹介だけで席が埋まる紹介制鮨会「鮨まさや」を主宰。著書に『経営者こそ、鮨を握れ』。</p>
+            <p>「鮨は最強のコミュニケーションツール」を軸に、紹介だけで席が埋まる紹介制鮨会「鮨まさや」を主宰。著書に『経営者こそ、鮨を握れ。』。</p>
             <p>現在は、鮨会の企画・運営にとどまらず、企業やコミュニティの会食・紹介・交流を、記憶に残り、次のご縁につながる場として設計している。</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="course" class="section alt">
+      <div class="wrap course-layout">
+        <div class="course-copy">
+          <h2 class="section-title serif">3時間で、<br>鮨は握れる。</h2>
+          <div class="lead">
+            <p>もちろん、3時間でプロにはなれません。</p>
+            <p>でも、自分で一貫を握って、家族や仲間にふるまえるところまでいけます。</p>
+            <p>経営者・個人事業主を対象に、少人数で鮨を握る実践講座を開催しています。自分で握った鮨を目の前の人に出す。その体験から、自然に会話が始まります。</p>
+          </div>
+          <div class="course-actions">
+            <a class="button" href="https://sushi.en-moto.com/practical-course/">実践講座の詳細を見る</a>
+            <p class="course-note">少人数制・リクエスト開催。日程は個別に調整します。</p>
+          </div>
+        </div>
+
+        <div class="course-focus">
+          <p class="course-time">3時間</p>
+          <h3 class="serif">自分で握った鮨を、<br>人にふるまう。</h3>
+          <p>初心者向け・少人数制。鮨を握る技術だけでなく、目の前の人をもてなし、会話が生まれる場まで体験します。</p>
         </div>
       </div>
     </section>
@@ -563,7 +666,8 @@
             <p>ただ鮨を提供するのではなく、誰が集まり、どんな会話が生まれ、次にどんなご縁につながるのかまで含めて、その場に合う流れを一緒に設計します。</p>
             <p>人数、会場、目的に合わせて、一回限りの開催から継続企画まで個別にご相談いただけます。</p>
           </div>
-          <a class="button" href="https://sub.masaya-goto.com/line/open/P0vXoLHsEx3T">LINEで開催相談をする</a>
+          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdve2ZUNl8qLYCNZumbPzVdQwDy_vsBFWM8GlmzJNyFkgb3Tg/viewform">鮨体験の開催について相談する</a>
+          <p class="produce-note">内容が固まっていなくても大丈夫です。2分程度で入力できます。</p>
         </div>
 
         <div>
@@ -612,10 +716,10 @@
           </article>
 
           <article class="entry-card featured">
-            <div class="entry-label">鮨講座・イベント</div>
+            <div class="entry-label">3時間の実践講座</div>
             <h3>鮨を握る体験に触れる</h3>
-            <p>鮨握り体験交流会、弟子が握る会、3時間で鮨が握れる実践講座など、目的別に複数の場を用意しています。</p>
-            <a class="button" href="https://sushi.en-moto.com/deshinokai/">開催情報を見る</a>
+            <p>経営者・個人事業主向け。自分で一貫を握り、人にふるまうところまでを3時間で実践する、少人数制の講座です。</p>
+            <a class="button" href="https://sushi.en-moto.com/practical-course/">実践講座の詳細を見る</a>
           </article>
 
           <article class="entry-card">
