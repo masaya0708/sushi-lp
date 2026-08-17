@@ -484,6 +484,48 @@
       background: var(--accent);
     }
 
+    .social-band {
+      padding: 54px 20px;
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .social-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .social-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.5;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(47, 42, 37, 0.38);
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .social-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
     .footer {
       padding: 34px 20px;
       background: #0b0b0a;
@@ -572,6 +614,11 @@
         padding: 28px 0 0;
         border-top: 1px solid rgba(158, 43, 34, 0.28);
         border-left: 0;
+      }
+
+      .social-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
@@ -729,6 +776,17 @@
             <a class="button line" href="https://sub.masaya-goto.com/line/open/P0vXoLHsEx3T">LINEで受け取る</a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="social-band" aria-labelledby="social-title">
+      <div class="social-inner">
+        <h2 id="social-title" class="social-title serif">SNSで活動を見る</h2>
+        <nav class="social-links" aria-label="後藤将哉のSNS">
+          <a href="https://www.facebook.com/masaya.gotoh" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/masaya.producer/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/Masaya_producer" target="_blank" rel="noopener noreferrer">X</a>
+        </nav>
       </div>
     </section>
 
