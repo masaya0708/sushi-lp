@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ダチョウ肉と日本酒の会 | 優(You)BASE</title>
+  <meta name="description" content="前回、大好評だった「ダチョウの会」が帰ってきます。ぷるにぃがダチョウ肉と卵を料理します。日本酒は1〜2種。定員10名です。">
+  <meta property="og:title" content="ダチョウ肉と日本酒の会 | 優(You)BASE">
+  <meta property="og:description" content="ダチョウ肉って、こんなにおいしい。前回、大好評だった「ダチョウの会」が優(You)BASEに帰ってきます。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/table-egg-drinks.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #161412;
+      --text: #2f2b26;
+      --sub: #70675d;
+      --paper: #f7f4ed;
+      --soft: #ebe2d4;
+      --line: rgba(47, 43, 38, 0.16);
+      --white: #fffdf8;
+      --accent: #5f7d3a;
+      --accent-dark: #36501f;
+      --shadow: 0 22px 80px rgba(22, 20, 18, 0.16);
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--paper);
+      font-family: "Noto Sans JP", system-ui, sans-serif;
+      line-height: 1.9;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .serif {
+      font-family: "Noto Serif JP", serif;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 30;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px clamp(18px, 4vw, 52px);
+      color: var(--white);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0));
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      color: rgba(255, 253, 248, 0.84);
+      font-size: 13px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.28) 54%, rgba(0, 0, 0, 0.72)),
+        linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.08) 64%);
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% center;
+      opacity: 0.88;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 138px 0 72px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 253, 248, 0.78);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 24px 0 20px;
+      color: var(--white);
+      font-size: clamp(42px, 7.6vw, 92px);
+      line-height: 1.1;
+      font-weight: 600;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 0;
+      color: rgba(255, 253, 248, 0.9);
+      font-size: clamp(17px, 2.2vw, 22px);
+      line-height: 1.9;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 7px 14px;
+      border: 1px solid rgba(255, 253, 248, 0.24);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.1);
+      color: rgba(255, 253, 248, 0.9);
+      font-size: 13px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 15px;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .button:active {
+      transform: translateY(1px);
+    }
+
+    .button.primary {
+      color: var(--white);
+      background: var(--accent);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+    }
+
+    .button.primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .button.secondary {
+      color: var(--white);
+      border-color: rgba(255, 253, 248, 0.34);
+      background: rgba(255, 253, 248, 0.1);
+    }
+
+    .photo-note {
+      max-width: 720px;
+      margin-top: 22px;
+      color: rgba(255, 253, 248, 0.66);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    section {
+      padding: clamp(70px, 10vw, 118px) 0;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-title {
+      margin: 0 0 22px;
+      color: var(--ink);
+      font-size: clamp(30px, 4.6vw, 56px);
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 2;
+    }
+
+    .intro {
+      background: var(--paper);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      gap: clamp(34px, 6vw, 74px);
+      align-items: center;
+    }
+
+    .intro-photo {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--soft);
+    }
+
+    .intro-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .caption {
+      margin: 12px 0 0;
+      color: var(--sub);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .host {
+      background: #e9ece1;
+    }
+
+    .host-grid {
+      display: grid;
+      grid-template-columns: minmax(250px, 360px) minmax(0, 1fr);
+      gap: clamp(30px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .host-photo {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+
+    .host-photo img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .host-name {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    .host-role {
+      margin: 0 0 24px;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .host-text {
+      max-width: 690px;
+      margin: 0;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .pottery {
+      background: var(--white);
+    }
+
+    .pottery-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 360px);
+      grid-template-areas:
+        "heading photo"
+        "body photo";
+      column-gap: clamp(30px, 6vw, 72px);
+      row-gap: 20px;
+      align-items: center;
+    }
+
+    .pottery-heading {
+      grid-area: heading;
+      align-self: end;
+    }
+
+    .pottery-body {
+      grid-area: body;
+      align-self: start;
+    }
+
+    .pottery-photo {
+      grid-area: photo;
+      margin: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--soft);
+    }
+
+    .pottery-photo img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .pottery-profile {
+      max-width: 650px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .pottery-name {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    .pottery-text {
+      margin: 0;
+      color: var(--sub);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .gallery {
+      background: var(--paper);
+    }
+
+    .gallery-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .gallery-note {
+      margin: 0;
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.9fr;
+      gap: 16px;
+    }
+
+    .photo-grid figure {
+      margin: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--soft);
+      box-shadow: 0 14px 46px rgba(22, 20, 18, 0.1);
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+    .photo-grid figure:first-child {
+      grid-row: span 2;
+    }
+
+    .photo-grid figure:first-child img {
+      min-height: 540px;
+    }
+
+    .info {
+      background: var(--white);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+      gap: clamp(30px, 6vw, 72px);
+      align-items: start;
+    }
+
+    .info-list {
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
+    }
+
+    .info-list li {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-list b {
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .info-list span {
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .notice {
+      padding: 26px;
+      border-radius: 18px;
+      background: #eef2e8;
+      border: 1px solid rgba(95, 125, 58, 0.22);
+    }
+
+    .notice h3 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: 20px;
+    }
+
+    .notice p {
+      margin: 0;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .entry {
+      color: var(--white);
+      background:
+        linear-gradient(rgba(22, 20, 18, 0.82), rgba(22, 20, 18, 0.82)),
+        url("assets/previous-meat.jpg") center / cover;
+    }
+
+    .entry .section-title {
+      color: var(--white);
+    }
+
+    .entry .lead {
+      color: rgba(255, 253, 248, 0.84);
+    }
+
+    .entry-box {
+      max-width: 760px;
+    }
+
+    .entry-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .entry-note {
+      margin: 22px 0 0;
+      color: rgba(255, 253, 248, 0.72);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: var(--sub);
+      background: var(--paper);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content {
+        padding-bottom: 56px;
+      }
+
+      .hero-img {
+        object-position: 48% center;
+      }
+
+      .intro-grid,
+      .host-grid,
+      .pottery-grid,
+      .gallery-head,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pottery-photo {
+        width: min(100%, 420px);
+      }
+
+      .pottery-grid {
+        grid-template-areas:
+          "heading"
+          "photo"
+          "body";
+        row-gap: 28px;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-grid figure:first-child {
+        grid-row: auto;
+      }
+
+      .photo-grid figure:first-child img,
+      .photo-grid img {
+        min-height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .info-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-content,
+      .wrap,
+      .footer-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      h1 {
+        font-size: clamp(36px, 10.5vw, 46px);
+        line-height: 1.18;
+      }
+
+      .section-title {
+        font-size: clamp(28px, 8.5vw, 36px);
+        line-height: 1.35;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .chip {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .notice {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" aria-label="ページ内ナビゲーション">
+    <a class="brand serif" href="#top">優(You)BASE</a>
+    <nav class="nav-links" aria-label="主要リンク">
+      <a href="#about">どんな会か</a>
+      <a href="#pluny">ぷるにぃ</a>
+      <a href="#info">開催概要</a>
+      <a href="#entry">申込</a>
+    </nav>
+  </header>
+
+    <section id="top" class="hero">
+    <img class="hero-img" src="assets/table-egg-drinks.jpg" alt="前回開催時のダチョウ卵と飲み物が並ぶ食卓">
+    <div class="hero-content">
+      <div class="kicker">ダチョウ肉と日本酒の会</div>
+      <h1 class="serif">ダチョウ肉って、<br>こんなに<br>おいしい。</h1>
+      <p class="hero-copy">料理を作るのは、ぷるにぃ。<br>大きなダチョウ卵は、みんなで叩き割ります。</p>
+      <div class="hero-meta" aria-label="開催情報">
+        <span class="chip">2026年9月11日（金）</span>
+        <span class="chip">優(You)BASE 原宿サロン</span>
+        <span class="chip">定員10名</span>
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" href="#entry">申込方法を見る</a>
+        <a class="button secondary" href="#about">会の内容を見る</a>
+      </div>
+      <p class="photo-note">写真は前回開催時の様子です。</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="intro">
+      <div class="wrap intro-grid">
+        <div>
+          <h2 class="section-title serif">前回、大好評だった<br>「ダチョウの会」が帰ってきます。</h2>
+          <p class="lead">ダチョウ肉は、牛肉のような見た目の赤身肉。やわらかく、脂は少なめです。今回は、ぷるにぃが料理します。</p>
+          <p class="lead" style="margin-top: 18px;">ダチョウ卵は、鶏卵の25〜30倍ほどの大きさです。今回も用意します。最初に、みんなで殻を叩き割る儀式があります。</p>
+          <p class="lead" style="margin-top: 18px;">日本酒は1〜2種。ウイスキーと焼酎も用意します。ビールはありません。飲みたい方はご持参ください。乾杯前に飲むお酒や、みんなに食べてほしい一品の持ち込みも歓迎です。</p>
+          <p class="lead" style="margin-top: 18px;">鮨まさや大将も、鮨を3貫ほど握ります。今回はおまけです。</p>
+        </div>
+        <figure class="intro-photo">
+          <img src="assets/ostrich-egg.jpeg" alt="鶏卵と並べた大きなダチョウ卵">
+          <figcaption class="caption">鶏卵と並べると、この大きさ。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="pluny" class="host">
+      <div class="wrap host-grid">
+        <figure class="host-photo">
+          <img src="assets/pluny-profile.png" alt="料理家・デザイナーのぷるにぃ">
+        </figure>
+        <div>
+          <p class="host-role">ゲスト料理人</p>
+          <h2 class="host-name serif">ぷるにぃ</h2>
+          <p class="host-text">「おいしい たのしい ぷるにぃ」と名乗る料理家・デザイナー。広尾にある妄想図書館（シェア型図書館）を運営しています。</p>
+          <p class="caption"><a href="https://instagram.com/plu_pluny/" target="_blank" rel="noopener">Instagram: @plu_pluny</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pottery" aria-labelledby="pottery-title">
+      <div class="wrap pottery-grid">
+        <div class="pottery-heading">
+          <p class="host-role">料理と器</p>
+          <h2 id="pottery-title" class="section-title serif">陶芸家のうつわを添えて</h2>
+        </div>
+        <div class="pottery-body">
+          <p class="host-text">今回、陶芸家の加藤 裕さんが岐阜からはるばる参加！料理の一部を彼の作ったうつわでご提供します。どんなうつわかは当日のお楽しみ。</p>
+          <div class="pottery-profile">
+            <h3 class="pottery-name serif">加藤 裕（ゆたか）さん</h3>
+            <p class="pottery-text">岐阜県多治見市生まれ。幸兵衛窯で7年間修行した陶芸家です。地元・岐阜の土と釉薬を使い、器を作っています。</p>
+            <p class="caption"><a href="https://www.instagram.com/yutaka__japan/" target="_blank" rel="noopener">Instagram: @yutaka__japan</a></p>
+          </div>
+        </div>
+        <figure class="pottery-photo">
+          <img src="assets/yutaka-profile.png" alt="器を手にする陶芸家の加藤 裕さん">
+        </figure>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="wrap">
+        <div class="gallery-head">
+          <div>
+            <h2 class="section-title serif">前回開催時の料理</h2>
+            <p class="lead">前回は、こんな料理でした。</p>
+          </div>
+          <p class="gallery-note">写真は前回開催時の料理です。<br>今回のメニューとは異なります。</p>
+        </div>
+        <div class="photo-grid">
+          <figure><img src="assets/previous-meat.jpg" alt="前回開催時のダチョウ肉料理"></figure>
+          <figure><img src="assets/previous-plate-1.jpeg" alt="前回開催時の盛り合わせ料理"></figure>
+          <figure><img src="assets/previous-noodle.jpg" alt="前回開催時の麺料理"></figure>
+          <figure><img src="assets/previous-plate-2.jpeg" alt="前回開催時の食卓の一皿"></figure>
+          <figure><img src="assets/table-egg-drinks.jpg" alt="前回開催時のダチョウ卵と飲み物"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="info" class="info">
+      <div class="wrap info-grid">
+        <div>
+          <h2 class="section-title serif">開催概要</h2>
+          <ul class="info-list">
+            <li><b>日時</b><span>2026年9月11日（金）<br>17:00頃〜 順次集合<br>19:00 乾杯<br>21:00 いったん片付け<br>21:00〜22:30 希望者のみ自由参加</span></li>
+            <li><b>会場</b><span>優(You)BASE 原宿サロン<br>東京都渋谷区千駄ヶ谷3丁目<br>詳細住所はお申し込み後にご案内します</span></li>
+            <li><b>アクセス</b><span>北参道駅より徒歩3分<br>原宿、明治神宮前、代々木、千駄ヶ谷駅より徒歩10〜13分<br>南新宿駅より徒歩16分</span></li>
+            <li><b>定員</b><span>10名</span></li>
+            <li><b>会費</b><span>13,000円<br>早割 2026年8月31日まで 12,000円</span></li>
+            <li><b>内容</b><span>ダチョウ肉・卵の食べ比べ<br>日本酒1〜2種、ウイスキー、焼酎<br>おまけの鮨3貫ほど</span></li>
+            <li><b>持ち込み</b><span>乾杯前に飲みたいお酒・ビール<br>みんなに食べてほしい一品</span></li>
+          </ul>
+        </div>
+        <aside class="notice">
+          <h3>キャンセルポリシー</h3>
+          <p>3日前から：50%<br>前日：80%<br>当日：100%</p>
+          <h3 style="margin-top: 26px;">お支払い</h3>
+          <p>お申し込み後、事前振込またはPayPayの支払い先をご案内します。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="entry" class="entry">
+      <div class="wrap entry-box">
+        <h2 class="section-title serif">定員は10名です。</h2>
+        <p class="lead">お申し込みはGoogleフォームで受け付けます。お支払いは、事前振込またはPayPayです。</p>
+        <div class="entry-actions">
+          <a class="button primary" href="https://docs.google.com/forms/d/e/1FAIpQLSduuSi6uGa5mvkLixNgrf4Q6wV3qJt3vAOnESsEoYF_pkXgSA/viewform" target="_blank" rel="noopener">Googleフォームで申し込む</a>
+          <a class="button secondary" href="#info">開催概要を確認する</a>
+        </div>
+        <p class="entry-note">会場の詳細住所は、お申し込み後にご案内します。アレルギーや苦手な食材は、申込フォームにご記入ください。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>主催: 優(You)BASE</span>
+      <span>共催: 鮨まさや大将</span>
+    </div>
+  </footer>
+</body>
+</html>
