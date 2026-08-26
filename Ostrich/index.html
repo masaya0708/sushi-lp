@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ダチョウ肉と日本酒の会 | 優(You)BASE</title>
-  <meta name="description" content="前回、大好評だった「ダチョウの会」が帰ってきます。ぷるにぃがダチョウ肉と卵を料理します。日本酒は1〜2種。定員10名です。">
+  <meta name="description" content="前回、大好評だった「ダチョウの会」を今年も開催。ぷるにぃが作るダチョウ肉の食べ比べと、大きなダチョウ卵の目玉焼きを楽しむ10名限定の食事会です。">
   <meta property="og:title" content="ダチョウ肉と日本酒の会 | 優(You)BASE">
   <meta property="og:description" content="ダチョウ肉って、こんなにおいしい。前回、大好評だった「ダチョウの会」が優(You)BASEに帰ってきます。">
   <meta property="og:type" content="website">
@@ -278,6 +278,60 @@
       object-fit: cover;
     }
 
+    .menu {
+      background: var(--white);
+    }
+
+    .menu-list {
+      margin-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 70px minmax(220px, 0.75fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-number {
+      color: var(--accent-dark);
+      font-family: "Noto Serif JP", serif;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .menu-name {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(21px, 2.8vw, 30px);
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    .menu-name span {
+      font-size: 0.72em;
+    }
+
+    .menu-description {
+      margin: 2px 0 0;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .bring-note {
+      margin: 30px 0 0 96px;
+      padding-left: 22px;
+      border-left: 3px solid var(--accent);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
     .caption {
       margin: 12px 0 0;
       color: var(--sub);
@@ -394,20 +448,94 @@
       line-height: 1.9;
     }
 
+    .pottery-text + .pottery-text {
+      margin-top: 12px;
+    }
+
+    .pottery-works {
+      margin-top: 54px;
+      padding-top: 38px;
+      border-top: 1px solid var(--line);
+    }
+
+    .pottery-works-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .pottery-works-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(23px, 3vw, 32px);
+      line-height: 1.4;
+    }
+
+    .pottery-works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .pottery-works-grid figure {
+      margin: 0;
+    }
+
+    .pottery-works-grid img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 6px;
+      background: var(--soft);
+    }
+
+    .masaya {
+      background: #ece8de;
+    }
+
+    .masaya-grid {
+      display: grid;
+      grid-template-columns: minmax(250px, 380px) minmax(0, 1fr);
+      gap: clamp(34px, 7vw, 82px);
+      align-items: center;
+    }
+
+    .masaya-photo {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--soft);
+    }
+
+    .masaya-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 38%;
+    }
+
     .gallery {
       background: var(--paper);
     }
 
     .gallery-head {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
+      grid-template-columns: minmax(0, 1fr) auto;
       gap: 34px;
       align-items: end;
       margin-bottom: 34px;
     }
 
+    .gallery .section-title {
+      margin-bottom: 0;
+    }
+
     .gallery-note {
       margin: 0;
+      max-width: 280px;
       color: var(--sub);
       font-size: 13px;
       line-height: 1.9;
@@ -563,9 +691,28 @@
       .intro-grid,
       .host-grid,
       .pottery-grid,
+      .masaya-grid,
       .gallery-head,
       .info-grid {
         grid-template-columns: 1fr;
+      }
+
+      .menu-item {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .menu-description {
+        grid-column: 2;
+        margin-top: -12px;
+      }
+
+      .bring-note {
+        margin-left: 70px;
+      }
+
+      .masaya-photo {
+        width: min(100%, 420px);
       }
 
       .pottery-photo {
@@ -580,8 +727,22 @@
         row-gap: 28px;
       }
 
+      .pottery-works-head {
+        display: block;
+      }
+
       .photo-grid {
         grid-template-columns: 1fr;
+      }
+
+      .gallery-head {
+        gap: 12px;
+        align-items: start;
+        margin-bottom: 24px;
+      }
+
+      .gallery-note {
+        max-width: none;
       }
 
       .photo-grid figure:first-child {
@@ -629,6 +790,26 @@
       .notice {
         padding: 22px;
       }
+
+      .pottery-works-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 24px 0;
+      }
+
+      .menu-description {
+        grid-column: auto;
+        margin-top: 2px;
+      }
+
+      .bring-note {
+        margin: 24px 0 0;
+        padding-left: 16px;
+      }
     }
   </style>
 </head>
@@ -666,16 +847,40 @@
     <section id="about" class="intro">
       <div class="wrap intro-grid">
         <div>
-          <h2 class="section-title serif">前回、大好評だった<br>「ダチョウの会」が帰ってきます。</h2>
-          <p class="lead">ダチョウ肉は、牛肉のような見た目の赤身肉。やわらかく、脂は少なめです。今回は、ぷるにぃが料理します。</p>
-          <p class="lead" style="margin-top: 18px;">ダチョウ卵は、鶏卵の25〜30倍ほどの大きさです。今回も用意します。最初に、みんなで殻を叩き割る儀式があります。</p>
-          <p class="lead" style="margin-top: 18px;">日本酒は1〜2種。ウイスキーと焼酎も用意します。ビールはありません。飲みたい方はご持参ください。乾杯前に飲むお酒や、みんなに食べてほしい一品の持ち込みも歓迎です。</p>
-          <p class="lead" style="margin-top: 18px;">鮨まさや大将も、鮨を3貫ほど握ります。今回はおまけです。</p>
+          <h2 class="section-title serif">希少肉「ダチョウ」の会</h2>
+          <p class="lead">前回、大好評だった「ダチョウの会」を今年も開催します。料理は今回もぷるにぃ。ダチョウ肉の食べ比べに、みんなで殻を割って作る大きな目玉焼き。日本酒に合わせて、鮨まさや大将もおまかせ握りを3貫握ります。</p>
+          <p class="lead" style="margin-top: 18px;">ダチョウ肉は、日本ではまだ生産者の少ない希少な赤身肉です。牛肉に似た見た目で、やわらかく、クセは控えめ。低脂肪・低カロリーで、鉄分を含むことでも知られています。</p>
+          <p class="lead" style="margin-top: 18px;">ダチョウ卵は、鶏卵約25個分。厚い殻をみんなで割り、その場で目玉焼きにします。日本酒は2種。加藤 裕さんの美濃焼のうつわで味わいます。</p>
         </div>
         <figure class="intro-photo">
           <img src="assets/ostrich-egg.jpeg" alt="鶏卵と並べた大きなダチョウ卵">
           <figcaption class="caption">鶏卵と並べると、この大きさ。</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="menu" aria-labelledby="menu-title">
+      <div class="wrap">
+        <p class="host-role">料理とお酒</p>
+        <h2 id="menu-title" class="section-title serif">当日のメニュー</h2>
+        <div class="menu-list">
+          <article class="menu-item">
+            <span class="menu-number">01</span>
+            <h3 class="menu-name">ダチョウ肉<br>食べ比べコース</h3>
+            <p class="menu-description">コースの途中で、大きなダチョウの卵をみんなで割り、目玉焼きにします。</p>
+          </article>
+          <article class="menu-item">
+            <span class="menu-number">02</span>
+            <h3 class="menu-name">日本酒飲み比べ<br><span>〜美濃焼のうつわを添えて〜</span></h3>
+            <p class="menu-description">日本酒は2種ご用意します。美濃焼のうつわで味わいます。</p>
+          </article>
+          <article class="menu-item">
+            <span class="menu-number">03</span>
+            <h3 class="menu-name">鮨まさやの<br>おまかせ握り3貫</h3>
+            <p class="menu-description">鮨まさや大将が、その日の日本酒に合わせた鮨を3貫握ります。</p>
+          </article>
+        </div>
+        <p class="bring-note">この会は1品持ち寄り制です。おすそ分けしたい食べ物や飲み物を、1品お持ちください。</p>
       </div>
     </section>
 
@@ -694,32 +899,65 @@
     </section>
 
     <section class="pottery" aria-labelledby="pottery-title">
-      <div class="wrap pottery-grid">
-        <div class="pottery-heading">
-          <p class="host-role">料理と器</p>
-          <h2 id="pottery-title" class="section-title serif">陶芸家のうつわを添えて</h2>
-        </div>
-        <div class="pottery-body">
-          <p class="host-text">今回、陶芸家の加藤 裕さんが岐阜からはるばる参加！料理の一部を彼の作ったうつわでご提供します。どんなうつわかは当日のお楽しみ。</p>
-          <div class="pottery-profile">
-            <h3 class="pottery-name serif">加藤 裕（ゆたか）さん</h3>
-            <p class="pottery-text">岐阜県多治見市生まれ。幸兵衛窯で7年間修行した陶芸家です。地元・岐阜の土と釉薬を使い、器を作っています。</p>
-            <p class="caption"><a href="https://www.instagram.com/yutaka__japan/" target="_blank" rel="noopener">Instagram: @yutaka__japan</a></p>
+      <div class="wrap">
+        <div class="pottery-grid">
+          <div class="pottery-heading">
+            <p class="host-role">料理と器</p>
+            <h2 id="pottery-title" class="section-title serif">陶芸家のうつわを添えて</h2>
           </div>
+          <div class="pottery-body">
+            <p class="host-text">今回、陶芸家の加藤 裕さんが岐阜からはるばる参加！料理の一部を彼の作ったうつわでご提供します。どんなうつわかは当日のお楽しみ。</p>
+            <div class="pottery-profile">
+              <h3 class="pottery-name serif">加藤 裕（ゆたか）さん</h3>
+              <p class="pottery-text">陶芸歴23年、陶芸と出会って36年。人間国宝・加藤卓男先生に師事し、幸兵衛窯で7年間修行。東海伝統工芸展 東濃信用金庫賞を受賞し、公募展には15回入選。展示・イベントには30回以上出展しています。</p>
+              <p class="pottery-text">コンセプトは『うつわで繋がる豊かな心』。地元・美濃の土と、自ら調合した釉薬でオリジナルの色を表現しています。</p>
+              <p class="caption"><a href="https://www.instagram.com/yutaka__japan/" target="_blank" rel="noopener">Instagram: @yutaka__japan</a></p>
+            </div>
+          </div>
+          <figure class="pottery-photo">
+            <img src="assets/yutaka-profile.png" alt="器を手にする陶芸家の加藤 裕さん">
+          </figure>
         </div>
-        <figure class="pottery-photo">
-          <img src="assets/yutaka-profile.png" alt="器を手にする陶芸家の加藤 裕さん">
+
+        <div class="pottery-works" aria-labelledby="pottery-works-title">
+          <div class="pottery-works-head">
+            <h3 id="pottery-works-title" class="pottery-works-title serif">加藤 裕さんのうつわ</h3>
+          </div>
+          <div class="pottery-works-grid">
+            <figure>
+              <img src="assets/yutaka-work-01.webp" alt="緑の釉薬が印象的な加藤 裕さんのうつわ" loading="lazy">
+            </figure>
+            <figure>
+              <img src="assets/yutaka-work-02.webp" alt="藍色の模様が広がる加藤 裕さんのうつわ" loading="lazy">
+            </figure>
+            <figure>
+              <img src="assets/yutaka-work-03.webp" alt="織部の色と造形が印象的な加藤 裕さんのうつわ" loading="lazy">
+            </figure>
+          </div>
+          <p class="caption"><a href="https://na-utsuwa.jp/maker/u0000091" target="_blank" rel="noopener">作品写真：NA-utsuwa（日本橋アートうつわ）</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="masaya" aria-labelledby="masaya-title">
+      <div class="wrap masaya-grid">
+        <figure class="masaya-photo">
+          <img src="assets/masaya-profile.jpg" alt="鮨を握る鮨まさや大将">
         </figure>
+        <div>
+          <p class="host-role">おまかせ握り担当</p>
+          <h2 id="masaya-title" class="section-title serif">鮨まさや大将</h2>
+          <p class="host-text">13年間の会社員生活を経て、30代後半に未経験から鮨職人へ。わずか数ヶ月の修業ながら会員制鮨屋の大将に抜擢。独立後は紹介制の鮨会「鮨まさや」を主宰し、鮨を通じて分かち合い、ご縁がつながる場をつくっています。</p>
+          <p class="host-text" style="margin-top: 18px;">当日は、その日の日本酒に合わせたおまかせ握りを3貫、丁寧に握らせていただきます。</p>
+          <p class="caption"><a href="https://www.instagram.com/masaya.producer/" target="_blank" rel="noopener">Instagram: @masaya.producer</a></p>
+        </div>
       </div>
     </section>
 
     <section class="gallery">
       <div class="wrap">
         <div class="gallery-head">
-          <div>
-            <h2 class="section-title serif">前回開催時の料理</h2>
-            <p class="lead">前回は、こんな料理でした。</p>
-          </div>
+          <h2 class="section-title serif">前回開催時の料理</h2>
           <p class="gallery-note">写真は前回開催時の料理です。<br>今回のメニューとは異なります。</p>
         </div>
         <div class="photo-grid">
@@ -727,7 +965,7 @@
           <figure><img src="assets/previous-plate-1.jpeg" alt="前回開催時の盛り合わせ料理"></figure>
           <figure><img src="assets/previous-noodle.jpg" alt="前回開催時の麺料理"></figure>
           <figure><img src="assets/previous-plate-2.jpeg" alt="前回開催時の食卓の一皿"></figure>
-          <figure><img src="assets/table-egg-drinks.jpg" alt="前回開催時のダチョウ卵と飲み物"></figure>
+          <figure><img src="assets/previous-sushi.webp" alt="前回開催時に握った鮨"></figure>
         </div>
       </div>
     </section>
@@ -742,13 +980,14 @@
             <li><b>アクセス</b><span>北参道駅より徒歩3分<br>原宿、明治神宮前、代々木、千駄ヶ谷駅より徒歩10〜13分<br>南新宿駅より徒歩16分</span></li>
             <li><b>定員</b><span>10名</span></li>
             <li><b>会費</b><span>13,000円<br>早割 2026年8月31日まで 12,000円</span></li>
-            <li><b>内容</b><span>ダチョウ肉・卵の食べ比べ<br>日本酒1〜2種、ウイスキー、焼酎<br>おまけの鮨3貫ほど</span></li>
-            <li><b>持ち込み</b><span>乾杯前に飲みたいお酒・ビール<br>みんなに食べてほしい一品</span></li>
+            <li><b>内容</b><span>ダチョウ肉食べ比べコース<br>ダチョウ卵を割るイベント<br>日本酒2種、ウイスキー、焼酎<br>鮨まさやのおまかせ握り3貫</span></li>
+            <li><b>持ち寄り</b><span>1品持ち寄り制です<br>おすそ分けしたい食べ物または飲み物を1品お持ちください<br>ビールや乾杯前に飲みたいお酒もご持参ください</span></li>
           </ul>
         </div>
         <aside class="notice">
           <h3>キャンセルポリシー</h3>
-          <p>3日前から：50%<br>前日：80%<br>当日：100%</p>
+          <p>3日前（9月8日）〜：80%<br>当日：100%</p>
+          <p class="caption">お肉の仕入れと仕込みの都合でご了承ください。</p>
           <h3 style="margin-top: 26px;">お支払い</h3>
           <p>申込フォームの次のページに、銀行振込とPayPayの支払い先を記載しています。申込後3日以内にお支払いください。</p>
         </aside>
@@ -757,8 +996,8 @@
 
     <section id="entry" class="entry">
       <div class="wrap entry-box">
-        <h2 class="section-title serif">定員は10名です。</h2>
-        <p class="lead">お申し込みはGoogleフォームで受け付けます。お支払いは、事前振込またはPayPayです。</p>
+        <h2 class="section-title serif">お申込み</h2>
+        <p class="lead">お申込みは以下Googleフォームにて。お支払いは事前振込またはPayPayとなります。</p>
         <div class="entry-actions">
           <a class="button primary" href="https://docs.google.com/forms/d/e/1FAIpQLSduuSi6uGa5mvkLixNgrf4Q6wV3qJt3vAOnESsEoYF_pkXgSA/viewform" target="_blank" rel="noopener">Googleフォームで申し込む</a>
           <a class="button secondary" href="#info">開催概要を確認する</a>
