@@ -495,14 +495,20 @@
       background: #ece8de;
     }
 
-    .masaya-grid {
+    .organizer {
+      background: var(--white);
+    }
+
+    .masaya-grid,
+    .organizer-grid {
       display: grid;
       grid-template-columns: minmax(250px, 380px) minmax(0, 1fr);
       gap: clamp(34px, 7vw, 82px);
       align-items: center;
     }
 
-    .masaya-photo {
+    .masaya-photo,
+    .organizer-photo {
       margin: 0;
       overflow: hidden;
       border-radius: 8px;
@@ -510,11 +516,19 @@
       background: var(--soft);
     }
 
-    .masaya-photo img {
+    .masaya-photo img,
+    .organizer-photo img {
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
+    }
+
+    .masaya-photo img {
       object-position: center 38%;
+    }
+
+    .organizer-photo img {
+      object-position: center 24%;
     }
 
     .gallery {
@@ -692,6 +706,7 @@
       .host-grid,
       .pottery-grid,
       .masaya-grid,
+      .organizer-grid,
       .gallery-head,
       .info-grid {
         grid-template-columns: 1fr;
@@ -711,7 +726,8 @@
         margin-left: 70px;
       }
 
-      .masaya-photo {
+      .masaya-photo,
+      .organizer-photo {
         width: min(100%, 420px);
       }
 
@@ -945,11 +961,28 @@
           <img src="assets/masaya-profile.jpg" alt="鮨を握る鮨まさや大将">
         </figure>
         <div>
-          <p class="host-role">おまかせ握り担当</p>
+          <p class="host-role">共催・おまかせ握り担当</p>
           <h2 id="masaya-title" class="section-title serif">鮨まさや大将</h2>
           <p class="host-text">13年間の会社員生活を経て、30代後半に未経験から鮨職人へ。わずか数ヶ月の修業ながら会員制鮨屋の大将に抜擢。独立後は紹介制の鮨会「鮨まさや」を主宰し、鮨を通じて分かち合い、ご縁がつながる場をつくっています。</p>
           <p class="host-text" style="margin-top: 18px;">当日は、その日の日本酒に合わせたおまかせ握りを3貫、丁寧に握らせていただきます。</p>
           <p class="caption"><a href="https://www.instagram.com/masaya.producer/" target="_blank" rel="noopener">Instagram: @masaya.producer</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="organizer" aria-labelledby="organizer-title">
+      <div class="wrap organizer-grid">
+        <figure class="organizer-photo">
+          <img src="assets/yukiko.jpg" alt="優(You)BASEを運営する和田 優喜子">
+        </figure>
+        <div>
+          <p class="host-role">主催・会場提供</p>
+          <h2 id="organizer-title" class="section-title serif">和田 優喜子</h2>
+          <p class="host-text">「一生、美味しいを楽しむ」をコンセプトに、健康的な体づくりをサポートするボディケアセラピストとして「優(You)BASE 原宿サロン」を運営。</p>
+          <p class="host-text" style="margin-top: 18px;">その傍ら、「酒縁の会」コミュニティを主宰。人と人がつながる“場づくり女将”として、鮨や日本酒、料理を囲む会などを開催し、この1年間で700名以上の方に足を運んでいただきました。</p>
+          <p class="host-text" style="margin-top: 18px;">会で大切にしているのは、皆さまに「お裾分けの一品」をお持ちいただくこと。</p>
+          <p class="host-text" style="margin-top: 18px;">それぞれの「美味しい」を分かち合うことで自然と会話が生まれ、お互いを知っていく。</p>
+          <p class="host-text" style="margin-top: 18px;">そんな時間の中から、素敵なご縁が生まれる瞬間が何よりも嬉しいです。</p>
         </div>
       </div>
     </section>
