@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>経営者こそ、鮨を握れ。｜後藤将哉 / 鮨まさや</title>
-  <meta name="description" content="鮨を握れるようになって変わったのは、技術ではなく人との出会い方でした。著書『経営者こそ、鮨を握れ。』著者・後藤将哉の活動と、3時間の鮨実践講座をご紹介します。">
+  <title>後藤将哉｜鮨を握るビジネスプロデューサー</title>
+  <meta name="description" content="紹介制鮨会「鮨まさや」を主宰する後藤将哉のポータルサイト。鮨を通じて人との出会い方が変わった体験と、3時間の鮨実践講座、法人・コミュニティ向け鮨体験、著書をご案内します。">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="経営者こそ、鮨を握れ。｜後藤将哉 / 鮨まさや">
-  <meta property="og:description" content="鮨を握れるようになって変わったのは、技術ではなく人との出会い方でした。著書『経営者こそ、鮨を握れ。』著者・後藤将哉の活動と、3時間の鮨実践講座をご紹介します。">
+  <meta property="og:title" content="後藤将哉｜鮨を握るビジネスプロデューサー">
+  <meta property="og:description" content="鮨を握れるようになって、変わったのは技術ではありません。人との『出会い方』でした。後藤将哉の鮨・著者活動をご案内します。">
   <meta property="og:image" content="https://sushi.en-moto.com/masaya/assets/hero-sushi.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <style>
@@ -42,6 +42,7 @@
     }
 
     img { display: block; max-width: 100%; }
+    figure { margin: 0; }
     a { color: inherit; text-decoration: none; }
     h1, h2, h3, p { margin-top: 0; }
 
@@ -202,6 +203,13 @@
       line-height: 1.55;
     }
 
+    .hero-credentials {
+      margin: -12px 0 30px;
+      color: rgba(255, 250, 243, 0.7);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -227,6 +235,72 @@
 
     .section.alt { background: var(--paper-2); }
     .section.dark { background: var(--sumi); color: rgba(255, 250, 243, 0.86); }
+
+    .routes {
+      padding-top: 82px;
+      padding-bottom: 82px;
+    }
+
+    .routes-head {
+      max-width: 720px;
+      margin-bottom: 36px;
+    }
+
+    .routes-head .section-title { margin-bottom: 14px; }
+
+    .routes-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .route-card {
+      min-height: 100%;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.72);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .route-card.primary {
+      border-top: 3px solid var(--accent);
+      background: var(--white);
+      box-shadow: 0 18px 44px rgba(47, 42, 37, 0.08);
+    }
+
+    .route-label {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .route-card h3 {
+      margin-bottom: 14px;
+      color: var(--ink);
+      font-size: 24px;
+      line-height: 1.45;
+    }
+
+    .route-card p {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .route-card .button {
+      width: 100%;
+      margin-top: auto;
+    }
 
     .wrap {
       width: min(var(--max), 100%);
@@ -362,64 +436,6 @@
       line-height: 1.9;
     }
 
-    .entry-head {
-      max-width: 720px;
-      margin-bottom: 42px;
-    }
-
-    .entry-head .section-title { margin-bottom: 18px; }
-
-    .entry-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .entry-card {
-      min-height: 100%;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 253, 248, 0.66);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .entry-card.featured {
-      background: var(--white);
-      box-shadow: 0 18px 44px rgba(47, 42, 37, 0.08);
-    }
-
-    .entry-label {
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .entry-card h3 {
-      margin-bottom: 0;
-      color: var(--ink);
-      font-size: 23px;
-      line-height: 1.45;
-    }
-
-    .entry-card p {
-      margin-bottom: auto;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .entry-card .button { width: 100%; }
-
-    .book-row {
-      display: grid;
-      grid-template-columns: 160px minmax(0, 1fr);
-      gap: 24px;
-      align-items: center;
-    }
-
     .book-cover {
       border: 1px solid rgba(47, 42, 37, 0.14);
       box-shadow: 0 18px 34px rgba(47, 42, 37, 0.14);
@@ -482,6 +498,95 @@
       height: 6px;
       border-radius: 50%;
       background: var(--accent);
+    }
+
+    .proof {
+      padding-top: 0;
+    }
+
+    .proof-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: clamp(34px, 6vw, 68px);
+      align-items: center;
+      padding-top: 72px;
+      border-top: 1px solid var(--line);
+    }
+
+    .proof-photo {
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--paper-2);
+    }
+
+    .proof-photo img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    .proof-label {
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .proof-copy h2 {
+      margin-bottom: 20px;
+      color: var(--ink);
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.35;
+    }
+
+    .proof-copy p {
+      margin-bottom: 14px;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .proof-fact {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted) !important;
+      font-size: 14px !important;
+    }
+
+    .book-layout {
+      display: grid;
+      grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+      gap: clamp(40px, 8vw, 92px);
+      align-items: center;
+    }
+
+    .book-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .book-visual .book-cover {
+      width: min(100%, 270px);
+    }
+
+    .book-copy .section-title { margin-bottom: 24px; }
+
+    .book-copy .button { margin-top: 28px; }
+
+    .connect-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .connect-layout .section-title { margin-bottom: 14px; }
+
+    .connect-layout p {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 16px;
     }
 
     .social-band {
@@ -596,9 +701,11 @@
 
       .profile,
       .course-layout,
-      .entry-grid,
-      .book-row,
-      .produce-layout {
+      .produce-layout,
+      .route-grid,
+      .proof-layout,
+      .book-layout,
+      .connect-layout {
         grid-template-columns: 1fr;
       }
 
@@ -608,6 +715,14 @@
 
       .book-cover {
         width: 148px;
+      }
+
+      .book-visual {
+        justify-content: flex-start;
+      }
+
+      .book-visual .book-cover {
+        width: 168px;
       }
 
       .course-focus {
@@ -626,14 +741,14 @@
 <body>
   <header class="site-nav">
     <div class="nav-inner">
-      <a class="brand" href="#top">後藤将哉｜著書・鮨講座・イベント</a>
+      <a class="brand" href="#top">後藤将哉｜鮨まさや</a>
       <nav class="nav-links" aria-label="主要ナビゲーション">
-        <a href="#why">出会い方が変わった理由</a>
         <a href="#profile">後藤将哉について</a>
         <a href="#course">3時間の実践講座</a>
-        <a href="#produce">法人向け相談</a>
-        <a href="#entry">著書・講座・イベント</a>
-        <a class="button nav-cta" href="#course">実践講座を見る</a>
+        <a href="#produce">鮨体験の開催相談</a>
+        <a href="#book">著書</a>
+        <a href="#connect">つながる</a>
+        <a class="button nav-cta" href="#activities">活動を見る</a>
       </nav>
     </div>
   </header>
@@ -642,12 +757,44 @@
     <section class="hero">
       <img class="hero-img" src="assets/hero-sushi.jpg" alt="鮨を握る手元とカウンターの風景">
       <div class="hero-content">
-        <p class="hero-kicker">名刺交換いただいた方へ</p>
-        <h1 class="serif">経営者こそ、<br>鮨を握れ。</h1>
+        <p class="hero-kicker">鮨を握るビジネスプロデューサー</p>
+        <h1 class="serif">後藤将哉</h1>
         <p class="hero-sub">鮨を握れるようになって、変わったのは技術ではありません。<br>人との「出会い方」でした。</p>
+        <p class="hero-credentials">紹介制鮨会「鮨まさや」主宰 ／ 著書『経営者こそ、鮨を握れ。』</p>
         <div class="hero-actions">
-          <a class="button" href="#why">出会い方が変わった理由を見る</a>
-          <a class="button secondary" href="#course">3時間の実践講座を見る</a>
+          <a class="button" href="#activities">活動を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities" class="section alt routes">
+      <div class="wrap">
+        <div class="routes-head">
+          <h2 class="section-title serif">鮨を通じて、<br>やっていること。</h2>
+          <p>興味のある入口からご覧ください。</p>
+        </div>
+
+        <div class="route-grid">
+          <article class="route-card primary">
+            <div class="route-label">鮨を学びたい</div>
+            <h3 class="serif">3時間の鮨実践講座</h3>
+            <p>自分で一貫を握り、家族や仲間にふるまうところまでを実践する少人数制の講座です。</p>
+            <a class="button" href="#course">講座について見る</a>
+          </article>
+
+          <article class="route-card">
+            <div class="route-label">鮨体験を開きたい</div>
+            <h3 class="serif">企業・コミュニティでの開催</h3>
+            <p>経営者会や懇親会など、その場に合わせて鮨をきっかけに会話が生まれる体験を企画します。</p>
+            <a class="button secondary" href="#produce">開催相談について見る</a>
+          </article>
+
+          <article class="route-card">
+            <div class="route-label">まず本で知りたい</div>
+            <h3 class="serif">『経営者こそ、鮨を握れ。』</h3>
+            <p>なぜ経営者に鮨なのか。僕自身の変化と、鮨が人との関係に与えたものを書きました。</p>
+            <a class="button secondary" href="#book">著書について見る</a>
+          </article>
         </div>
       </div>
     </section>
@@ -743,39 +890,44 @@
       </div>
     </section>
 
-    <section id="entry" class="section alt">
-      <div class="wrap">
-        <div class="entry-head">
-          <h2 class="section-title serif">著書・講座・イベント</h2>
+    <section class="section proof" aria-labelledby="proof-title">
+      <div class="wrap proof-layout">
+        <figure class="proof-photo">
+          <img src="assets/sushi-retreat.jpg" alt="鮨リトリートで参加者が鮨を握っている様子">
+        </figure>
+        <div class="proof-copy">
+          <p class="proof-label">開催実績　鮨リトリート / 2026.4</p>
+          <h2 id="proof-title" class="serif">10名限定の<br>鮨リトリート</h2>
+          <p>都内のプライベート空間で、10名限定の鮨リトリートを開催しました。参加者自身が鮨を握り、同じ場で食べる体験を通じて交流しました。</p>
+          <p class="proof-fact">『スタンフォード式 最高の休み方』著者・鈴木亜佐子氏を特別ゲストに迎え、後藤将哉・和田優喜子・小野匠が講師を務めました。</p>
         </div>
+      </div>
+    </section>
 
-        <div class="entry-grid">
-          <article class="entry-card">
-            <div class="entry-label">著書</div>
-            <div class="book-row">
-              <img class="book-cover" src="assets/book-cover.jpg" alt="著書『経営者こそ、鮨を握れ。』表紙">
-              <div>
-                <h3>まず、本で世界観を知る</h3>
-                <p>『経営者こそ、鮨を握れ。』Kindle Unlimited / Kindle / 紙書籍で読めます。</p>
-              </div>
-            </div>
-            <a class="button secondary" href="https://sushi.en-moto.com/kindle-book/">本の詳細を見る</a>
-          </article>
-
-          <article class="entry-card featured">
-            <div class="entry-label">3時間の実践講座</div>
-            <h3>鮨を握る体験に触れる</h3>
-            <p>経営者・個人事業主向け。自分で一貫を握り、人にふるまうところまでを3時間で実践する、少人数制の講座です。</p>
-            <a class="button" href="https://sushi.en-moto.com/practical-course/">実践講座の詳細を見る</a>
-          </article>
-
-          <article class="entry-card">
-            <div class="entry-label">LINE</div>
-            <h3>最新の情報を受け取る</h3>
-            <p>読者特典、イベント・講座の案内、最新情報をLINEでお届けします。</p>
-            <a class="button line" href="https://sub.masaya-goto.com/line/open/P0vXoLHsEx3T">LINEで受け取る</a>
-          </article>
+    <section id="book" class="section alt">
+      <div class="wrap book-layout">
+        <div class="book-visual">
+          <img class="book-cover" src="assets/book-cover.jpg" alt="著書『経営者こそ、鮨を握れ。』表紙">
         </div>
+        <div class="book-copy">
+          <p class="proof-label">著書</p>
+          <h2 class="section-title serif">経営者こそ、<br>鮨を握れ。</h2>
+          <div class="lead">
+            <p>名刺を配り、自己紹介を磨いても、なかなか仕事につながらなかった。そんな僕の出会い方を変えたのが、鮨でした。</p>
+            <p>なぜ鮨を握ることが人との関係を変え、自分の中にあった強みを伝わる形にしてくれたのか。その体験を一冊にまとめています。</p>
+          </div>
+          <a class="button secondary" href="https://sushi.en-moto.com/kindle-book/">本の詳細を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect" class="section">
+      <div class="wrap connect-layout">
+        <div>
+          <h2 class="section-title serif">鮨会・講座の<br>開催案内</h2>
+          <p>LINEでは、読者特典、鮨会・実践講座の開催案内、最新情報をお届けしています。</p>
+        </div>
+        <a class="button line" href="https://sub.masaya-goto.com/line/open/P0vXoLHsEx3T">LINEで案内を受け取る</a>
       </div>
     </section>
 
