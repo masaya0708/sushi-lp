@@ -1,7 +1,7 @@
 # 個人LP（後藤将哉ポータル）SPEC
 
 対象: `sushi-lp/masaya/index.html`（本番: https://sushi.en-moto.com/masaya/ ）
-最終更新: 2026-08-30
+最終更新: 2026-09-08
 
 ## このLPの役割
 
@@ -16,8 +16,10 @@
 5. #course 3時間の鮨実践講座
 6. #produce 法人・コミュニティ向け鮨体験と専用Googleフォーム
 7. 開催実績（鮨リトリート）
-8. #book 著書『経営者こそ、鮨を握れ。』
-9. #connect LINEとSNSの継続接点
+8. 大規模イベント実績（FLOW THE FESTIVAL 2026）
+9. これまでの鮨会の写真と鮨握り体験交流会の参加者動画
+10. #book 著書『経営者こそ、鮨を握れ。』
+11. #connect LINEとSNSの継続接点
 
 継続接点用LINE: `https://sub.masaya-goto.com/line/open/P0vXoLHsEx3T`
 法人・コミュニティ向け開催相談フォーム: `https://docs.google.com/forms/d/e/1FAIpQLSdve2ZUNl8qLYCNZumbPzVdQwDy_vsBFWM8GlmzJNyFkgb3Tg/viewform`
@@ -203,3 +205,81 @@
     cause: objective_change
     delta: 守成クラブの名刺交換者向けLPから、複数流入を受ける後藤将哉の鮨・著者活動ポータルへ変更
     source: 2026-08-30の本人判断
+
+### MASAYA-LP-007
+
+- status: local_draft
+- date: 2026-09-08
+- scope_layer: copy / visual design / implementation
+- input_classification: factual_correction / new_artifact
+- current_decision:
+  - 鮨リトリートの実績写真を、本人指定の当日集合写真へ差し替える。
+  - 実績文を「『スタンフォード式 最高の休み方』著者・鈴木亜佐子氏を特別ゲストに迎え、10名の参加者とともに交流しました」へ変更する。
+  - 書名部分のみAmazonの商品ページへリンクする。
+  - 追加提供された過去の鮨会写真4枚は、説明を作らず「これまでの鮨会から」という写真ギャラリーで掲載する。
+  - FLOW THE FESTIVAL 2026は少人数の鮨会写真に混ぜず、法人・イベント向けの実行力を示す独立した実績として扱う。素材と掲載内容を確認してから実装する。
+- rationale:
+  - 当日の集合写真には鈴木亜佐子氏、参加者、書籍名が同時に写っており、実績内容との対応が明確である。
+  - 過去の鮨会写真は、未確認の開催名や参加者属性を加えずに、場の人数感と雰囲気を伝えられる。
+  - 個別の実績カードを増やさず写真帯に留めることで、法人・コミュニティ向け開催相談の補強というセクションの役割を保つ。
+  - FLOW THE FESTIVAL 2026は大規模イベントでの提供・運営実績であり、少人数の交流会とは証明する内容が異なる。
+- history:
+  - date: 2026-09-08
+    outcome: change
+    cause: new_evidence
+    delta: 鮨リトリート写真と説明文を本人提供の当日資料に合わせ、過去の鮨会写真4枚を補助的に追加
+    source: 2026-09-08に本人が指定・提供した鮨リトリート写真1枚、過去の鮨会写真4枚、修正文
+  - date: 2026-09-08
+    outcome: preserve
+    cause: none
+    delta: FLOW THE FESTIVAL 2026は少人数鮨会の写真帯へ混在させず、別実績として後日検討
+    source: 2026-09-08の本人からの掲載相談
+
+### MASAYA-LP-008
+
+- status: local_draft
+- date: 2026-09-08
+- scope_layer: copy / visual design / implementation
+- supersedes: MASAYA-LP-007のFLOW THE FESTIVAL 2026実装保留
+- input_classification: new_artifact
+- reader_state:
+  - who: 名刺、SNS、紹介、検索、著書などから後藤将哉の活動を知り、鮨会やイベントを任せられる人物か確認している人
+  - state: 鮨まさやの考え方には関心があるが、開催実績と対応できる現場の幅をまだ知らない
+  - knows: 少人数の鮨会、3時間の実践講座、法人・コミュニティ向け鮨体験を行っていること
+  - natural_next_action: 小規模な会だけでなく大型イベントでの提供実績も確認し、必要なら開催相談へ進む
+- current_decision:
+  - FLOW THE FESTIVAL 2026を「大規模イベントでの提供実績」として独立セクションにする。
+  - 主訴求は、出演アーティスト向けの楽屋鮨を担当した事実と、少人数会以外の現場にも対応した実績による信頼形成とする。
+  - 実践講座受講生が握り手として参加した話は掲載しない。受講後の未来を示す役割は`/practical-course/`が担う。
+  - 写真は、担当チーム、鮨まさやののれん、用意したマグロの3枚を使用する。
+  - FLOW THE FESTIVAL 2026公式サイトへのリンクを掲載する。
+- rationale:
+  - `/masaya/`は講座の販売ページではなく、後藤将哉の鮨・著者活動を知り、活動の幅と信頼性を確認するポータルである。
+  - 受講生の参加を中心にすると講座の成果事例に見え、法人・イベント開催相談を補強する実績としての役割が弱くなる。
+  - 鮨リトリート、FLOW THE FESTIVAL 2026、過去の鮨会写真を分けることで、少人数の交流設計、大規模現場での提供、継続的な開催の3種類の証拠を見せられる。
+- history:
+  - date: 2026-09-08
+    outcome: change
+    cause: new_evidence
+    delta: FLOW THE FESTIVAL 2026を実装保留から、大規模イベントでの信頼を示す独立実績としてローカル実装へ変更
+    source: 2026-09-08に本人が提供したFLOW THE FESTIVAL 2026の写真3枚と掲載指示
+
+### MASAYA-LP-009
+
+- status: confirmed
+- date: 2026-09-08
+- scope_layer: copy / visual design / implementation
+- input_classification: preference_or_objection
+- current_decision:
+  - 鮨握り体験交流会のお客様の声動画を、「これまでの鮨会」の写真ギャラリー直後に掲載する。
+  - 写真を主な雰囲気の証拠、動画を参加者の実感を伝える補助的な証拠として扱う。
+  - 3時間の実践講座を受けた方の声とは混同せず、「鮨握り体験交流会に参加した方の声」と明記する。
+- rationale:
+  - FLOW THE FESTIVAL 2026は大規模現場での提供実績、写真ギャラリーは場の雰囲気、参加者動画は体験者の実感をそれぞれ補強し、証拠の役割が重複しない。
+  - 動画を講座セクション直下に置くと、3時間の実践講座の受講者動画だと誤認される可能性がある。
+- history:
+  - date: 2026-09-08
+    outcome: preserve
+    cause: none
+    delta: 写真を主、参加者動画を補助とする従来判断を維持し、鮨会写真の直後に動画を追加
+    source: 既存の鮨握り体験交流会動画と2026-09-08の本人確認

@@ -521,7 +521,7 @@
 
     .proof-photo img {
       width: 100%;
-      aspect-ratio: 3 / 2;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
     }
 
@@ -551,6 +551,170 @@
       border-top: 1px solid var(--line);
       color: var(--muted) !important;
       font-size: 14px !important;
+    }
+
+    .proof-fact a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: rgba(158, 43, 34, 0.45);
+      text-underline-offset: 4px;
+    }
+
+    .festival-proof {
+      padding: 92px 0;
+      color: var(--white);
+      background: var(--sumi);
+    }
+
+    .festival-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+      gap: clamp(40px, 7vw, 76px);
+      align-items: center;
+    }
+
+    .festival-label {
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .festival-copy h2 {
+      margin-bottom: 24px;
+      color: var(--white);
+      font-size: clamp(29px, 4vw, 46px);
+      line-height: 1.45;
+    }
+
+    .festival-copy p {
+      margin-bottom: 16px;
+      color: rgba(255, 250, 243, 0.76);
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .festival-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(196, 161, 90, 0.72);
+    }
+
+    .festival-gallery {
+      display: grid;
+      gap: 14px;
+    }
+
+    .festival-gallery figure {
+      overflow: hidden;
+      border-radius: 8px;
+      background: #201d1a;
+    }
+
+    .festival-main img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .festival-support {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(150px, 0.55fr);
+      gap: 14px;
+    }
+
+    .festival-support img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .festival-tuna img {
+      object-position: center 30%;
+    }
+
+    .festival-caption {
+      margin: 0;
+      color: rgba(255, 250, 243, 0.48);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .gathering-section {
+      padding-top: 76px;
+    }
+
+    .gathering-gallery {
+      margin-top: 0;
+    }
+
+    .gathering-gallery h3 {
+      margin-bottom: 20px;
+      color: var(--ink);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 500;
+    }
+
+    .gathering-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gathering-grid figure {
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--paper-2);
+    }
+
+    .gathering-grid img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .experience-voice {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+      gap: clamp(34px, 6vw, 68px);
+      align-items: center;
+      margin-top: 72px;
+      padding-top: 64px;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-voice h3 {
+      margin-bottom: 18px;
+      color: var(--ink);
+      font-size: clamp(26px, 3.5vw, 38px);
+      line-height: 1.45;
+    }
+
+    .experience-voice p:last-child {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .voice-video {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      background: var(--sumi);
+    }
+
+    .voice-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .book-layout {
@@ -704,9 +868,23 @@
       .produce-layout,
       .route-grid,
       .proof-layout,
+      .festival-layout,
+      .experience-voice,
       .book-layout,
       .connect-layout {
         grid-template-columns: 1fr;
+      }
+
+      .gathering-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .festival-support {
+        grid-template-columns: minmax(0, 1.3fr) minmax(120px, 0.7fr);
+      }
+
+      .festival-support img {
+        height: 160px;
       }
 
       .profile-photo {
@@ -893,13 +1071,69 @@
     <section class="section proof" aria-labelledby="proof-title">
       <div class="wrap proof-layout">
         <figure class="proof-photo">
-          <img src="assets/sushi-retreat.jpg" alt="鮨リトリートで参加者が鮨を握っている様子">
+          <img src="assets/sushi-retreat.jpg" alt="鮨リトリートで鈴木亜佐子氏と参加者が集まった様子">
         </figure>
         <div class="proof-copy">
           <p class="proof-label">開催実績　鮨リトリート / 2026.4</p>
           <h2 id="proof-title" class="serif">10名限定の<br>鮨リトリート</h2>
           <p>都内のプライベート空間で、10名限定の鮨リトリートを開催しました。参加者自身が鮨を握り、同じ場で食べる体験を通じて交流しました。</p>
-          <p class="proof-fact">『スタンフォード式 最高の休み方』著者・鈴木亜佐子氏を特別ゲストに迎え、後藤将哉・和田優喜子・小野匠が講師を務めました。</p>
+          <p class="proof-fact"><a href="https://amzn.asia/d/0eAEB3vC" target="_blank" rel="noopener noreferrer">『スタンフォード式 最高の休み方』</a>著者・鈴木亜佐子氏を特別ゲストに迎え、10名の参加者とともに交流しました</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="festival-proof" aria-labelledby="festival-title">
+      <div class="wrap festival-layout">
+        <div class="festival-copy">
+          <p class="festival-label">大規模イベントでの提供実績</p>
+          <h2 id="festival-title" class="serif">FLOW THE FESTIVAL 2026で、<br>出演アーティスト向けの<br>「楽屋鮨」を担当</h2>
+          <p>FLOW THE FESTIVAL 2026の楽屋で、出演アーティスト向けに鮨をふるまいました。</p>
+          <p>少人数の鮨会だけでなく、大型音楽フェスの現場でも、鮨まさやとして提供を行っています。</p>
+          <a class="festival-link" href="https://www.flow-official.jp/cam/flowthefestival2026/" target="_blank" rel="noopener noreferrer">FLOW THE FESTIVAL 2026 公式サイトを見る</a>
+        </div>
+        <div class="festival-gallery" aria-label="FLOW THE FESTIVAL 2026 楽屋鮨の実績写真">
+          <figure class="festival-main">
+            <img src="assets/flow-backstage-team.jpg" alt="FLOW THE FESTIVAL 2026の楽屋鮨を担当したチーム" loading="lazy">
+          </figure>
+          <div class="festival-support">
+            <figure>
+              <img src="assets/flow-noren.jpg" alt="FLOW THE FESTIVAL 2026 Presented by 鮨まさや のれん" loading="lazy">
+            </figure>
+            <figure class="festival-tuna">
+              <img src="assets/flow-tuna.jpg" alt="FLOW THE FESTIVAL 2026の楽屋鮨で用意したマグロ" loading="lazy">
+            </figure>
+          </div>
+          <p class="festival-caption">イベント名・写真は掲載許可の範囲で使用しています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gathering-section" aria-labelledby="gathering-gallery-title">
+      <div class="wrap gathering-gallery">
+        <h3 id="gathering-gallery-title" class="serif">これまでの鮨会から</h3>
+        <div class="gathering-grid">
+          <figure>
+            <img src="assets/sushi-gathering-01.jpg" alt="参加者が食卓を囲む鮨会の様子" loading="lazy">
+          </figure>
+          <figure>
+            <img src="assets/sushi-gathering-02.jpg" alt="参加者が集まった鮨会の様子" loading="lazy">
+          </figure>
+          <figure>
+            <img src="assets/sushi-gathering-03.jpg" alt="参加者が食卓を囲んで交流する鮨会の様子" loading="lazy">
+          </figure>
+          <figure>
+            <img src="assets/sushi-gathering-04.jpg" alt="鮨会を終えた参加者と後藤将哉の集合写真" loading="lazy">
+          </figure>
+        </div>
+      </div>
+      <div class="wrap experience-voice" aria-labelledby="experience-voice-title">
+        <div>
+          <p class="proof-label">参加者の声</p>
+          <h3 id="experience-voice-title" class="serif">体験した方の声</h3>
+          <p>鮨握り体験交流会に参加した方の声を、動画でご覧いただけます。</p>
+        </div>
+        <div class="voice-video">
+          <iframe src="https://www.youtube.com/embed/ljo05qcMbUk" title="鮨握り体験交流会 お客様の声" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
     </section>
