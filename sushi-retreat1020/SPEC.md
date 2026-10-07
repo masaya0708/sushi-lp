@@ -40,3 +40,10 @@
 - 原因: 和文約物を詰める font-feature "palt" が句点後を窮屈にしていた。文節折り返し指定がなく「す。」等が孤立。ジン写真の列幅が過大。鈴木亜佐子さんの写真が88pxで小さい。
 - 修正: palt削除、word-break:auto-phrase と text-wrap:pretty、段落間24px、ジンは240px+1fr、鈴木さんは112px(SP)/160px(PC)で名前と肩書きを分離。
 - 確認: 幅375pxと1100pxで該当4箇所を目視、横スクロールなし、本文16px。実機・Safari・Firefoxは未確認。
+
+## 改訂 2026-10-08（4回目: 写真の縦伸び修正・文言削除・フッター）
+- input: factual_correction / preference_or_objection / outcome: change / cause: reasoning_correction
+- 原因: img の height="800" 属性が aspect-ratio より優先され、主催者写真が縦に伸びていた（CSSに height:auto を追加。PC240×300、SP335×419で確認）。
+- 削除（ユーザー指示）: 「今回はゲストを招かず…」「出張費は10円単位で切り上げて計算します。」「確定した参加費（出張費込み）が基準です。お支払い前でも発生します。」
+- フッター: © 2026 Sushi-Masaya All Rights Reserved.
+- 注意: キャンセル料の基準（確定参加費・未入金でも発生）の記載がLPから消えたため、規定自体は sushi-experience-20261020/SPEC.md EXP-002 と申込フォーム/メール側にのみ残る。

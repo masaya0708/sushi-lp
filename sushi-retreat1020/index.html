@@ -259,7 +259,9 @@
         /* ---------- Hosts ---------- */
         .person { display: grid; gap: var(--s3); }
         .person + .person { margin-top: var(--s5); }
-        .person img { width: 100%; max-width: 320px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius); }
+        .person img { width: 100%; max-width: 360px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; border-radius: var(--radius); }
+        .person img.pos-masaya { object-position: center 30%; }
+        .person img.pos-yukiko { object-position: center 22%; }
         .person .role { color: var(--gold); font-size: 15px; margin: 0 0 var(--s2); }
         .person .name { font-family: var(--font-head); font-size: 24px; color: #fff; line-height: 1.4; }
         .person .name span { font-family: var(--font-body); font-size: 14px; color: var(--text-sub); margin-left: var(--s1); letter-spacing: 0.04em; }
@@ -436,9 +438,7 @@
                             <img src="asakosuzuki.png" alt="鈴木亜佐子さん" width="320" height="320">
                             <p class="who"><strong>鈴木 亜佐子さん</strong></p>
                             <p class="detail"><span class="nb">作家・</span><span class="nb">スタンフォード大学認定</span><span class="nb">コンパッションアンバサダー</span><br>著書『最高の休み方』ほか</p>
-                        </div>
-                        <p>今回はゲストを招かず、握ることと食べることに時間を使います。</p>
-                    </div>
+                        </div>                    </div>
                 </div>
             </div>
         </section>
@@ -491,7 +491,7 @@
                         <tr><th scope="row">定員</th><td>12名（5名以上で開催）</td></tr>
                         <tr><th scope="row">会場</th><td>優【You】BASE 原宿サロン<span class="caption">東京都渋谷区千駄ヶ谷3丁目<br>詳細住所は参加確定後にご案内します。</span></td></tr>
                         <tr><th scope="row">アクセス</th><td>東京メトロ副都心線 北参道駅 徒歩3分<span class="caption">JR原宿駅・明治神宮前駅・代々木駅・千駄ヶ谷駅から徒歩10〜13分</span></td></tr>
-                        <tr><th scope="row">参加費</th><td>お1人 13,000円 ＋ 出張費10,000円（参加人数で案分）<span class="caption">出張費は10円単位で切り上げて計算します。</span></td></tr>
+                        <tr><th scope="row">参加費</th><td>お1人 13,000円 ＋ 出張費10,000円（参加人数で案分）</td></tr>
                     </tbody>
                 </table>
 
@@ -534,9 +534,7 @@
                             <tr><td>10月17日（土）〜19日（月）</td><td>80%</td></tr>
                             <tr><td>10月20日（火）当日</td><td>100%</td></tr>
                         </tbody>
-                    </table>
-                    <p class="caption">確定した参加費（出張費込み）が基準です。お支払い前でも発生します。</p>
-                    <p class="caption">お問い合わせ・キャンセルのご連絡は、申し込み後にお送りするメールへの返信でお願いします。</p>
+                    </table>                    <p class="caption">お問い合わせ・キャンセルのご連絡は、申し込み後にお送りするメールへの返信でお願いします。</p>
                 </div>
 
                 <div class="cta">
@@ -553,7 +551,7 @@
                 <h2 class="h2">主催者紹介</h2>
 
                 <div class="person">
-                    <img src="masaya.jpg" alt="鮨まさや大将 後藤将哉" width="640" height="800" loading="lazy">
+                    <img src="masaya.jpg" alt="鮨まさや大将 後藤将哉" class="pos-masaya" width="640" height="800" loading="lazy">
                     <div>
                         <p class="role">鮨まさや大将 ／ プロデューサー</p>
                         <p class="name">後藤 将哉<span>Masaya Goto</span></p>
@@ -563,7 +561,7 @@
                 </div>
 
                 <div class="person">
-                    <img src="yukiko.jpg" alt="会場オーナー 和田優喜子さん" width="640" height="800" loading="lazy">
+                    <img src="yukiko.jpg" alt="会場オーナー 和田優喜子さん" class="pos-yukiko" width="640" height="800" loading="lazy">
                     <div>
                         <p class="role">会場オーナー ／ 居場所づくり</p>
                         <p class="name">和田 優喜子<span>Yukiko Wada</span></p>
@@ -622,7 +620,7 @@
 
     <footer>
         <div class="wrap-wide">
-            <p>&copy; 2026 en-moto All Rights Reserved.</p>
+            <p>&copy; 2026 Sushi-Masaya All Rights Reserved.</p>
         </div>
     </footer>
 </body>
