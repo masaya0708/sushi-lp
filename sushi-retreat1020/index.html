@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>鮨リトリート | 2026年10月20日（火）原宿</title>
+    <meta name="description" content="2026年10月20日（火）13:00〜15:30、原宿で開く鮨リトリート。自分で握って、隣の人が握った鮨を食べる。定員12名、募集締切は10月13日（火）23:59です。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===============================================================
+           鮨リトリート 2026.10.20
+           基準: デジタル庁デザインシステム（本文16px以上・行間175%・字間2%、
+           8px基準の余白、テキスト4.5:1・境界3:1、ボタン高56px・角丸8px、リンク下線）
+           トンマナ: 墨色の背景 × 金 × 明朝の見出し（鮨まさやLP共通）
+        =============================================================== */
+
+        :root {
+            --bg: #111111;
+            --surface: #1b1b1b;
+            --text: #ececec;
+            --text-sub: #b5b5b5;
+            --gold: #c3a36c;
+            --gold-hover: #d6bb87;
+            --gold-active: #a98a54;
+            --line: rgba(255, 255, 255, 0.14);
+            --line-strong: #6a6a6a;
+
+            --font-body: 'Noto Sans JP', sans-serif;
+            --font-head: 'Shippori Mincho', serif;
+
+            /* 8px基準の余白スケール */
+            --s1: 8px;
+            --s2: 16px;
+            --s3: 24px;
+            --s4: 40px;
+            --s5: 64px;
+            --s6: 96px;
+
+            --radius: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.75;
+            letter-spacing: 0.02em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @media (min-width: 768px) {
+            body { font-size: 17px; line-height: 1.8; }
+        }
+
+        img { max-width: 100%; display: block; }
+
+        p, li, dd, td, figcaption { word-break: auto-phrase; overflow-wrap: anywhere; line-break: strict; text-wrap: pretty; }
+        p + p { margin-top: var(--s3); }
+        .nb { display: inline-block; }
+
+        a { color: var(--gold); text-decoration: underline; text-underline-offset: 0.2em; }
+        a:hover { color: var(--gold-hover); }
+
+        /* フォーカスは黄＋黒の二重リング（キーボード操作用） */
+        :focus-visible {
+            outline: 3px solid #000;
+            box-shadow: 0 0 0 6px #ffd43d;
+            border-radius: 2px;
+        }
+
+        /* ---------- Layout ---------- */
+        .wrap { width: calc(100% - 40px); max-width: 720px; margin: 0 auto; }
+        .wrap-wide { width: calc(100% - 40px); max-width: 960px; margin: 0 auto; }
+
+        .section { padding: var(--s5) 0; }
+        .section.alt { background: var(--surface); }
+        @media (min-width: 768px) { .section { padding: var(--s6) 0; } }
+
+        /* セクション間のつながりが強いものは上の余白を詰める */
+        .section.tight-top { padding-top: 0; }
+
+        /* ---------- Headings ---------- */
+        h1, h2, h3 { font-family: var(--font-head); font-weight: 500; letter-spacing: 0.04em; }
+
+        .h2 {
+            font-size: 28px; line-height: 1.5;
+            color: #fff;
+            margin-bottom: var(--s4);
+            padding-top: var(--s3);
+            position: relative;
+        }
+        .h2::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 40px; height: 2px; background: var(--gold);
+        }
+        @media (min-width: 768px) { .h2 { font-size: 32px; } }
+
+        .h3 {
+            font-size: 20px; line-height: 1.5;
+            color: #fff;
+            margin-bottom: var(--s2);
+        }
+        @media (min-width: 768px) { .h3 { font-size: 22px; } }
+
+        .caption { font-size: 14px; line-height: 1.8; color: var(--text-sub); text-wrap: balance; }
+        .caption + .caption { margin-top: 4px; }
+
+        /* ---------- Button ---------- */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-height: 56px; min-width: 136px; padding: 0 var(--s4);
+            background: var(--gold); color: #111;
+            font-family: var(--font-body); font-weight: 700; font-size: 17px; letter-spacing: 0.06em;
+            text-decoration: none; border-radius: var(--radius);
+        }
+        .btn:hover { background: var(--gold-hover); color: #111; }
+        .btn:active { background: var(--gold-active); }
+        .btn-block { width: 100%; }
+        @media (min-width: 768px) { .btn-block { width: auto; min-width: 320px; } }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            min-height: 92svh;
+            display: flex; align-items: flex-end;
+            padding: var(--s6) 0 var(--s5);
+            background:
+                linear-gradient(to bottom, rgba(17, 17, 17, 0.55) 0%, rgba(17, 17, 17, 0.72) 45%, rgba(17, 17, 17, 1) 100%),
+                url('top.JPG') center / cover;
+        }
+        .hero .wrap-wide { max-width: 720px; }
+        .hero-by { font-size: 14px; color: var(--text-sub); letter-spacing: 0.16em; margin-bottom: var(--s2); }
+        .hero h1 { font-size: 44px; line-height: 1.3; color: var(--gold); letter-spacing: 0.12em; margin-bottom: var(--s2); font-weight: 600; }
+        .hero-lead { font-family: var(--font-head); font-size: 20px; line-height: 1.7; color: #fff; margin-bottom: var(--s4); }
+        .hero-meta { margin-bottom: var(--s4); color: var(--text); }
+        .hero-meta p + p { margin-top: 0; }
+        .hero-action { display: flex; flex-direction: column; gap: var(--s2); align-items: flex-start; }
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 64px; }
+            .hero-lead { font-size: 24px; }
+            .hero-action { flex-direction: row; align-items: center; gap: var(--s3); }
+        }
+
+        /* ---------- Facts strip ---------- */
+        .facts { border-bottom: 1px solid var(--line); }
+        .facts dl { display: grid; grid-template-columns: 1fr; }
+        .facts .row { padding: var(--s2) 0; border-top: 1px solid var(--line); display: flex; gap: var(--s3); }
+        .facts .row:first-child { border-top: 0; }
+        .facts dt { flex: 0 0 4.5em; color: var(--text-sub); font-size: 14px; line-height: 2; }
+        .facts dd { flex: 1; }
+        @media (min-width: 768px) {
+            .facts dl { grid-template-columns: 1fr 1fr; column-gap: var(--s5); }
+            .facts .row:nth-child(2) { border-top: 0; }
+        }
+
+        /* ---------- Concept ---------- */
+        .figure { margin: var(--s4) 0; }
+        .figure img { width: 100%; height: auto; border-radius: var(--radius); }
+
+        .scene { margin: var(--s4) 0; padding-left: var(--s3); border-left: 2px solid var(--gold); }
+        .scene p { font-family: var(--font-head); font-size: 18px; line-height: 2; letter-spacing: 0.02em; color: #fff; }
+        .scene p + p { margin-top: var(--s3); }
+        @media (min-width: 768px) { .scene p { font-size: 20px; } }
+
+        /* 2カラム（モバイルは縦積み） */
+        .split { display: grid; gap: var(--s4); align-items: start; }
+        @media (min-width: 768px) {
+            .split { grid-template-columns: 5fr 7fr; gap: var(--s5); }
+            .split.rev { grid-template-columns: 7fr 5fr; }
+            .split.rev > :first-child { order: 2; }
+        }
+        .split img { width: 100%; height: auto; border-radius: var(--radius); }
+
+        .about-box { margin-top: var(--s5); }
+
+        /* ---------- Menu / Share ---------- */
+        .menu-main { padding: var(--s3); border: 1px solid var(--gold); border-radius: var(--radius); margin-bottom: var(--s4); }
+        .menu-main .h3 { color: var(--gold); margin-bottom: var(--s1); }
+
+        .block { margin-top: var(--s5); }
+        .block > .h3 { padding-left: var(--s2); border-left: 2px solid var(--gold); }
+
+        .gin-wrap { display: grid; gap: var(--s4); align-items: start; }
+        .gin-photo { width: 100%; max-width: 220px; height: auto; margin: 0 auto; border-radius: var(--radius); }
+        @media (min-width: 768px) { .gin-wrap { grid-template-columns: 240px 1fr; gap: var(--s5); } .gin-photo { margin: 0; max-width: none; } }
+
+        .bullets { list-style: none; margin-top: var(--s2); }
+        .bullets li { position: relative; padding-left: var(--s3); }
+        .bullets li + li { margin-top: 4px; }
+        .bullets li::before { content: ''; position: absolute; left: 4px; top: 0.95em; width: 8px; height: 2px; background: var(--gold); }
+
+        /* ---------- Track record ---------- */
+        .eyebrow { font-size: 14px; color: var(--gold); letter-spacing: 0.12em; margin-bottom: var(--s1); }
+        .guest { display: grid; grid-template-columns: 112px 1fr; grid-template-areas: "img who" "detail detail"; gap: var(--s2) var(--s3); align-items: center; margin: var(--s3) 0; padding: var(--s3); background: #242424; border-radius: var(--radius); }
+        .guest img { grid-area: img; width: 112px; height: 112px; object-fit: cover; border-radius: 4px; }
+        .guest .who { grid-area: who; margin: 0; font-size: 18px; line-height: 1.5; }
+        .guest .detail { grid-area: detail; margin: 0; font-size: 16px; line-height: 1.75; color: var(--text); }
+        @media (min-width: 768px) {
+            .guest { grid-template-columns: 160px 1fr; grid-template-areas: "img who" "img detail"; align-content: center; row-gap: var(--s1); }
+            .guest img { width: 160px; height: 160px; }
+            .guest .who { align-self: end; font-size: 20px; }
+            .guest .detail { align-self: start; font-size: 17px; }
+        }
+        .guest strong { font-weight: 700; color: #fff; }
+
+        /* ---------- Voice ---------- */
+        .video { position: relative; aspect-ratio: 16 / 9; margin-bottom: var(--s4); border-radius: var(--radius); overflow: hidden; background: #000; }
+        .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+        .voices { list-style: none; display: grid; gap: var(--s4); }
+        .voices blockquote { font-family: var(--font-head); font-size: 18px; line-height: 1.9; color: #fff; padding-left: var(--s3); border-left: 2px solid var(--gold); }
+        .voices figcaption { margin: var(--s1) 0 0 calc(var(--s3) + 2px); }
+        @media (min-width: 768px) { .voices blockquote { font-size: 20px; } }
+
+        /* ---------- Tables ---------- */
+        .tbl { width: 100%; border-collapse: collapse; }
+        .tbl caption { text-align: left; font-weight: 700; color: #fff; padding-bottom: var(--s1); }
+        .tbl th, .tbl td { padding: var(--s2) var(--s2) var(--s2) 0; border-bottom: 1px solid var(--line-strong); text-align: left; vertical-align: top; }
+        .tbl th { font-weight: 700; color: #fff; width: 6.5em; white-space: nowrap; }
+        .tbl td .caption { display: block; }
+        .tbl.num td:last-child, .tbl.num th:last-child { text-align: right; padding-right: 0; }
+        .tbl.num th { width: auto; white-space: normal; }
+
+        .tbl-block { margin-top: var(--s5); }
+        .tbl-block .caption { margin-top: var(--s2); }
+
+        /* ---------- Flow ---------- */
+        .steps { list-style: none; counter-reset: step; margin-top: var(--s3); }
+        .steps li { counter-increment: step; position: relative; padding: 0 0 var(--s4) calc(40px + var(--s2)); }
+        .steps li::before {
+            content: counter(step);
+            position: absolute; left: 0; top: 0;
+            width: 40px; height: 40px; border-radius: 50%;
+            border: 1px solid var(--gold); color: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700;
+        }
+        .steps li::after { content: ''; position: absolute; left: 20px; top: 48px; bottom: var(--s1); width: 1px; background: var(--line-strong); }
+        .steps li:last-child { padding-bottom: 0; }
+        .steps li:last-child::after { display: none; }
+        .steps strong { display: block; color: #fff; font-weight: 700; margin-bottom: 4px; }
+
+        /* ---------- CTA ---------- */
+        .cta { margin-top: var(--s5); padding: var(--s4) var(--s3); background: var(--bg); border: 1px solid var(--gold); border-radius: var(--radius); text-align: center; }
+        .cta .lead { font-family: var(--font-head); font-size: 20px; color: #fff; margin-bottom: var(--s3); }
+        .cta .caption { margin-top: var(--s2); }
+
+        /* ---------- Hosts ---------- */
+        .person { display: grid; gap: var(--s3); }
+        .person + .person { margin-top: var(--s5); }
+        .person img { width: 100%; max-width: 320px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius); }
+        .person .role { color: var(--gold); font-size: 15px; margin: 0 0 var(--s2); }
+        .person .name { font-family: var(--font-head); font-size: 24px; color: #fff; line-height: 1.4; }
+        .person .name span { font-family: var(--font-body); font-size: 14px; color: var(--text-sub); margin-left: var(--s1); letter-spacing: 0.04em; }
+        @media (min-width: 768px) {
+            .person { grid-template-columns: 240px 1fr; gap: var(--s4); align-items: start; }
+            .person img { max-width: none; }
+        }
+
+        /* ---------- FAQ (accordion) ---------- */
+        .faq { border-top: 1px solid var(--line-strong); }
+        .faq details { border-bottom: 1px solid var(--line-strong); }
+        .faq summary {
+            list-style: none; cursor: pointer;
+            min-height: 56px; padding: var(--s2) 40px var(--s2) 0;
+            position: relative; font-weight: 700; color: #fff; line-height: 1.6;
+        }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after {
+            content: ''; position: absolute; right: 8px; top: 50%;
+            width: 10px; height: 10px; margin-top: -8px;
+            border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+            transform: rotate(45deg); transition: transform .2s;
+        }
+        .faq details[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+        .faq .answer { padding: 0 0 var(--s3); }
+
+        /* ---------- Closing ---------- */
+        .closing { text-align: left; }
+        .closing .big { font-family: var(--font-head); font-size: 24px; line-height: 1.7; color: #fff; margin-bottom: var(--s3); }
+        @media (min-width: 768px) { .closing .big { font-size: 30px; } }
+
+        footer { padding: var(--s4) 0; border-top: 1px solid var(--line); }
+        footer p { font-size: 14px; color: var(--text-sub); }
+
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="wrap-wide">
+            <p class="hero-by">Produced by 鮨まさや</p>
+            <h1>鮨リトリート</h1>
+            <p class="hero-lead"><span class="nb">鮨を握って、</span><span class="nb">五感をリセットする午後。</span></p>
+            <div class="hero-meta">
+                <p>2026年10月20日（火）13:00〜15:30</p>
+                <p>原宿　／　定員12名</p>
+            </div>
+            <div class="hero-action">
+                <a href="#apply" class="btn">開催情報を見る</a>
+                <p class="caption">募集締切 10月13日（火）23:59</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 要点 -->
+        <section class="facts section" style="padding: var(--s4) 0;" aria-label="開催のあらまし">
+            <div class="wrap-wide">
+                <dl>
+                    <div class="row"><dt>日時</dt><dd>10月20日（火）13:00〜15:30</dd></div>
+                    <div class="row"><dt>会場</dt><dd>原宿（北参道駅 徒歩3分）</dd></div>
+                    <div class="row"><dt>定員</dt><dd>12名（5名以上で開催）</dd></div>
+                    <div class="row"><dt>参加費</dt><dd>13,000円＋出張費（人数で案分）</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- コンセプト -->
+        <section class="section" id="about">
+            <div class="wrap">
+                <h2 class="h2">鮨リトリートとは？</h2>
+
+                <p>鮨まさやが主催する、鮨握り体験交流会の特別版です。</p>
+                <p>いつもの交流会とは違い、「握ること」を通じて、五感のリセットと、最高の休み方を体験していただく時間をご用意しました。</p>
+                <p>やることは、とてもシンプルです。</p>
+
+                <figure class="figure">
+                    <img src="sushi-retreat.jpg" alt="鮨リトリートで鮨を握る様子" width="1200" height="800">
+                </figure>
+
+                <div class="scene">
+                    <p>仕入れた新鮮なネタを前にして、見よう見まねで鮨を握ってみる。</p>
+                    <p>酢飯の温かさと香り。手に残る感触。</p>
+                    <p>気づくと、さっきまで頭にあった仕事のことや日常の悩みが消えています。</p>
+                </div>
+
+                <p>そして、隣の方が握った鮨を食べてみる。</p>
+                <p>自分が握ったものを誰かが食べて、「美味しい！」と言ってくれる。このやりとりが、想像以上に心地良いんです。</p>
+
+                <div class="about-box split rev">
+                    <div>
+                        <p class="eyebrow">ABOUT</p>
+                        <h3 class="h3">「鮨まさや」について</h3>
+                        <p>2025年に紹介制の鮨会として始まりました。</p>
+                        <p>コンセプトは、「鮨を通じて分かち合い、ご縁を紡ぐ」。参加者が一品を持ち寄り、鮨を囲みながら語り合う。そんなお裾分け文化が自然と育ち、SNS集客なしの口コミだけで毎回満席が続いています。</p>
+                    </div>
+                    <img src="sushi.masaya.png" alt="鮨まさや縁元" width="600" height="600">
+                </div>
+
+                <div class="block">
+                    <p>面白いのは、同じネタ、同じシャリを使っても、握る方によって味が変わること。技術の差だけでは説明がつきません。</p>
+                    <p>これまで鮨握り体験交流会を重ねてきて気づいたのは、「握る」というプロセスそのものが、人と人との距離を自然に縮めているということでした。</p>
+                    <p>初めましての方同士でも、鮨を握っていると不思議と会話が生まれます。手を動かしているから沈黙も気まずくならないし、「これ美味しいですね」がそのまま対話になる。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- お料理 -->
+        <section class="section alt" id="menu">
+            <div class="wrap">
+                <h2 class="h2">お料理ラインナップ</h2>
+
+                <div class="menu-main">
+                    <h3 class="h3">握り10種前後 ＋ 巻物 ＋ お椀</h3>
+                    <p>豊洲市場から新鮮な魚を目利きのプロから仕入れる予定です。</p>
+                </div>
+
+                <p>このネタの一部を、皆様に握っていただきます。参加者同士の食べ比べや、大将と女将の握りとの食べ比べもあります。</p>
+                <p>同じネタを醤油、塩、炙りで食べ比べるなど、お鮨屋ではなかなかできない体験を、時間の許す限りお楽しみください。</p>
+
+                <div class="block">
+                    <h3 class="h3">実は新しいシャリを考案中です</h3>
+                    <p>今、鮨会で使っているのは、こだわりの有機純米酢（いわゆる白酢）を使ったシンプルなシャリ酢です。どんなネタにも合うように設計しています。</p>
+                    <p>ただ、僕はこだわり始めると追求したくなる性分で、赤酢をブレンドしたシャリも作りたくなりました（笑）</p>
+                    <p>そこで今回、開発中の赤酢シャリを試していただき、ぜひ感想を聞かせてください。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- おすそ分け -->
+        <section class="section" id="share">
+            <div class="wrap-wide">
+                <h2 class="h2">おすそ分けの文化</h2>
+
+                <div class="gin-wrap">
+                    <img src="gin.png" alt="三島のクラフトジン Water Dragon Spirits のボトル" class="gin-photo" width="400" height="600">
+                    <div>
+                        <h3 class="h3">大将からのおすそ分け</h3>
+                        <p>初めてご依頼をいただいた記念に、三島のクラフトジンを差し入れます。今まで飲んだジンの中で一番感動したので、皆様にも飲んでいただきたいと思いました。</p>
+                        <p>2024年8月、アジアを代表するシンガポールの酒類品評会で最高金賞を獲得しました。4月にアメリカ、7月にイギリス、8月にシンガポールと、3つのエリアを代表する酒類品評会のすべてで最高評価を得たジンです。</p>
+                    </div>
+                </div>
+
+                <div class="block" style="max-width: 720px;">
+                    <h3 class="h3">一品持ち寄り制</h3>
+                    <p>おすそ分け文化を大切にしています。今回はお酒などのお飲み物がついていません。ぜひ皆様の「これ飲んでほしい！」という1本を、おすそ分けください。</p>
+                    <ul class="bullets">
+                        <li>お鮨に合うおつまみでも構いません</li>
+                        <li>お酒を飲まない方は、ノンアルコールでも大丈夫です</li>
+                        <li>お水とお茶は、こちらで用意します</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実績 -->
+        <section class="section alt" id="track">
+            <div class="wrap-wide">
+                <h2 class="h2">過去の開催実績</h2>
+
+                <div class="split">
+                    <div>
+                        <figure>
+                            <img src="sushi-retreat-group.jpg" alt="2026年4月28日、鮨リトリート当日の集合写真" loading="lazy" width="1200" height="675">
+                            <figcaption class="caption" style="margin-top: var(--s1);">2026年4月28日　鮨リトリート当日の集合写真（参加者10名）</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <p class="eyebrow">2026.4.28　鮨リトリート</p>
+                        <p>鮨リトリートは、今回が初めてではありません。4月には、アメリカ在住の作家・鈴木亜佐子さんを特別ゲストに迎えて開催しました。</p>
+                        <div class="guest">
+                            <img src="asakosuzuki.png" alt="鈴木亜佐子さん" width="320" height="320">
+                            <p class="who"><strong>鈴木 亜佐子さん</strong></p>
+                            <p class="detail"><span class="nb">作家・</span><span class="nb">スタンフォード大学認定</span><span class="nb">コンパッションアンバサダー</span><br>著書『最高の休み方』ほか</p>
+                        </div>
+                        <p>今回はゲストを招かず、握ることと食べることに時間を使います。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 声 -->
+        <section class="section" id="voice">
+            <div class="wrap">
+                <h2 class="h2">体験された方の声</h2>
+                <p style="margin-bottom: var(--s4);">鮨握り体験交流会に参加された方の声です。</p>
+
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube.com/embed/ljo05qcMbUk?si=ZC453hr9VzVktT-k" title="鮨握り体験交流会の参加者の声（YouTube）"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+
+                <ul class="voices">
+                    <li>
+                        <figure>
+                            <blockquote>「回転寿司とは全く別物でした。自分の手で握るからこそ、ネタの味が分かる。」</blockquote>
+                            <figcaption class="caption">30代女性／IT企業勤務</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <blockquote>「気づいたら3時間経っていました。これだけリラックスできたのは久しぶりです。」</blockquote>
+                            <figcaption class="caption">40代男性／経営者</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <blockquote>「人見知りなのですが、握っているうちに自然と話せるようになっていて驚きました。」</blockquote>
+                            <figcaption class="caption">30代女性／フリーランス</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 開催概要・申込 -->
+        <section class="section alt" id="apply">
+            <div class="wrap">
+                <h2 class="h2">開催概要とお申し込み</h2>
+
+                <table class="tbl">
+                    <caption class="caption" style="position:absolute;left:-9999px;">開催概要</caption>
+                    <tbody>
+                        <tr><th scope="row">日時</th><td>2026年10月20日（火）13:00〜15:30<span class="caption">12:45開場</span></td></tr>
+                        <tr><th scope="row">定員</th><td>12名（5名以上で開催）</td></tr>
+                        <tr><th scope="row">会場</th><td>優【You】BASE 原宿サロン<span class="caption">東京都渋谷区千駄ヶ谷3丁目<br>詳細住所は参加確定後にご案内します。</span></td></tr>
+                        <tr><th scope="row">アクセス</th><td>東京メトロ副都心線 北参道駅 徒歩3分<span class="caption">JR原宿駅・明治神宮前駅・代々木駅・千駄ヶ谷駅から徒歩10〜13分</span></td></tr>
+                        <tr><th scope="row">参加費</th><td>お1人 13,000円 ＋ 出張費10,000円（参加人数で案分）<span class="caption">出張費は10円単位で切り上げて計算します。</span></td></tr>
+                    </tbody>
+                </table>
+
+                <div class="tbl-block">
+                    <table class="tbl num">
+                        <caption>参加人数ごとの、お1人あたりの参加費</caption>
+                        <thead>
+                            <tr><th scope="col">参加人数</th><th scope="col">お1人あたり</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5名</td><td>15,000円</td></tr>
+                            <tr><td>6名</td><td>14,670円</td></tr>
+                            <tr><td>8名</td><td>14,250円</td></tr>
+                            <tr><td>10名</td><td>14,000円</td></tr>
+                            <tr><td>12名</td><td>13,840円</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="caption">無料キャンセルで人数が減った場合の差額は、下の「キャンセルについて」をご確認ください。</p>
+                </div>
+
+                <div class="tbl-block">
+                    <h3 class="h3">申し込み後の流れ</h3>
+                    <ol class="steps">
+                        <li><strong>10月13日（火）23:59　募集締切</strong>下のボタンからフォームでお申し込みください。</li>
+                        <li><strong>10月14日（水）以降　人数と会費の確定</strong>確定した人数と会費を、銀行振込のご案内としてメールでお送りします。</li>
+                        <li><strong>10月16日（金）23:59　振込期限</strong>期限までにお振込みください。</li>
+                        <li><strong>10月17日（土）以降　詳細住所のご案内</strong>入金確認済みの方に、詳細住所と当日のご案内をメールでお送りします。</li>
+                    </ol>
+                </div>
+
+                <div class="tbl-block" id="cancel">
+                    <table class="tbl num">
+                        <caption>キャンセルについて</caption>
+                        <thead>
+                            <tr><th scope="col">連絡の日</th><th scope="col">キャンセル料</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>10月14日（水）まで</td><td>無料</td></tr>
+                            <tr><td>10月15日（木）〜16日（金）</td><td>50%</td></tr>
+                            <tr><td>10月17日（土）〜19日（月）</td><td>80%</td></tr>
+                            <tr><td>10月20日（火）当日</td><td>100%</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="caption">確定した参加費（出張費込み）が基準です。お支払い前でも発生します。</p>
+                    <p class="caption">お問い合わせ・キャンセルのご連絡は、申し込み後にお送りするメールへの返信でお願いします。</p>
+                </div>
+
+                <div class="cta">
+                    <p class="lead"><span class="nb">定員12名、</span><span class="nb">締切は10月13日（火）23:59です。</span></p>
+                    <a href="https://forms.gle/tsFvZtaWk89KaGK28" class="btn btn-block">申し込みフォームへ</a>
+                    <p class="caption">申し込み時点では、お支払いは発生しません。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主催 -->
+        <section class="section" id="host">
+            <div class="wrap-wide">
+                <h2 class="h2">主催者紹介</h2>
+
+                <div class="person">
+                    <img src="masaya.jpg" alt="鮨まさや大将 後藤将哉" width="640" height="800" loading="lazy">
+                    <div>
+                        <p class="role">鮨まさや大将 ／ プロデューサー</p>
+                        <p class="name">後藤 将哉<span>Masaya Goto</span></p>
+                        <p style="margin-top: var(--s2);">13年間の会社員生活を経て、メンタルダウンをきっかけに未経験から鮨職人へ。</p>
+                        <p>「鮨は最上級のコミュニケーションツール」を軸に、紹介だけで満席が続く「鮨まさや」を主宰。言葉にならない本音を対話で引き出し、言語化することを得意とする。</p>
+                    </div>
+                </div>
+
+                <div class="person">
+                    <img src="yukiko.jpg" alt="会場オーナー 和田優喜子さん" width="640" height="800" loading="lazy">
+                    <div>
+                        <p class="role">会場オーナー ／ 居場所づくり</p>
+                        <p class="name">和田 優喜子<span>Yukiko Wada</span></p>
+                        <p style="margin-top: var(--s2);">自宅に年間のべ700人が集まる「帰ってきたくなる場所」を育てた、究極の人たらし。</p>
+                        <p>原宿のプライベートサロンでは、人と人が自然につながる居場所を作ってきた。「安心して話せる雰囲気づくり」で鮨まさやを支える女将。日本酒が大好き。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section alt" id="faq">
+            <div class="wrap">
+                <h2 class="h2">よくあるご質問</h2>
+
+                <div class="faq">
+                    <details>
+                        <summary>鮨を握ったことがないのですが……</summary>
+                        <div class="answer"><p>問題ありません。むしろ初めての方がほとんどです。大将と女将が横にいますので、見よう見まねで握れます。うまく作る必要はありませんし、正解もありません。</p></div>
+                    </details>
+                    <details>
+                        <summary>一人でも参加できますか？</summary>
+                        <div class="answer"><p>もちろんです。鮨を握っていると自然に会話が生まれますので、おひとりでいらしても全く浮きません。</p></div>
+                    </details>
+                    <details>
+                        <summary>お酒を飲まないのですが……</summary>
+                        <div class="answer"><p>ノンアルコールの持ち寄りで大丈夫です。お水とお茶はこちらで用意します。</p></div>
+                    </details>
+                    <details>
+                        <summary>無料キャンセルで人数が減ると、参加費はどうなりますか？</summary>
+                        <div class="answer">
+                            <p>出張費は、10月14日までの無料キャンセルで減った人数を除いて、あらためて参加者で分けます。すでにご案内した振込額はそのままです。増えた分の差額は、事前にお知らせしたうえで当日にお支払いいただきます。</p>
+                            <p class="caption">例：6名で14,670円とご案内したあと、1名が無料キャンセルして5名になった場合、当日の差額は330円です。有料キャンセルが出た場合は、他の参加者に追加のご請求はしません。</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>5名に満たなかった場合は？</summary>
+                        <div class="answer"><p>5名以上で開催します。5名に満たない場合は、確定のご案内の前に主催からご連絡します。</p></div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="section closing">
+            <div class="wrap">
+                <p class="big">自分で握った鮨を、誰かが食べて「美味しい」と言ってくれる。</p>
+                <p>それだけで、午後の頭の中がだいぶ軽くなります。原宿で、お待ちしています。</p>
+                <div style="margin-top: var(--s4);">
+                    <a href="https://forms.gle/tsFvZtaWk89KaGK28" class="btn btn-block">申し込みフォームへ</a>
+                    <p class="caption" style="margin-top: var(--s2);">募集締切 10月13日（火）23:59</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap-wide">
+            <p>&copy; 2026 en-moto All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
