@@ -191,6 +191,14 @@
         .block { margin-top: var(--s5); }
         .block > .h3 { padding-left: var(--s2); border-left: 2px solid var(--gold); }
 
+        /* 写真のトリミング（height:auto を必ず指定。height属性が縦伸びの原因になる） */
+        .crop { display: block; width: 100%; height: auto; object-fit: cover; border-radius: var(--radius); }
+        .crop-wide { aspect-ratio: 3 / 2; object-position: center 54%; }
+        .crop-shari { aspect-ratio: 4 / 3; object-position: center 50%; }
+        .shari { display: grid; gap: var(--s3); align-items: start; }
+        @media (min-width: 768px) { .shari { grid-template-columns: 240px 1fr; gap: var(--s4); } .crop-shari { aspect-ratio: 4 / 5; object-position: center 60%; } }
+        .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .ext::after { content: '↗'; margin-left: 0.15em; font-size: 0.85em; text-decoration: none; display: inline-block; }
         .gin-wrap { display: grid; gap: var(--s4); align-items: start; }
         .gin-photo { width: 100%; max-width: 220px; height: auto; margin: 0 auto; border-radius: var(--radius); }
         @media (min-width: 768px) { .gin-wrap { grid-template-columns: 240px 1fr; gap: var(--s5); } .gin-photo { margin: 0; max-width: none; } }
@@ -381,14 +389,23 @@
                     <p>豊洲市場から新鮮な魚を目利きのプロから仕入れる予定です。</p>
                 </div>
 
+                <figure class="figure">
+                    <img src="nigiri.jpg" alt="器に盛られた、サーモンと白身魚の握り" class="crop crop-wide" width="1500" height="2000" loading="lazy">
+                </figure>
+
                 <p>このネタの一部を、皆様に握っていただきます。参加者同士の食べ比べや、大将と女将の握りとの食べ比べもあります。</p>
                 <p>同じネタを醤油、塩、炙りで食べ比べるなど、お鮨屋ではなかなかできない体験を、時間の許す限りお楽しみください。</p>
 
                 <div class="block">
                     <h3 class="h3">実は新しいシャリを考案中です</h3>
-                    <p>今、鮨会で使っているのは、こだわりの有機純米酢（いわゆる白酢）を使ったシンプルなシャリ酢です。どんなネタにも合うように設計しています。</p>
-                    <p>ただ、僕はこだわり始めると追求したくなる性分で、赤酢をブレンドしたシャリも作りたくなりました（笑）</p>
-                    <p>そこで今回、開発中の赤酢シャリを試していただき、ぜひ感想を聞かせてください。</p>
+                    <div class="shari">
+                        <img src="shari.jpg" alt="寿司桶のシャリに、酢を回しかける手元" class="crop crop-shari" width="981" height="1669" loading="lazy">
+                        <div>
+                            <p>今、鮨会で使っているのは、こだわりの有機純米酢（いわゆる白酢）を使ったシンプルなシャリ酢です。どんなネタにも合うように設計しています。</p>
+                            <p>ただ、僕はこだわり始めると追求したくなる性分で、赤酢をブレンドしたシャリも作りたくなりました（笑）</p>
+                            <p>そこで今回、開発中の赤酢シャリを試していただき、ぜひ感想を聞かせてください。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -402,7 +419,7 @@
                     <img src="gin.png" alt="三島のクラフトジン Water Dragon Spirits のボトル" class="gin-photo" width="400" height="600">
                     <div>
                         <h3 class="h3">大将からのおすそ分け</h3>
-                        <p>初めてご依頼をいただいた記念に、三島のクラフトジンを差し入れます。今まで飲んだジンの中で一番感動したので、皆様にも飲んでいただきたいと思いました。</p>
+                        <p>初めてご依頼をいただいた記念に、三島のクラフトジンを差し入れます。僕が今まで飲んだジンの中で一番感動したので、皆様にもぜひ飲んでいただきたいです！</p>
                         <p>2024年8月、アジアを代表するシンガポールの酒類品評会で最高金賞を獲得しました。4月にアメリカ、7月にイギリス、8月にシンガポールと、3つのエリアを代表する酒類品評会のすべてで最高評価を得たジンです。</p>
                     </div>
                 </div>
@@ -437,7 +454,7 @@
                         <div class="guest">
                             <img src="asakosuzuki.png" alt="鈴木亜佐子さん" width="320" height="320">
                             <p class="who"><strong>鈴木 亜佐子さん</strong></p>
-                            <p class="detail"><span class="nb">作家・</span><span class="nb">スタンフォード大学認定</span><span class="nb">コンパッションアンバサダー</span><br>著書『最高の休み方』ほか</p>
+                            <p class="detail"><span class="nb">作家・</span><span class="nb">スタンフォード大学認定</span><span class="nb">コンパッションアンバサダー</span><br>著書『<a href="https://amzn.asia/d/0afV9FND" target="_blank" rel="noopener noreferrer">最高の休み方<span class="ext" aria-hidden="true"></span><span class="sr">（Amazon／新しいタブを開きます）</span></a>』ほか</p>
                         </div>                    </div>
                 </div>
             </div>
