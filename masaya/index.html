@@ -254,6 +254,40 @@
       font-size: 16px;
     }
 
+    .event-notice {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 48px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--accent);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .event-notice[hidden] { display: none; }
+    .event-notice-copy { flex: 1; min-width: 0; }
+    .event-notice h2 {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: clamp(25px, 3vw, 34px);
+      line-height: 1.45;
+    }
+    .event-notice p { margin-bottom: 10px; }
+    .event-notice .event-notice-meta {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .event-notice-action { flex: 0 1 330px; }
+    .event-notice-action .button { width: 100%; text-align: center; }
+
+    @media (max-width: 820px) {
+      .event-notice { align-items: stretch; flex-direction: column; gap: 22px; padding: 24px; }
+      .event-notice-action { flex: auto; }
+    }
+
     .route-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -947,6 +981,33 @@
 
     <section id="activities" class="section alt routes">
       <div class="wrap">
+        <aside id="retreat-notice" class="event-notice" aria-labelledby="retreat-notice-title" data-closes-at="2026-10-14T00:00:00+09:00" hidden>
+          <div class="event-notice-copy">
+            <p class="route-label">開催案内</p>
+            <h2 id="retreat-notice-title" class="serif">10/20（火）鮨リトリート</h2>
+            <p>鮨を握って、五感をリセットするひととき。</p>
+            <p class="event-notice-meta">13:00〜15:30｜原宿<br>募集締切：10/13（火）23:59</p>
+          </div>
+          <div class="event-notice-action">
+            <a class="button" href="https://sushi.en-moto.com/sushi-retreat1020/">10/20の鮨リトリートの詳細を見る</a>
+          </div>
+        </aside>
+        <script id="retreat-notice-expiry">
+          (() => {
+            const notice = document.getElementById('retreat-notice');
+            if (!notice) return;
+            const closesAt = Date.parse(notice.dataset.closesAt);
+            if (!Number.isFinite(closesAt)) return;
+            function updateNotice() {
+              const remaining = closesAt - Date.now();
+              notice.hidden = remaining <= 0;
+              if (remaining > 0) {
+                window.setTimeout(updateNotice, Math.min(remaining, 2147483647));
+              }
+            }
+            updateNotice();
+          })();
+        </script>
         <div class="routes-head">
           <h2 class="section-title serif">鮨を通じて、<br>やっていること。</h2>
           <p>興味のある入口からご覧ください。</p>
