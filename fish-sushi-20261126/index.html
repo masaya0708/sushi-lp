@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>魚さばき教室と夜の鮨会｜11月26日｜鮨まさや</title>
+<style>
+  :root { color-scheme: light; --paper: #f7f5ef; --ink: #252724; --blue: #163b4d; --line: #cbc6b8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; line-height: 1.9; }
+  a { color: var(--blue); }
+  a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+  header, main, footer { width: min(1100px, 90%); margin-inline: auto; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.2rem; }
+  .brand { color: var(--blue); font-size: 1.25rem; letter-spacing: .13em; }
+  .button { display: inline-block; background: var(--blue); color: white; padding: .65rem 1.1rem; text-decoration: none; font-family: system-ui, sans-serif; font-size: .9rem; }
+  .intro { padding: clamp(2rem, 7vw, 6rem) 0 2rem; display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: end; }
+  h1, h2 { font-weight: 500; line-height: 1.35; margin: 0 0 .8em; }
+  h1 { font-size: clamp(2.15rem, 6vw, 4.8rem); margin-bottom: 0; }
+  h2 { font-size: clamp(1.65rem, 4vw, 2.65rem); }
+  .date, .price { color: var(--blue); font-weight: bold; }
+  .date { letter-spacing: .09em; }
+  p { margin: 0 0 1em; }
+  figure { margin: 0; }
+  img { display: block; width: 100%; object-fit: cover; }
+  .hero { width: 95%; }
+  .hero img, #host-photo { height: auto; object-fit: contain; aspect-ratio: auto; }
+  .hero { position: relative; }
+  .day { display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid var(--line); margin-top: 2rem; }
+  .day a { padding: 1rem; text-decoration: none; }
+  .day a + a { border-left: 1px solid var(--line); }
+  .day strong { display: block; font-size: clamp(1.1rem, 3vw, 1.65rem); }
+  .menu-heading { font-size: 1.1rem; margin: 1.4rem 0 .4rem; }
+  .menu { list-style: none; padding: 0; margin: 0 0 .8rem; border-top: 1px solid var(--line); }
+  .menu li { padding: .55rem 0; border-bottom: 1px solid var(--line); }
+  .counts { display: flex; gap: 2rem; margin-block: 1rem; color: var(--blue); }
+  .counts strong { font-size: 2.7rem; line-height: 1.1; }
+  figcaption, small { font: .78rem/1.6 system-ui, sans-serif; color: #55564e; }
+  figcaption { padding-top: .45rem; }
+  section { margin-block: clamp(3rem, 9vw, 8rem); }
+  .scene { display: grid; grid-template-columns: 1fr .85fr; align-items: start; gap: clamp(1.4rem, 6vw, 6rem); }
+  .scene figure { margin-top: 3rem; }
+  .scene img { aspect-ratio: 4/3; }
+  .scene.reverse { grid-template-columns: .85fr 1fr; }
+  .reverse figure { grid-column: 1; grid-row: 1; }
+  .reverse .copy { grid-column: 2; }
+  .course { max-width: 43rem; margin-inline: auto; }
+  .time { color: var(--blue); font: 600 .9rem/1.5 system-ui, sans-serif; letter-spacing: .06em; }
+  .price { font-size: 1.3rem; }
+  .choices { margin: 0; border-top: 1px solid var(--line); }
+  .choices div { display: grid; grid-template-columns: 1fr auto; gap: .25rem 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }
+  .choices dd { margin: 0; white-space: nowrap; }
+  .choices small { grid-column: 1 / -1; }
+  .draft-note { margin-top: 1.5rem; padding: .85rem 1rem; border-left: 2px solid var(--blue); background: #eeece4; }
+  footer { border-top: 1px solid var(--line); padding-block: 1.3rem 2rem; }
+  @media (max-width: 680px) {
+    .intro, .scene, .scene.reverse { grid-template-columns: 1fr; gap: 1.1rem; }
+    .scene figure { margin-top: 0; }
+    .reverse figure, .reverse .copy { grid-column: auto; grid-row: auto; }
+    .hero { width: 100%; }
+
+    .choices div { grid-template-columns: 1fr; }
+  }
+.benefit { background: var(--blue); color: white; padding: 1rem 1.25rem; font-weight: bold; }
+.second-photo { margin-top: .8rem; }
+.profile img { aspect-ratio: auto; }
+.schedule-wrap { overflow-x: auto; }
+.schedule { width: 100%; border-collapse: collapse; min-width: 0; font-size: .9rem; table-layout: fixed; }
+.schedule caption { text-align: left; color: var(--blue); padding-bottom: .5rem; }
+.schedule th, .schedule td { padding: .7rem .25rem; text-align: center; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.schedule th:first-child { width: 36%; text-align: left; }
+.schedule thead { background: #eeece4; }
+.faq details { border-bottom: 1px solid var(--line); padding-block: .8rem; }
+.faq summary { cursor: pointer; }
+.faq details p { margin: .6rem 0 0; }
+button.button { border: 0; }
+button.button:disabled { opacity: .75; }
+@media (max-width: 480px) { .schedule { font-size: .73rem; } }
+</style>
+</head>
+<body>
+<header><span class="brand">鮨まさや</span><a class="button" href="#participation">参加枠を見る</a></header>
+<main>
+<div class="intro"><div><p class="date">2026年11月26日（木）</p><p class="time">目利きのプロ、元セリ人による</p><h1>魚の捌き方講座<br>＆ 夜の鮨会</h1></div>
+<p>元セリ人が豊洲で選んだ魚を使って、捌き方や包丁の使い方を少人数で練習します。夜は、昼に捌いた魚も使って鮨会を開きます。魚を丸ごと一尾から捌いてみたい方も、お鮨を食べたい方も、ぜひ！</p></div>
+<figure class="hero"><img src="assets/hero-fish.png" width="1448" height="1086" alt="まな板に並べた丸魚と包丁"></figure>
+<nav class="day" aria-label="昼と夜の内容"><a href="#fish"><span class="time">14:00〜16:00</span><strong>魚の捌き方講座</strong>15,000円</a><a href="#dinner"><span class="time">18:00〜21:00</span><strong>夜の鮨会</strong>7,000円</a></nav>
+<section class="scene" aria-labelledby="fish"><div class="copy">
+<p class="time">14:00〜16:00</p><h2 id="fish">魚の捌き方講座</h2>
+<p class="price">15,000円 <small>魚代込み・定員4名</small></p>
+<p>魚のプロに包丁の入れ方を教わりながら、まずは小型魚を繰り返し捌きます。大型魚も、一人につき最低一尾は自分で包丁を入れます。</p>
+<div class="counts" aria-label="一人分の実習魚"><div>小型魚<br><strong>3</strong>尾</div><div>大型魚<br><strong>1</strong>尾</div></div>
+<p>アジやイワシ、真鯛やブリなど。魚はその日の仕入れ状況によります。当日の進み具合や仕入れによっては、さらに捌けることもあります。</p>
+</div><figure><img src="assets/0644.jpg" alt="実習用の丸魚と包丁を並べた作業台" loading="lazy"></figure></section>
+<section class="scene reverse profile" aria-labelledby="tanno"><div class="copy">
+<h2 id="tanno">講師紹介</h2><p class="price">丹野涼 <small>さかなコンサルタント</small></p>
+<p>横浜市中央卸売市場で約7年間セリ人を務める。現在は魚の仕入れや捌き方の指導、市場同行を手がけています。</p><p><a href="https://tttaichi.github.io/sakana-consultant/">丹野涼さんの公式サイト</a></p>
+</div><figure><img src="assets/tanno.png" alt="講師の丹野涼さん" loading="lazy"></figure></section>
+<section class="scene reverse" aria-labelledby="dinner"><div class="copy">
+<p class="time">18:00〜21:00</p><h2 id="dinner">夜の鮨会</h2>
+<h3 class="menu-heading">お品書き</h3>
+<ul class="menu"><li>お刺身</li><li>握り10貫前後</li><li>お椀</li><li>巻物</li></ul>
+<p><small>※当鮨会の特徴：生・湯霜・炙りなど、同じ魚でも食べ方によって味わいが違うことを体験いただきます</small></p>
+<p>昼に捌いた魚も使います。握るのは、実践講座を受けた方や僕の鮨仲間です。よかったら、食べた感想もその場で聞かせてください。</p>
+<p class="price">お一人7,000円 <small>夜だけの参加も歓迎</small></p>
+<p>お酒は持ち込み可です。飲みたい方はお好きなものをお持ちください。<br><small>持ち込み料なし。お水とお茶はご用意します。</small></p>
+<small>鮨まさやの通常の出張鮨は、お一人13,000円＋交通費です。</small>
+</div><figure><img src="assets/0435.jpg" alt="大人の参加者が卓を囲む鮨会" loading="lazy"><img class="second-photo" src="assets/0433.jpg" alt="過去の鮨会の参加者と握り手" loading="lazy"><figcaption>過去の開催写真</figcaption></figure></section>
+<section class="course" aria-labelledby="course">
+<p class="time">午前の講座 10:30〜13:30｜定員3名</p><h2 id="course">鮨会で、主役になりたい方へ</h2>
+<p>実は3時間で鮨は握れるようになります。午前の講座で握り方を練習して、その日の夜にお客さんへふるまいます。夜の鮨会に握り手として参加する方は、当日の午前講座を受講してください。</p>
+<p>マンツーマンレッスンは通常110,000円ですが、この日はお一人でも55,000円。</p><p class="benefit">参加特典：夜の鮨会参加無料＆握り手として実技指導</p><p><a href="https://sushi.en-moto.com/practical-course/">3時間で鮨が握れる実践講座の詳細を見る</a></p>
+<ul><li>3時間で鮨が握れる実践講座（夜の鮨会付き）55,000円</li><li>実践講座＋魚の捌き方講座（夜の鮨会付き）70,000円</li></ul>
+</section>
+<section id="participation" aria-labelledby="options">
+<h2 id="options">参加枠と料金</h2>
+<div class="schedule-wrap"><table class="schedule"><caption>当日の時間割</caption><thead><tr><th scope="col">参加枠</th><th scope="col">10:30〜13:30<br>握る</th><th scope="col">14:00〜16:00<br>捌く</th><th scope="col">18:00〜21:00<br>鮨会</th><th scope="col">料金</th></tr></thead><tbody>
+<tr><th scope="row">実践講座＋魚の捌き方講座＋夜の鮨会</th><td>●</td><td>●</td><td>握り手</td><td>70,000円</td></tr>
+<tr><th scope="row">実践講座＋夜の鮨会</th><td>●</td><td>—</td><td>握り手</td><td>55,000円</td></tr>
+<tr><th scope="row">魚の捌き方講座＋夜の鮨会</th><td>—</td><td>●</td><td>食事</td><td>22,000円</td></tr>
+<tr><th scope="row">魚の捌き方講座</th><td>—</td><td>●</td><td>—</td><td>15,000円</td></tr>
+<tr><th scope="row">夜の鮨会（食事のみ）</th><td>—</td><td>—</td><td>食事</td><td>7,000円</td></tr>
+</tbody></table></div>
+<p><small>実践講座は2つの参加枠あわせて定員3名。魚の捌き方講座は対象の参加枠あわせて定員4名です。</small></p>
+</section>
+<section class="scene" aria-labelledby="host"><div class="copy"><h2 id="host">鮨まさや大将</h2><p class="price">後藤将哉</p><p>12年間の会社員生活を経て、未経験から鮨職人へ。わずか半年の修業期間を経て、独立。本業はビジネスプロデュース。<br>偶然出会った鮨によって人生の流れが大きく変わった経験を、著書『経営者こそ、鮨を握れ。』に綴る。</p><p><a href="https://sushi.en-moto.com/kindle-book/">著書『経営者こそ、鮨を握れ。』を見る</a></p></div><figure><img id="host-photo" src="../deshinokai/assets/photos/masaya.jpg" alt="鮨まさや大将 後藤将哉" loading="lazy"></figure></section>
+<section class="course faq" aria-labelledby="faq"><h2 id="faq">よくある質問</h2>
+<details><summary>夜の鮨会だけ参加できますか？</summary><p>はい。18:00からの鮨会に、お一人7,000円で参加できます。</p></details>
+<details><summary>魚の捌き方講座に出なくても、夜に握れますか？</summary><p>はい。当日の午前講座を受ければ、夜は握り手として参加できます。午前講座と夜の鮨会で55,000円です。<br>※この日に限り、鮨会参加が無料</p></details>
+<details><summary>どんな魚を捌きますか？</summary><p>小型魚はアジやイワシ、大型魚は真鯛やブリなどを予定していますが、魚種は当日の仕入れによって変わる可能性があります。</p></details>
+<details><summary>捌いた魚は持ち帰れますか？</summary><p>お持ち帰りいただけます。保冷バッグと保冷剤をご持参ください。</p></details>
+<details><summary>お酒は持ち込めますか？</summary><p>はい。持ち込み料はかかりません。お水とお茶はこちらでご用意します。</p></details>
+</section>
+<section class="course" id="apply" aria-labelledby="apply-heading"><h2 id="apply-heading">お申し込み</h2><p>まもなく受付開始</p><button class="button" type="button" disabled>お申込みはこちらから</button></section>
+</main>
+<footer>
+  <span class="brand">鮨まさや</span>
+  <nav aria-label="特商法表記と個人情報の取り扱い" style="display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin-top:.5rem;font-size:.85rem">
+    <a href="https://sub.masaya-goto.com/p/privacy_policy_sushi">プライバシーポリシー</a>
+    <a href="https://sub.masaya-goto.com/p/sctl_sushi">特定商取引法に基づく表記</a>
+  </nav>
+</footer>
+</body></html>
