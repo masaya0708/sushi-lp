@@ -110,10 +110,15 @@ button.button:disabled { opacity: .75; }
   }
   @media (prefers-reduced-motion: no-preference) {
     html { scroll-behavior: smooth; }
-    section h2.heading-enter { animation: heading-enter .65s ease-out both; }
-    section h2.heading-enter::after { transform-origin: left; animation: heading-rule .75s ease-out both; }
-    @keyframes heading-enter { from { opacity: .45; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    section h2.scroll-enter { animation: heading-enter .85s ease-out both; }
+    section h2.scroll-enter::after { transform-origin: left; animation: heading-rule .95s ease-out both; }
+    .scene figure.scroll-enter { animation: photo-enter 1.05s cubic-bezier(.2,.65,.25,1) both; }
+    @keyframes heading-enter { from { opacity: .15; transform: translateY(27px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes heading-rule { from { transform: scaleX(.2); } to { transform: scaleX(1); } }
+    @keyframes photo-enter {
+      from { opacity: .25; clip-path: inset(0 0 28% 0); transform: translateY(24px); }
+      to { opacity: 1; clip-path: inset(0); transform: translateY(0); }
+    }
   }
   @media (prefers-reduced-motion: reduce) { a.button, .day a { transition: none; } }
 </style>
@@ -185,14 +190,14 @@ button.button:disabled { opacity: .75; }
 </footer>
 <script>
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const headingObserver = new IntersectionObserver((entries) => {
+    const scrollObserver = new IntersectionObserver((entries) => {
       for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        entry.target.classList.add('heading-enter');
-        headingObserver.unobserve(entry.target);
+        if (entry.intersectionRatio < .15) continue;
+        entry.target.classList.add('scroll-enter');
+        scrollObserver.unobserve(entry.target);
       }
     }, { threshold: .15 });
-    document.querySelectorAll('section h2').forEach((heading) => headingObserver.observe(heading));
+    document.querySelectorAll('section h2, .scene figure').forEach((element) => scrollObserver.observe(element));
   }
 </script>
 </body></html>
